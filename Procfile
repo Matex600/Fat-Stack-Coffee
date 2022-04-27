@@ -1,0 +1,1 @@
+web: gunicorn fat_stack_coffee.wsgi:application
