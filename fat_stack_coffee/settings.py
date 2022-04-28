@@ -36,7 +36,7 @@ DEBUG = "DEVELOPMENT" in os.environ
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['fat-stack-coffee.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME', 'localhost')]
 
 
 # Application definition
