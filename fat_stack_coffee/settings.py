@@ -14,6 +14,12 @@ from pathlib import Path
 
 import os
 import dj_database_url
+if os.path.isfile('env.py'):
+    """
+    Conditional import to prevent application
+    error if it cannot find env
+    """
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,10 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s_$f@e11thfkzfw31cs%g6o5ivkfwvn1lk4^6!53v=b6yfm9eq'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = "DEVELOPMENT" in os.environ
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['fat-stack-coffee.herokuapp.com', 'localhost']
 
@@ -84,7 +92,7 @@ WSGI_APPLICATION = 'fat_stack_coffee.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://optmkglcpydohc:cae6364ff0cec42a7cb91dffa3cd7d0f6e53aa994df533bc25705213a50014a4@ec2-99-80-170-190.eu-west-1.compute.amazonaws.com:5432/d2nj3s00oiat2e')
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 
