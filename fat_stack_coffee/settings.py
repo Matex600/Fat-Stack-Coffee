@@ -54,6 +54,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'fsc_cart',
+    'fsc_checkout',
+    'fsc_products',
+    'fsc_store',
+    'fsc_users',
 ]
 
 MIDDLEWARE = [
