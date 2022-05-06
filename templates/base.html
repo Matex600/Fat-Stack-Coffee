@@ -69,6 +69,7 @@
           <i class="fa fa-phone mx-2"></i>
           <a class="navbar-sm-brand text-light text-decoration-none" href="tel:07700 900615">07700 900615</a>
         </div>
+        <h4 id="delivery_msg">Free delivery on orders over ${{ free_shipping_threshold }}!</h4> 
         <div>
           <a class="text-light" href="https://www.facebook.com/FSCoffeeLondon" target="_blank" rel="sponsored"><i
               class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -92,6 +93,7 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
         <form method="GET" action="">
           <div class="input-group w-100">
@@ -107,6 +109,7 @@
           </div>
         </form>
       </div>
+
       <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
         id="fsc_main_nav">
         <div class="flex-fill">
@@ -193,6 +196,15 @@
     </div>
     </div>
   </nav>
+  <div class="row bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light w-100">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+        aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      {% include 'includes/main_nav.html' %}
+    </nav>
+  </div>
 
 
   {% if messages %}
