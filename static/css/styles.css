@@ -19,6 +19,10 @@ body {
     width: 10%;
  }
 
+#delivery_msg {
+  color: #ffffff;
+}
+
 /* Nav */
 #fsc_nav_top { min-height: 40px;}
 #fsc_nav_top * { font-size: 0.95em !important;}
@@ -51,11 +55,12 @@ body {
 /* Carousel Hero */
 #fatstack-carousel-hero .carousel-indicators li {
   margin-top: -50px;
-  background-color: #59ab6e;
+  background-color: #01081B;
 }
+
 #fatstack-carousel-hero .carousel-control-next i,
 #fatstack-carousel-hero .carousel-control-prev i {
-  color: #59ab6e !important;
+  color: #01081B !important;
   font-size: 2.8em !important;
 }
 
