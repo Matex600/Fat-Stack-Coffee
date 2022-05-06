@@ -7,6 +7,8 @@ h1, h2, h3, h4, h5, h6, a {
     color: #000000;
  }
 
+
+ 
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -24,7 +26,7 @@ body {
     position: relative;
   }
   
-  a::before {
+  nav a::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -45,3 +47,20 @@ body {
 
 #fsc_main_nav a:hover { color: #01081B;}
 #fsc_main_nav .navbar .nav-icon { margin-right: 20px;}
+
+/* Carousel Hero */
+#fatstack-carousel-hero .carousel-indicators li {
+  margin-top: -50px;
+  background-color: #59ab6e;
+}
+#fatstack-carousel-hero .carousel-control-next i,
+#fatstack-carousel-hero .carousel-control-prev i {
+  color: #59ab6e !important;
+  font-size: 2.8em !important;
+}
+
+.carousel-image {
+  height: 50vh;
+  min-height: 200px;
+  background: no-repeat, scroll, center scroll;
+}
