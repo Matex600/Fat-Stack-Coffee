@@ -28,14 +28,14 @@
   <link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-icon-144x144.png' %}">
   <link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}">
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
-  <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'favicon/android-icon-192x192.png' %}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{% static 'favicon/android-icon-192x192.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
   <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">     
+  <meta name="theme-color" content="#ffffff">
   <!-- Favicon End -->
   {% endblock %}
 
@@ -65,14 +65,6 @@
 </head>
 
 <body>
-  <header class="container-fluid fixed-top">
-    <div class="row">
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
-    </div>
-
-  </header>
   <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="fsc_nav_top">
     <div class="container text-light">
       <div class="w-100 d-flex justify-content-between">
@@ -96,8 +88,9 @@
   </nav>
   <nav class="navbar navbar-expand-lg navbar-light shadow">
     <div class="container d-flex justify-content-between align-items-center">
-      <img class="img-fluid img-thumbnail" src="https://res.cloudinary.com/matts-cloud/image/upload/v1651747021/rsz_imageedit_3_2818077152_n8bjfp.png"
-              alt="Site logo navy and light blue bear">
+      <img class="img-fluid img-thumbnail"
+        src="https://res.cloudinary.com/matts-cloud/image/upload/v1651747021/rsz_imageedit_3_2818077152_n8bjfp.png"
+        alt="Site logo navy and light blue bear">
       <a class="navbar-brand logo h1 align-self-center" href="index.html">
         Fat Stack Coffee
       </a>
@@ -124,47 +117,89 @@
         id="fsc_main_nav">
         <div class="flex-fill">
           <ul class="nav navbar-nav d-flex justify-content-around mx-lg-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+            <li class="list-inline-item">
+              <a class="nav-link" href="index.html">
+                <div class="text-center">
+                  <div><i class="fa-solid fa-house"></i></div>
+                  <p class="my-0">
+                    Home
+                  </p>
+                </div>
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">Products</a>
+            <li class="list-inline-item">
+              <a class="nav-link" href="">
+                <div class="text-center">
+                  <div><i class="fa-solid fa-mug-hot"></i></div>
+                  <p class="my-0">
+                    Products
+                  </p>
+                </div>
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="shop.html">About</a>
+            <li class="list-inline-item">
+              <a class="nav-link" href="">
+                <div class="text-center">
+                  <div><i class="fa-solid fa-id-card-clip"></i></div>
+                  <p class="my-0">
+                    About
+                  </p>
+                </div>
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+            <li class="list-inline-item">
+              <a class="nav-link" href="">
+                <div class="text-center">
+                  <div><i class="fa-solid fa-address-book"></i></div>
+                  <p class="my-0">
+                    Contact
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="list-inline-item dropdown">
+              <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <div class="text-center">
+                  <div><i class="fa-solid fa-user-gear"></i></div>
+                  <p class="my-0">My Account</p>
+                </div>
+              </a>
+              <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <a href="" class="dropdown-item">Product Management</a>
+                {% endif %}
+                <a href="" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                <div class="text-center">
+                  <div><i class="fa-solid fa-basket-shopping"></i></div>
+                  <p class="my-0">
+                    {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}
+                    {% else %}
+                    $0.00
+                    {% endif %}
+                  </p>
+                </div>
+              </a>
             </li>
           </ul>
         </div>
-        <div class="navbar align-self-center d-flex">
-          <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-            <div class="input-group">
-              <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-              <div class="input-group-text">
-                <i class="fa fa-fw fa-search"></i>
-              </div>
-            </div>
-          </div>
-          <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="">
-            <i class="fa fa-fw fa-search text-dark mr-2"></i>
-          </a>
-          <a class="nav-icon position-relative text-decoration-none" href="#">
-            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-            <span
-              class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-          </a>
-          <a class="nav-icon position-relative text-decoration-none" href="#">
-            <i class="fa fa-fw fa-user text-dark mr-3"></i>
-            <span
-              class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-          </a>
-        </div>
       </div>
-
+    </div>
+    </div>
     </div>
   </nav>
+
   {% if messages %}
   <div class="message-container"></div>
   {% endif %}
