@@ -5,7 +5,7 @@ from .models import Product, Category
 class ProductsAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
-        'name',
+        'prod_name',
         'category',
         'price',
         'rating',
