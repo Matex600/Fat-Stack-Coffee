@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('fsc_store.urls')),
+    path('products/', include('fsc_products.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
