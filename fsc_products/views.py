@@ -4,7 +4,7 @@ from .models import Product
 
 def fsc_products(request):
 
-    products = Product.object.all()
+    products = Product.objects.all()
 
     context = {
         'products': products,
