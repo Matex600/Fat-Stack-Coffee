@@ -86,7 +86,7 @@
       <img class="img-fluid img-thumbnail"
         src="https://res.cloudinary.com/matts-cloud/image/upload/v1651747021/rsz_imageedit_3_2818077152_n8bjfp.png"
         alt="Site logo navy and light blue bear">
-      <a class="navbar-brand logo h1 align-self-center" href="index.html">
+      <a class="navbar-brand logo h1 align-self-center" href="{% url 'store' %}">
         Fat Stack Coffee
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#fsc_main_nav"
@@ -115,7 +115,7 @@
         <div class="flex-fill">
           <ul class="nav navbar-nav d-flex justify-content-around mx-lg-auto">
             <li class="list-inline-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="{% url 'store' %}">
                 <div class="text-center">
                   <div><i class="fa-solid fa-house"></i></div>
                   <p class="my-0">
@@ -125,7 +125,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="{% url 'products' %}">
                 <div class="text-center">
                   <div><i class="fa-solid fa-mug-hot"></i></div>
                   <p class="my-0">
