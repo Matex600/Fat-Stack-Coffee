@@ -26,14 +26,16 @@ def fsc_products(request):
         'products': products,
         'search_term': query,
     }
+
     return render(request, 'products/products.html', context)
 
 
 def fsc_product_detail(request, product_id):
-
-    products = get_object_or_404(Product, pk=product_id)
+    
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
-        'product': products,
+        'product': product,
     }
-    return render(request, 'products/products.html', context)
+
+    return render(request, 'products/product_detail.html', context)
