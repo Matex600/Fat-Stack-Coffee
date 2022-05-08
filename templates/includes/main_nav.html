@@ -17,10 +17,10 @@
             </a>
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Light Roast</a></li>
-              <li><a class="dropdown-item" href="#">Medium Roast</a></li>
-              <li><a class="dropdown-item" href="#">Medium-Dark Roast</a></li>
-              <li><a class="dropdown-item" href="#">Dark Roast</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=light_roast">Light Roast</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=medium_roast">Medium Roast</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=medium_dark_roast">Medium-Dark Roast</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=dark_roast">Dark Roast</a></li>
             </ul>
           </div>
         <div class="dropdown">
@@ -29,9 +29,9 @@
         </a>
         
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Coding Mugs</a></li>
-            <li><a class="dropdown-item" href="#">Gaming Mugs</a></li>
-            <li><a class="dropdown-item" href="#">Regular Mugs</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=coding_mugs">Coding Mugs</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=gaming_mugs">Gaming Mugs</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=regular_mugs">Regular Mugs</a></li>
         </ul>
         </div>
 
@@ -41,8 +41,8 @@
             </a>
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Coffee Machines</a></li>
-              <li><a class="dropdown-item" href="#">Coffee Grinders</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=coffee_machines">Coffee Machines</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=coffee_grinders">Coffee Grinders</a></li>
             </ul>
           </div>
     </ul>
