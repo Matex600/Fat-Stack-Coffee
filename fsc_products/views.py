@@ -21,6 +21,9 @@ def fsc_products(request):
             if sortkey == 'prod_name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('prod_name'))
+                
+            if sortkey == 'category':
+                sortkey = 'category__name'
    
             if 'direction' in request.GET:
                 direction = request.GET['direction']
