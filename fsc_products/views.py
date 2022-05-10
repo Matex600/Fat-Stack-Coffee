@@ -18,9 +18,9 @@ def fsc_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'prod_name':
+            if sortkey == 'name':
                 sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('prod_name'))
+                products = products.annotate(lower_name=Lower('name'))
                 
             if sortkey == 'category':
                 sortkey = 'category__name'
@@ -45,7 +45,7 @@ def fsc_products(request):
                 return redirect(reverse('products'))
 
             queries = (
-                Q(prod_name__icontains=query) | Q(description__icontains=query)
+                Q(name__icontains=query) | Q(description__icontains=query)
                 )
             products = products.filter(queries)
 

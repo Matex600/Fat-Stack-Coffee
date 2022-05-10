@@ -11,7 +11,7 @@
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Products</h2>
                 {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.prod_name }}">
+                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
@@ -54,15 +54,15 @@
                             <div class="card h-100 border-0">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.prod_name }}">
+                                    <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top" src="{{ MEDIA_URL }}default-product-image.png" alt="{{ product.prod_name }}">
+                                    <img class="card-img-top" src="{{ MEDIA_URL }}default-product-image.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.prod_name }}</p>
+                                    <p class="mb-0">{{ product.name }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
