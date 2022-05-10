@@ -88,6 +88,7 @@ TEMPLATES = [
                 # Required by Allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'fsc_cart.contexts.cart_contents',
             ],
         },
     },
@@ -177,6 +178,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+FREE_DELIVERY_THRESHOLD = 60
+STANDARD_DELIVERY_PERCENTAGE = 15
 
 
 # Default primary key field type
