@@ -46,7 +46,7 @@
                     <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
-                            <!-- {% with product.coffee_amounts as c %}
+                            {% with product.coffee_amounts as c %}
                             {% if c %}
                                 <div class="col-12">
                                     <p><strong>Quantity:</strong></p>
@@ -58,7 +58,7 @@
                                         <option value="750">750g</option>
                                     </select>
                                 </div>
-                            {% endif %} -->
+                            {% endif %}
                             <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">
                                     <div class="input-group">
