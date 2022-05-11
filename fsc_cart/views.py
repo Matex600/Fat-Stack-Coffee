@@ -34,6 +34,7 @@ def add_to_cart(request, item_id):
 
 def update_cart(request, item_id):
 
+
     quantity = int(request.POST.get('quantity'))
     weight = None
     if 'product_weight' in request.POST:
@@ -54,7 +55,7 @@ def update_cart(request, item_id):
             cart.pop(item_id)
 
     request.session['cart'] = cart
-    return redirect(reverse(view_cart))
+    return redirect(reverse('view_cart'))
 
 
 def delete_from_cart(request, item_id):
