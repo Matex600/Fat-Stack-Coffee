@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block page_header %}
 
@@ -39,7 +40,7 @@
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                    <p class="my-0"><strong>Quantity </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                                    <p class="my-0"><strong>Quantity </strong>{% if item.product.coffee_amounts %}{{ item.weight|upper }}{% else %}N/A{% endif %}</p>
                                     <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                 </td>
                                 <td class="py-3">
@@ -80,7 +81,7 @@
                                     <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_weight="{{ item.weight }}"><small>Remove</small></a>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">${{ item.product.price }}</p>
+                                    <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity}}</p>
                                 </td>
                             </tr>
                         {% endfor %}
