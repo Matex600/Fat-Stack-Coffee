@@ -179,8 +179,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-FREE_DELIVERY_THRESHOLD = 60
-STANDARD_DELIVERY_PERCENTAGE = 15
+FREE_DELIVERY_THRESHOLD = 40
+STANDARD_DELIVERY_PERCENTAGE = 10
 
 
 # Default primary key field type
