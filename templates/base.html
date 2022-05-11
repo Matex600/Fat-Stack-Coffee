@@ -69,7 +69,7 @@
           <i class="fa fa-phone mx-2"></i>
           <a class="navbar-sm-brand text-light text-decoration-none" href="tel:07700 900615">07700 900615</a>
         </div>
-        <h4 id="delivery_msg">Free delivery on orders over ${{ free_delivery_threshold }}!</h4> 
+        <h4 id="delivery_msg">Free delivery on orders over £{{ free_delivery_threshold }}!</h4> 
         <div>
           <a class="text-light" href="https://www.facebook.com/FSCoffeeLondon" target="_blank" rel="sponsored"><i
               class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -208,9 +208,22 @@
 
 
   {% if messages %}
-  <div class="message-container"></div>
-  {% endif %}
-
+    <div class="message-container">
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+{% endif %}
 
   {% block page_header %}
   {% endblock %}
@@ -219,6 +232,11 @@
   {% endblock %}
 
   {% block postloadjs %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".toast").toast('show');
+    });
+  </script>
   {% endblock %}
 
 </body>
