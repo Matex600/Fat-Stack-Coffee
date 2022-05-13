@@ -24,14 +24,18 @@ def cart_contents(request):
         else:
             product = get_object_or_404(Product, pk=item_id)
             for weight, quantity in item_data['items_by_weight'].items():
-                total += weight * product.price
+                new_price = int(weight) * product.price / 100
+                total += quantity * new_price
                 product_count += quantity
                 cart_items.append({
                     'item_id': item_id,
                     'quantity': quantity,
                     'product': product,
                     'weight': weight,
+                    'price': new_price,
                 })
+            
+            
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
