@@ -1,14 +1,27 @@
+"""
+
+checkout/admin.py: admin models for the checkout app.
+Credit to Code Institute's Boutique Ado project.
+
+"""
+
+# - - - - - Native Python Imports - - - - - - - - -
 import uuid
 
+# - - - - - Django Imports - - - - - - - - -
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 
+
+# - - - - - Internal Imports - - - - - - - - -
 from fsc_products.models import Product
 
 
 class Order(models.Model):
-
+    """
+    Model saves instances with user and purchase information.
+    """
     order_number = models.CharField(
         max_length=32,
         null=False,
@@ -82,27 +95,40 @@ class Order(models.Model):
     )
 
     def _generate_order_number(self):
-
+        """
+        Function generates a randomised unique
+        order number using UUID
+        """
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
+        """
+        Update grand total each time a line item is added,
+        accounting for delivery costs.
+        """
 
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum']
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+            sdp = settings.STANDARD_DELIVERY_PERCENTAGE
+            self.delivery_cost = self.order_total * sdp / 100
         else:
             self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
     def save(self, *args, **kwargs):
-
+        """
+        Override the original save method to set the order number
+        if it hasn't been set already.
+        """
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
     def __str__(self):
         return self.order_number
+
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(
