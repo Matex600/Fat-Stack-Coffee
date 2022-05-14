@@ -98,6 +98,7 @@ TEMPLATES = [
                 # Required by Allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'fsc_cart.contexts.cart_contents',
             ],
             'builtins': [
