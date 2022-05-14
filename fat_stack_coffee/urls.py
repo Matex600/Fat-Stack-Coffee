@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('fsc_store.urls')),
     path('products/', include('fsc_products.urls')),
     path('cart/', include('fsc_cart.urls')),
+    path('checkout/', include('fsc_checkout.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
