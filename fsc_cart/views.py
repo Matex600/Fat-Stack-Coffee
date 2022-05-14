@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, reverse, HttpResponse, get_object
 from django.contrib import messages
 from fsc_products.models import Product
 
+
 def view_cart(request):
+    
     return render(request, 'cart/cart.html')
 
 
