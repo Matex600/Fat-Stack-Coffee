@@ -16,15 +16,14 @@ from django.conf import settings
 # - - - - - Internal imports - - - - - - - - - - - -
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from products.models import Product
-from cart.contexts import cart_contents
+from fsc_products.models import Product
+from fsc_cart.contexts import cart_contents
 
 # - - - - - 3rd party imports - - - - - - - - - - - -
 import stripe
 
 
 def checkout(request):
-
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -81,8 +80,7 @@ def checkout(request):
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There is nothing in your"
-                                    "cart at the moment")
+            messages.error(request, "There's nothing in your cart at the moment")
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
@@ -95,7 +93,7 @@ def checkout(request):
         )
 
         order_form = OrderForm()
-    
+
     if not stripe_public_key:
         messages.warning(request, 'Stripe Public Key is missing. \
             Did you forget to set it in the environment')
