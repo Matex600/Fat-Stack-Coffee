@@ -14,7 +14,7 @@ from django.views.decorators.csrf import csrf_exempt
 import stripe
 
 # - - - - - Internal Imports - - - - - - - - -
-from checkout.webhook_handler import StripeWH_Handler
+from fsc_checkout.webhook_handler import StripeWH_Handler
 # pylint: disable=invalid-name, broad-except
 
 
