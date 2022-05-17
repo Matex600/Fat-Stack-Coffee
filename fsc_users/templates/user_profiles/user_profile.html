@@ -4,7 +4,7 @@
 
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'fsc_users/css/user_profile.css' %}">
+    <link rel="stylesheet" href="{% static 'user_profile/css/user_profile.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -35,5 +35,5 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'fsc_users/js/countryfield.js' %}"></script>
+    <script type="text/javascript" src="{% static 'user_profile/js/countryfield.js' %}"></script>
 {% endblock %}
