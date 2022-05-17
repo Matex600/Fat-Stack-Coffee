@@ -81,6 +81,7 @@ def checkout(request):
                         order_line_item.save()
                     else:
                         for weight, quantity in item_data['items_by_weight'].items():
+                            # flake8: noqa
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
