@@ -4,8 +4,7 @@
     <div class="toast-header bg-white text-dark">
         <strong class="mr-auto">Happy Days!</strong>
         <div>
-        <button type="button" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close">
         </button>
         </div>
     </div>
@@ -16,7 +15,7 @@
                 <hr class="mt-1 mb-3">
             </div>
         </div>
-        {% if grand_total %}
+        {% if grand_total and not on_profile_page %}
             <p class="logo-font bg-white text-black py-1">Your Shopping Cart ({{ product_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in cart_items %}
