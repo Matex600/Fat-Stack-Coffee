@@ -5,4 +5,7 @@ urlpatterns = [
     path('', views.fsc_products, name='products'),
     path('<int:product_id>/', views.fsc_product_detail, name='product_detail'),
     path('add/', views.fsc_add_product, name='fsc_add_product'),
+    path(
+        'edit/<int:product_id>/',
+        views.fsc_edit_product, name='fsc_edit_product'),
 ]
