@@ -1,8 +1,17 @@
+"""
+products/views.py: views to display all pages in the products app.
+Credit to Code Institute's Boutique Ado project.
+"""
+
+# - - - - - Django Imports - - - - - - - - -
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+
+# - - - - - Internal imports - - - - - - - - -
 from .models import Product, Category
+from .forms import ProductForm
 
 
 def fsc_products(request):
@@ -70,3 +79,14 @@ def fsc_product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def fsc_add_product(request):
+    """ Add a product to the store """
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
