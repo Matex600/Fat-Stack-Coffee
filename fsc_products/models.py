@@ -51,11 +51,12 @@ class Product(models.Model):
         blank=True
     )
     image_url = models.URLField(
-        max_length=1024,
+        max_length=2024,
         null=True,
         blank=True
     )
     image = models.ImageField(
+        max_length=2024,
         null=True,
         blank=True
     )
