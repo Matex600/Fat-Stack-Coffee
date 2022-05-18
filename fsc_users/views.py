@@ -8,7 +8,7 @@ Credit to Code Institute for profile and order_history views.
 # - - - - - Django Imports - - - - - - - - -
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 
 # - - - - - Internal Imports - - - - - - - - -
 from .models import UserProfile
@@ -16,7 +16,7 @@ from fsc_checkout.models import Order
 from .forms import UserProfileForm
 
 
-
+@login_required
 def user_profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
