@@ -8,4 +8,7 @@ urlpatterns = [
     path(
         'edit/<int:product_id>/',
         views.fsc_edit_product, name='fsc_edit_product'),
+    path(
+        'delete/<int:product_id>/',
+        views.fsc_delete_product, name='fsc_delete_product'),
 ]
