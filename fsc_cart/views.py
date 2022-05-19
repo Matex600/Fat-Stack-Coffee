@@ -1,6 +1,7 @@
 """
 
-cart/views.py: views to display the shopping cart page and add/update/remove
+fsc_cart/views.py: views to display the shopping cart page
+and add/update/remove
 functionality for it. Some of the code is derived from the Code Institute
 Boutique Ado project.
 

@@ -18,7 +18,13 @@ from fsc_products.models import Product
 
 
 def cart_contents(request):
-
+    """
+    Accesses the cart contents.
+    Args:
+        request (object)
+    Returns:
+        the cart contents as its context.
+    """
     cart_items = []
     total = 0
     product_count = 0

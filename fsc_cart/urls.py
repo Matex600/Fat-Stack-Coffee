@@ -1,4 +1,12 @@
+"""
+
+fsc_cart/urls.py: the urls to connect the cart views with their templates.
+
+"""
+# - - - - - Django Imports - - - - - - - - -
 from django.urls import path
+
+# - - - - - Internal imports - - - - - - - - -
 from . import views
 
 urlpatterns = [
