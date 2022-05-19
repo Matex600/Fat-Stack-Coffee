@@ -1,6 +1,7 @@
 """
+
 fsc_products/forms.py: forms to be used with the product app of the application
-Credit to Code Institute for product and order_history views.
+
 """
 
 # - - - - - Django Imports - - - - - - - - -
@@ -12,14 +13,19 @@ from .widgets import CustomClearableFileInput
 from .models import Product, Category
 
 
-
 class ProductForm(forms.ModelForm):
-
+    """
+    The product form, used to create and edit products by admin users.
+    """
     class Meta:
         model = Product
         fields = '__all__'
-    
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+
+    image = forms.ImageField(
+        label='Image',
+        required=False,
+        widget=CustomClearableFileInput
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

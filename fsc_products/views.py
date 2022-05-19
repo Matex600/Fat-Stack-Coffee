@@ -1,5 +1,5 @@
 """
-products/views.py: views to display all pages in the products app.
+fsc_products/views.py: views to display all pages in the products app.
 Credit to Code Institute's Boutique Ado project.
 """
 
@@ -16,7 +16,12 @@ from .forms import ProductForm
 
 
 def fsc_products(request):
+    """
 
+    View displays products on the products template,
+    depending on the users sorting or queries.
+
+    """
     products = Product.objects.all()
 
     query = None
@@ -96,10 +101,11 @@ def fsc_add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. \
+                 Please ensure the form is valid and try again.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -142,7 +148,8 @@ def fsc_edit_product(request, product_id):
 def fsc_delete_product(request, product_id):
     """ Delete a product from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, "Sorry, only store owners can do that.. \
+             don't be cheeky.")
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)

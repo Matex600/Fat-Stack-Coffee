@@ -1,3 +1,9 @@
+"""
+
+fsc_products/urls.py: All urls for the products app.
+
+"""
+
 from django.urls import path
 from. import views
 
