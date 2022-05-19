@@ -33,12 +33,12 @@ def webhook(request):
 
     try:
         event = stripe.Webhook.construct_event(
-        payload, sig_header, wh_secret
+            payload, sig_header, wh_secret
         )
-    except ValueError as e:
+    except ValueError as e: # noqa
         # Invalid payload
         return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError as e:
+    except stripe.error.SignatureVerificationError as e: # noqa
         # Invalid signature
         return HttpResponse(status=400)
     except Exception as e:
@@ -48,9 +48,10 @@ def webhook(request):
     handler = StripeWH_Handler(request)
 
     # Map webhook events to relevant handler functions
+    # Line too long fix breaks the code.
     event_map = {
         'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
-        'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
+        'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed, # noqa
     }
 
     # Get the webhook type from Stripe

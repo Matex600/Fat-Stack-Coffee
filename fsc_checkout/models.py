@@ -150,6 +150,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Model to save each item in an Order instance as a lineitem.
+    """
     order = models.ForeignKey(
         Order,
         null=False,
