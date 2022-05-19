@@ -1,15 +1,41 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+"""
+
+cart/views.py: views to display the shopping cart page and add/update/remove
+functionality for it. Some of the code is derived from the Code Institute
+Boutique Ado project.
+
+"""
+# - - - - - Django Imports - - - - - - - - -
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+)
 from django.contrib import messages
+
+# - - - - - Internal imports - - - - - - - - -
 from fsc_products.models import Product
 
 
 def view_cart(request):
-    
+    """
+    This view displays shopping cart template.
+    Args:
+        request (object)
+    Returns:
+        the shopping cart page.
+    """
     return render(request, 'cart/cart.html')
 
 
 def add_to_cart(request, item_id):
-
+    """
+    This view displays products in the shopping cart template.
+    Args:
+        request (object)
+        item_id (instance of the item being added)
+    Returns:
+        the redirect_url (request.path) from the browsers current
+        location on the site
+    """
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -22,27 +48,53 @@ def add_to_cart(request, item_id):
         if item_id in list(cart.keys()):
             if weight in cart[item_id]['items_by_weight'].keys():
                 cart[item_id]['items_by_weight'][weight] += quantity
-                messages.success(request, f'Updated weight {weight.upper()} {product.name} quantity to {cart[item_id]["items_by_weight"][weight]}')
+                messages.success(
+                    request, (
+                        f'Updated weight {weight} {product.name} quantity to '
+                        f'{cart[item_id]["items_by_weight"][weight]}'
+                    )
+                )
             else:
                 cart[item_id]['items_by_weight'][weight] = quantity
-                messages.success(request, f'Added weight {weight.upper()} {product.name} to your shopping cart')
+                messages.success(
+                    request, (
+                        f'Added weight {weight.upper()} {product.name} to '
+                        f'your shopping cart'
+                    )
+                )
         else:
             cart[item_id] = {'items_by_weight': {weight: quantity}}
-            messages.success(request, f'Added weight {weight.upper()} {product.name} to your shopping cart')
+            messages.success(
+                request, (
+                    f'Added weight {weight.upper()} {product.name} to '
+                    f'your shopping cart'
+                )
+            )
     else:
         if item_id in list(cart.keys()):
             cart[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}')
+            messages.success(
+                request, (
+                    f'Updated {product.name} quantity to {cart[item_id]}'))
         else:
             cart[item_id] = quantity
-            messages.success(request, f'Added {product.name} to your shopping cart')
+            messages.success(request, f'Added {product.name} to '
+                                      f'your shopping cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
 
 
 def update_cart(request, item_id):
-
+    """
+    This view enables adjusting the cart contents to the
+    given quantity and updates it in the template
+    Args:
+        request (object)
+        item_id (instance of the item being updated)
+    Returns:
+        a redirect to the view_cart page after updating.
+    """
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     weight = None
@@ -53,26 +105,44 @@ def update_cart(request, item_id):
     if weight:
         if quantity > 0:
             cart[item_id]['items_by_weight'][weight] = quantity
-            messages.success(request, f'Updated weight {weight.upper()} {product.name} quantity to {cart[item_id]["items_by_weight"][weight]}')
+            messages.success(
+                request, (
+                    f'Updated weight {weight.upper()} {product.name} quantity '
+                    f'to {cart[item_id]["items_by_weight"][weight]}'))
         else:
             del cart[item_id]['items_by_weight'][weight]
             if not cart[item_id]['items_by_weight']:
                 cart.pop(item_id)
-            messages.success(request, f'Removed item{weight.upper()} {product.name} from your shopping cart')
+            messages.success(
+                request, (
+                    f'Removed item{weight.upper()} {product.name} from your '
+                    f'shopping cart'))
     else:
         if quantity > 0:
             cart[item_id] = quantity
-            messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}')
+            messages.success(
+                request, (f'Updated {product.name} quantity '
+                          f'to {cart[item_id]}'))
         else:
             cart.pop(item_id)
-            messages.success(request, f'Removed {product.name} from your shopping cart')
+            messages.success(
+                request, (f'Removed {product.name} from '
+                          f'your shopping cart'))
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
 
 
 def delete_from_cart(request, item_id):
-
+    """
+    Function based view to remove an
+    item from the shopping cart template.
+    Args:
+        request (object)
+        item_id (instance of the item being removed)
+    Returns:
+        a 200 status OK HTTP-response.
+    """
     product = get_object_or_404(Product, pk=item_id)
 
     try:
@@ -85,10 +155,14 @@ def delete_from_cart(request, item_id):
             del cart[item_id]['items_by_weight'][weight]
             if not cart[item_id]['items_by_weight']:
                 cart.pop(item_id)
-            messages.success(request, f'Removed weight {weight.upper()} {product.name} from your shopping cart')
+            messages.success(
+                request, (f'Removed weight {weight.upper()} {product.name} '
+                          f'from your shopping cart'))
         else:
             cart.pop(item_id)
-            messages.success(request, f'Removed {product.name} from your shopping cart')
+            messages.success(
+                request, (f'Removed {product.name} '
+                          f'from your shopping cart'))
 
         request.session['cart'] = cart
         return HttpResponse(status=200)

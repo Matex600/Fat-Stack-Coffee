@@ -1,6 +1,19 @@
+"""
+
+fsc_cart/contexts.py: enables the cart contents to be accessed
+throughout the site.
+Credit to Code Institute's Boutique Ado project.
+
+"""
+
+# - - - - - Python Imports - - - - - - - - -
 from decimal import Decimal
+
+# - - - - - Django Imports - - - - - - - - -
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+
+# - - - - - Internal Imports - - - - - - - - -
 from fsc_products.models import Product
 
 
@@ -34,8 +47,6 @@ def cart_contents(request):
                     'weight': weight,
                     'price': new_price,
                 })
-            
-            
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
