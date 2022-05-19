@@ -1,6 +1,6 @@
 """
 
-checkout/signals.py: config file for home app
+fsc_checkout/signals.py: config file for home app
 Credit to Code Institute's Boutique Ado project.
 
 """

@@ -1,6 +1,6 @@
 """
 
-checkout/admin.py: admin models for the checkout app.
+fsc_checkout/admin.py: admin models for the checkout app.
 Credit to Code Institute's Boutique Ado project.
 
 """

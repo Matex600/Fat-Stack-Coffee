@@ -1,5 +1,7 @@
 """
-checkout/urls.py: urls for the checkout app
+
+fsc_checkout/urls.py: urls for the checkout app
+
 """
 
 # - - - - - Django Imports - - - - - - - - -

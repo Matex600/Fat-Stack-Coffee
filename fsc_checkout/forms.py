@@ -1,6 +1,6 @@
 """
 
-checkout/forms.py: forms for the checkout app.
+fsc_checkout/forms.py: forms for the checkout app.
 Credit to Code Institute's Boutique Ado project.
 
 """

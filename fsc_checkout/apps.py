@@ -1,6 +1,6 @@
 """
 
-checkout/apps.py: config file for checkout app
+fsc_checkout/apps.py: config file for checkout app
 
 """
 

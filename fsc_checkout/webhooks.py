@@ -1,6 +1,6 @@
 """
 
-checkout/webhooks.py: Contains webhook listener for stripe payment
+fsc_checkout/webhooks.py: Contains webhook listener for stripe payment
 Credit: Code Institute, Boutique Ado project, Stripe
 
 """

@@ -1,6 +1,6 @@
 """
 
-checkout/views.py: views to process an order made on the site.
+fsc_checkout/views.py: views to process an order made on the site.
 Most of the code is derived from the Code Institute
 Boutique Ado project.
 
