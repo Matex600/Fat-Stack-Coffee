@@ -1,0 +1,5 @@
+{% if item.product.image %}
+<img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+{% else %}
+<img class="w-100" src="https://res.cloudinary.com/matts-cloud/image/upload/v1652901667/default-product-image_an1sg9.png" alt="{{ item.product.name }}">
+{% endif %}
