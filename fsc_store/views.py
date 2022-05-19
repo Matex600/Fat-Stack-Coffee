@@ -1,5 +1,7 @@
 """
+
 fsc_store/views.py: Views for home app, rendering the landing page of the site.
+
 """
 
 # - - - - - Django Imports - - - - - - - - -
