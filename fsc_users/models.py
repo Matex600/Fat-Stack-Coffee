@@ -1,6 +1,6 @@
 """
 
-profiles/models.py: models for profiles app.
+fsc_users/models.py: models for users app.
 Credit to Code Institute's Boutique Ado project.
 
 
