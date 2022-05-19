@@ -14,7 +14,7 @@ register = template.Library()
 @register.filter(name='calc_subtotal')
 def calc_subtotal(price, quantity):
     """
-    Calculates the subtotal of each item in the 
+    Calculates the subtotal of each item in the
     shopping cart.
     Args:
         price (decimal)
