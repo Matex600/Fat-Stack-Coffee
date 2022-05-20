@@ -16,7 +16,7 @@ class Review(models.Model):
     """
     The review model class, with fields for
     user and products using a foreign key (unique value)
-    A prod_description and review_date
+    A prod_description and review_time
     """
 
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
