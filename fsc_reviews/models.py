@@ -21,6 +21,6 @@ class Review(models.Model):
 
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    prod_desc = models.TextField(max_length=450, null=False,
+    description = models.TextField(max_length=450, null=False,
                                  blank=False)
     review_time = models.DateTimeField(auto_now_add=True)

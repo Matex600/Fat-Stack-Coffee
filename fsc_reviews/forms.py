@@ -15,4 +15,4 @@ class ReviewForm(forms.ModelForm):
     """ Form for users to add reviews of products"""
     class Meta:
         model = Review
-        fields = ('prod_desc',)
+        fields = ('description',)
