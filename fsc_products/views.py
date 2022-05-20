@@ -13,6 +13,8 @@ from django.db.models.functions import Lower
 # - - - - - Internal imports - - - - - - - - -
 from .models import Product, Category
 from .forms import ProductForm
+from fsc_reviews.models import Review
+from fsc_reviews.forms import ReviewForm
 
 
 def fsc_products(request):
@@ -79,9 +81,14 @@ def fsc_products(request):
 def fsc_product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product)
+    review_form = ReviewForm()
+    product.save()
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'review_form': review_form,
     }
 
     return render(request, 'products/product_detail.html', context)
