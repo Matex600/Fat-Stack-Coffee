@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Review
 from .forms import ReviewForm
 from fsc_products.models import Product
-from fsc_profiles.models import UserProfile
+from fsc_users.models import UserProfile
 
 
 @login_required
