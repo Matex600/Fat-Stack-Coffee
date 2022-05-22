@@ -7,6 +7,10 @@ Inspired by Code Institute's Boutique Ado project.
 
 # - - - - - Django Imports - - - - - - - - -
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+
+# - - - - - Internal Imports - - - - - - - - -
+from fsc_users.models import UserProfile
 
 
 class Category(models.Model):
@@ -71,12 +75,6 @@ class Product(models.Model):
         max_digits=6,
         decimal_places=2
     )
-    rating = models.DecimalField(
-        max_digits=6,
-        decimal_places=2,
-        null=True,
-        blank=True
-    )
     image_url = models.URLField(
         max_length=2024,
         null=True,
@@ -87,7 +85,7 @@ class Product(models.Model):
         null=True,
         blank=True
     )
-
+    
     def __str__(self):
         """
         Returns the product name
@@ -97,3 +95,32 @@ class Product(models.Model):
             The product name field as string
         """
         return self.name
+
+    def get_rating(self):
+        total = (sum(int(review['star_rating']) for review
+                 in self.reviews.values()))
+
+        if self.reviews.count() > 0:
+            return total / self.reviews.count()
+        else:
+            return 0
+
+
+class Review(models.Model):
+    """
+    The review model class, with fields for
+    user and products using a foreign key (unique value)
+    A prod_description and review_time
+    """
+
+    user = models.ForeignKey(UserProfile, related_name='reviews',
+                             on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='reviews',  
+                                on_delete=models.CASCADE)
+    description = models.TextField(max_length=450, null=False,
+                                   blank=False)
+    star_rating = models.IntegerField(validators=[
+            MaxValueValidator(5),
+            MinValueValidator(1)
+        ])
+    review_time = models.DateTimeField(auto_now_add=True)
