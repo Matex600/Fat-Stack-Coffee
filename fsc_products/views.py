@@ -16,7 +16,6 @@ from fsc_users.models import UserProfile
 from .forms import ProductForm, ReviewForm
 
 
-
 def fsc_products(request):
     """
 
