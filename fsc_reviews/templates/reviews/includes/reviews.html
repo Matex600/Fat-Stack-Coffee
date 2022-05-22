@@ -25,6 +25,7 @@
                                         <span>Posted on: &nbsp;{{ review.review_time|date:"M d, Y" }}</span><br>
                                         <p>{{ review.description }}</p>
                                         <p>Review added by - <strong>{{ review.user }}</strong>
+                                            <i class="fas fa-star mr-1"></i> - <strong>{{ review.star_rating }}</strong>  
                                         {% if request.user.is_authenticated %} 
                                         {% if request.user|lower == review.user|lower %}
                                             <span>
