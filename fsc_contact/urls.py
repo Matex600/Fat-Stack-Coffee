@@ -1,0 +1,15 @@
+"""
+
+fsc_contact/urls.py: All urls for the contact app.
+
+"""
+
+# - - - - - Django Imports - - - - - - - - -
+from django.urls import path
+
+# - - - - - Internal imports - - - - - - - - -
+from . import views
+
+urlpatterns = [
+    path('', views.contact, name='contact'),
+]
