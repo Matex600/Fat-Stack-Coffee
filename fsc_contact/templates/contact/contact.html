@@ -6,92 +6,101 @@
 {% endblock %}
 
 {% block content %}
+<!-- Start Content Page -->
+<div class="container-fluid bg-light py-5">
+    <div class="col-md-6 m-auto text-center">
+        <h2 class="logo-font mb-4">Contact us for more coffee! <i class="fa-solid fa-mug-hot"></i></h2>
+        <hr>
+    </div>
+</div>
+    
+<div id="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19829.697553209233!2d0.1846741671606131!3d51.59183795920515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a23174b37231%3A0x932de78a76329f31!2sRomford!5e0!3m2!1sen!2suk!4v1653319509180!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 <!-- Overlay -->
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Contact us for more coffee!<i class="fa-solid fa-mug-hot"></i></h2>
+            <h2 class="mb-2">Drop us message</h2>
             <hr>
         </div>
-    </div>
 </div>
-<div>
-    <div class="container">
-        <div class="row">
-            <!-- Contact form -->
-            <br>
-            <div class="col-sm-7 contact-form">
-                <h2 class="mb-2">Drop us message</h2>
-                <div class="row">
-                    <div class="col">
-                        <form action="{% url 'contact' %}" method="POST">
-                            {% csrf_token %}
-                            {% for field in form %}
-                                {{ field | as_crispy_field}}
-                            {% endfor %}
-                            <input type="submit" value="Submit" class="btn btn-custom">
-                        </form>
-                    </div>
+<div class="container">
+    <div class="row">
+        <!-- Contact form -->
+        <br>
+        <div class="col-sm-7 contact-form">
+            <div class="row">
+                <div class="col">
+                    <form action="{% url 'contact' %}" method="POST">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            {{ field | as_crispy_field}}
+                        {% endfor %}
+                        <input type="submit" value="Submit" class="btn btn-custom">
+                    </form>
                 </div>
             </div>
-            <!-- Store address details -->
-            <div class="col-sm-5 text-center">
-                <h2 class="mb-2">Contact details</h2>
-                <p><i class="fas fa-map-marker-alt"></i><br>
-                    Havering<br>
-                    London<br>
-                    United Kingdom</p>
-                <p><i class="fas fa-phone"></i><br>
-                    07700 900615</p>
-                <p><i class="fas fa-store"></i><br>
-                <strong>Office opening hours</strong></p>
-                <table class="col">
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td><strong>Monday:</strong></td>
-                        <td></td>
-                        <td>10:00 - 16:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tuesday:</strong></td>
-                        <td></td>
-                        <td>8:00 - 16:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Wednesday:</strong></td>
-                        <td></td>
-                        <td>8:00 - 16:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Thursday:</strong></td>
-                        <td></td>
-                        <td>8:00 - 18:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Friday:</strong></td>
-                        <td></td>
-                        <td>10:00 - 18:00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Saturday:</strong></td>
-                        <td></td>
-                        <td>Closed</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sunday:</strong></td>
-                        <td></td>
-                        <td>Closed</td>
-                    </tr>
-                </table>
+        </div>
+        <!-- Store address details -->
+        <div class="col-sm-5 text-center">
+            <h2 class="mb-2">Contact details</h2>
+            <p><i class="fas fa-map-marker-alt"></i><br>
+                Havering<br>
+                London<br>
+                United Kingdom</p>
+            <p><i class="fas fa-phone"></i><br>
+                07700 900615</p>
+            <p><i class="fa-solid fa-warehouse"></i><br>
+            <strong>Office opening hours</strong></p>
+            <table class="col">
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><strong>Monday:</strong></td>
+                    <td></td>
+                    <td>10:00 - 16:00</td>
+                </tr>
+                <tr>
+                    <td><strong>Tuesday:</strong></td>
+                    <td></td>
+                    <td>8:00 - 16:00</td>
+                </tr>
+                <tr>
+                    <td><strong>Wednesday:</strong></td>
+                    <td></td>
+                    <td>8:00 - 16:00</td>
+                </tr>
+                <tr>
+                    <td><strong>Thursday:</strong></td>
+                    <td></td>
+                    <td>8:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td><strong>Friday:</strong></td>
+                    <td></td>
+                    <td>10:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td><strong>Saturday:</strong></td>
+                    <td></td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td><strong>Sunday:</strong></td>
+                    <td></td>
+                    <td>Closed</td>
+                </tr>
+            </table>
 
-            </div>
         </div>
     </div>
 </div>
+</div>
+    
 {% endblock %}
