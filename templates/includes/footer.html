@@ -1,12 +1,9 @@
+{% load static %}
 <div class="container">
+
     <div class="row">
     <!-- Begin Mailchimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-    </style>
     <div id="mc_embed_signup">
     <form action="https://gmail.us14.list-manage.com/subscribe/post?u=48061ab5ca66edd4c84a4845b&amp;id=c8424e3670" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div id="mc_embed_signup_scroll">
@@ -24,8 +21,8 @@
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_48061ab5ca66edd4c84a4845b_c8424e3670" tabindex="-1" value=""></div>
             <div class="optionalParent">
                 <div class="clear foot">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                    <p class="brandingLogo"><a href="http://eepurl.com/hZK_vz" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_light_dtp.svg"></a></p>
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-custom">
+                    <p class="brandingLogo"><a href="http://eepurl.com/hZK_vz" title="Mailchimp - email marketing made easy and fun"></a></p>
                 </div>
             </div>
         </div>
@@ -35,18 +32,88 @@
     <!--End mc_embed_signup-->
 </div>
 
-<div class="w-100 bg-black py-3">
+
+<footer class="bg-dark" id="fatstack_footer">
     <div class="container">
-        <div class="row pt-2">
-            <div class="col-12">
-                <p class="text-left text-light">
-                    Copyright &copy; Fat-Stack-Coffee | Designed by Mateusz Leks 2022
-                    
-                    <a class="text-light" href="https://github.com/Matex600" target="_blank" rel="sponsored">
+        <div class="row">
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-white border-bottom pb-3 border-light logo">Fat-Stack-Coffee</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                    <li>
+                        <i class="fas fa-map-marker-alt fa-fw"></i>
+                        Romford, Havering, United Kingdom
+                    </li>
+                    <li>
+                        <i class="fa fa-phone fa-fw"></i>
+                        <a class="text-decoration-none" href="tel:07700 900615">07700 900615</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope fa-fw"></i>
+                        <a class="text-decoration-none" href="mailto:fatstack.info@gmail.com">fatstack.info@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                    <li><a class="text-decoration-none" href="{% url 'products' %}?category=light_roast">Light Roast</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'products' %}?category=medium_roast">Medium Roast</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'products' %}?category=medium_dark_roast">Medium-Dark Roast</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'products' %}?category=dark_roast">Dark Roast</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'products' %}?category=coding_mugs">Coding Mugs</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'products' %}?category=gaming_mugs">Gaming Mugs</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'products' %}?category=regular_mugs">Regular Mugs</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'products' %}?category=coffee_machines">Coffee Machines</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'products' %}?category=coffee_grinders">Coffee Grinders</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                    <li><a class="text-decoration-none" href="{% url 'store' %}">Home</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'products' %}">Products</a></li>
+                    <li><a class="text-decoration-none" href="#">About Us!</a></li>
+                    <li><a class="text-decoration-none" href="{% url 'contact' %}">Contact Us!</a></li>
+                </ul>
+            </div>
+
+        </div>
+    <div class="row mb-4">
+        <div class="col-12 mb-3">
+            <div class="w-100 my-3 border-top border-light"></div>
+        </div>
+        <div class="col-auto me-auto">
+            <ul class="list-inline text-left footer-icons">
+                <li class="list-inline-item border border-light rounded-circle text-center">
+                    <a class="text-decoration-none" target="_blank" href="https://www.facebook.com/FSCoffeeLondon" title="Check out our Facebook!"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                </li>
+                <li class="list-inline-item border border-light rounded-circle text-center">
+                    <a class="text-decoration-none" target="_blank" href="https://www.instagram.com/" title="Check out our Instagram!" ><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                </li>
+                <li class="list-inline-item border border-light rounded-circle text-center">
+                    <a class="text-decoration-none" href="https://github.com/Matex600" title="Check out my Github for more projects!" target="_blank" rel="sponsored">
                         <i class="fa-brands fa-github-square fa-xl"></i></a>
-                </p>
-                
+                </li>
+                <li class="list-inline-item border border-light rounded-circle text-center">
+                    <a class="text-decoration-none" target="_blank" href="https://www.linkedin.com/in/mateusz-leks-714a32213/" title="Check out my Linkedin!">
+                        <i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="w-100 py-3">
+        <div class="container">
+            <div class="row pt-2">
+                <div class="col-12">
+                    <p class="text-left text-light">
+                        Copyright &copy; Fat-Stack-Coffee | Designed by Mateusz Leks 2022
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</footer>
