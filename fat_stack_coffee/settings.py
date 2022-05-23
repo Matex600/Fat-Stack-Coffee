@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'fsc_store',
     'fsc_users',
     'fsc_reviews',
+    'fsc_contact',
 
 
     # Other
