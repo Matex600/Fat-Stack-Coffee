@@ -8,7 +8,6 @@ h1, h2, h3, h4, h5, h6, a {
  }
 
 
- 
 body {
     font-family: 'Montserrat', sans-serif;
     overflow-x: scroll;
@@ -255,3 +254,46 @@ color: #17a2b8; /* text-info */
   }
 }
 
+
+/* Mailchimp embedded form */
+
+div#mc_embed_signup_scroll {
+  background-color: #e9ecef;
+}
+
+#mc_embed_signup_scroll {
+  padding-top: 5px;
+  text-align: center;
+}
+
+#mce-EMAIL {
+  width: 50%!important;
+  margin: 0 auto!important;
+}
+
+#mc-embedded-subscribe {
+  margin: 0 auto!important;
+  text-align: left!important;
+}
+
+.btn-custom {
+  font-weight: 400;
+  line-height: 1.5;
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.btn-custom:disabled {
+  pointer-events: none;
+}
+
+.btn-custom:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.btn-custom:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
