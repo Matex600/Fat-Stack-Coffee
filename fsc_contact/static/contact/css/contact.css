@@ -1,0 +1,43 @@
+.btn-custom {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+.btn-custom:disabled {
+    pointer-events: none;
+}
+
+.btn-custom:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+    color: #FFFFFF;
+}
+
+.btn-custom:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+#map-container {
+    position: relative;
+    overflow: hidden;
+    height:0;
+    width: 100%;
+    padding-bottom:30%;
+}
+
+#map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+table.col {
+    margin: auto;
+}
+
+.mb-2 {
+    text-align: center;
+}
