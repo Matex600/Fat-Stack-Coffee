@@ -65,9 +65,18 @@ body {
   font-size: 2.8em !important;
 }
 
+.product-image {
+    width:  200px;
+    height: 200px;
+    object-fit: cover;
+}
+
 .carousel-image {
-  height: 50vh;
+  height: auto;
   min-height: 200px;
+  max-height: 70vh;
+  width: auto;
+  object-fit: scale-down;
   background: no-repeat, scroll, center scroll;
 }
 
