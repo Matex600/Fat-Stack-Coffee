@@ -287,6 +287,15 @@ color: #17a2b8; /* text-info */
 }
 
 @media (max-width: 750px) {
+.btn-custom {
+  font-weight: 200;
+  line-height: 0.7;
+  color: #FFFFFF;
+  background-color: #000000;
+}
+}
+
+@media (max-width: 750px) {
   li.list-inline-item.dropdown{
     text-align: center!important;
   }
