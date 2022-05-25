@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Added to clear html error  -->
+  <head>
+    <title>Fat Stack Coffee</title> 
+  </head>
 <h6><strong>Shopping Cart Total: £{{ total|floatformat:2 }}</strong></h6>
 <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
 <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
@@ -6,3 +12,4 @@
         You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
     </p>
 {% endif %}
+</html>
