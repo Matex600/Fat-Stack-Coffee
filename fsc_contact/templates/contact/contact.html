@@ -33,7 +33,7 @@
         <br>
         <div class="col-sm-7 contact-form">
             <div class="row">
-                <div class="col">
+                <div class="col form-margin">
                     <form action="{% url 'contact' %}" method="POST">
                         {% csrf_token %}
                         {% for field in form %}
