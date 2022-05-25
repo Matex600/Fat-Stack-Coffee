@@ -113,7 +113,6 @@
           </div>
         </form>
       </div>
-
       <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
         id="fsc_main_nav">
         <div class="flex-fill">
@@ -159,11 +158,9 @@
               </a>
             </li>
             <li class="list-inline-item dropdown">
-              <li class="list-inline-item dropdown">
-                <div class="dropdown">
                   <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-labelledby="user-options" aria-expanded="false">
-                    <i class="fas fa-user fa-lg"></i>
-                    My account
+                    <div><i class="fas fa-user fa-lg"></i></div>
+                    User Account
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     {% if request.user.is_authenticated %}
@@ -178,8 +175,8 @@
                       <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
                       <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
                     {% endif %}
+                    
                   </ul>
-                </div>
             </li>
             <li class="list-inline-item">
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}">
@@ -187,9 +184,9 @@
                   <div><i class="fa-solid fa-basket-shopping"></i></div>
                   <p class="my-0">
                     {% if grand_total %}
-                    ${{ grand_total|floatformat:2 }}
+                    £{{ grand_total|floatformat:2 }}
                     {% else %}
-                    $0.00
+                    £0.00
                     {% endif %}
                   </p>
                 </div>
