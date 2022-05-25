@@ -20,6 +20,9 @@ body {
     width: 10%;
  }
 
+.featured-img {
+  width: 100%
+}
 #delivery_msg {
   color: #ffffff;
 }
@@ -53,6 +56,13 @@ body {
 #fsc_main_nav a:hover { color: #01081B;}
 #fsc_main_nav .navbar .nav-icon { margin-right: 20px;}
 
+#icons-pad {
+  padding-right: 15px;
+}
+
+#contact-pad {
+  padding-left: 15px;
+}
 /* Carousel Hero */
 #fatstack-carousel-hero .carousel-indicators li {
   margin-top: -50px;
@@ -108,14 +118,27 @@ body {
 }
 
 
+.container {
+  max-width: 100%;
+}
 
+
+/* -------------------------------- Users */
+.form-pad {
+  margin-left: 20px;
+  width: 50%;
+}
+
+.order-pad {
+  width: 45%;
+}
 
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
   .container {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 
@@ -353,4 +376,37 @@ div#mc_embed_signup_scroll {
 #fatstack_footer ul.footer-icons li:hover i {
   color: #212934;
   transition: .5s;
+}
+
+.col-md-4.pt-5 {
+  text-align: center;
+  padding: 0px;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.center {
+  text-align:center;
+  width:100%;
+}
+
+.clear.foot {
+  display: flex!important;
+  width: 100%!important;
+  
+}
+
+.form-margin {
+  margin-left: 25px;
+}
+
+#mc_embed_signup .mc-field-group {
+  width: 100%!important;
+}
+
+#mc_embed_signup h2 {
+  margin: 25px 0!important;
 }
