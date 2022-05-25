@@ -124,7 +124,7 @@
         var option = this.options[this.selectedIndex];
         var new_weight = parseInt(option.value);
         var new_price = (new_weight / 100) * parseFloat(product_price);
-        price_element.innerText = `£${new_price}.00`; 
+        price_element.innerText = new Intl.NumberFormat('en-EN', { style: 'currency', currency: 'GBP' }).format(new_price) 
     });
 </script>
 {% include 'products/includes/quantity_input_script.html' %}
