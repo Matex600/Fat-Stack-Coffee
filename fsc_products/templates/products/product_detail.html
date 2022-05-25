@@ -30,7 +30,7 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold" id="product_price">${{ product.price }}</p>
+                    <p class="lead mb-0 text-left font-weight-bold" id="product_price">£{{ product.price }}</p>
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -124,7 +124,7 @@
         var option = this.options[this.selectedIndex];
         var new_weight = parseInt(option.value);
         var new_price = (new_weight / 100) * parseFloat(product_price);
-        price_element.innerText = `$${new_price}.00`; 
+        price_element.innerText = `£${new_price}.00`; 
     });
 </script>
 {% include 'products/includes/quantity_input_script.html' %}
