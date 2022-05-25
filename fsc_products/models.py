@@ -115,7 +115,7 @@ class Review(models.Model):
 
     user = models.ForeignKey(UserProfile, related_name='reviews',
                              on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, related_name='reviews',  
+    product = models.ForeignKey(Product, related_name='reviews',
                                 on_delete=models.CASCADE)
     description = models.TextField(max_length=450, null=False,
                                    blank=False)

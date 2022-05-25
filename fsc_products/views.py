@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.core.paginator import Paginator
 
 # - - - - - Internal imports - - - - - - - - -
 from .models import Product, Category, Review
@@ -24,7 +25,6 @@ def fsc_products(request):
 
     """
     products = Product.objects.all()
-
     query = None
     categories = None
     sort = None
@@ -65,13 +65,20 @@ def fsc_products(request):
                 )
             products = products.filter(queries)
 
-    current_sorting = f'{sort}_{direction}'
+    # Pagination: https://docs.djangoproject.com/en/3.2/topics/pagination/
+    p = Paginator(Product.objects.all(), 12)
+    page = request.GET.get('page')
+    page_obj = p.get_page(page)
+    nums = "a" * page_obj.paginator.num_pages
 
+    current_sorting = f'{sort}_{direction}'
     context = {
         'products': products,
+        'page_obj': page_obj,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'nums': nums,
     }
 
     return render(request, 'products/products.html', context)
