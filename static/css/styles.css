@@ -263,6 +263,19 @@ color: #17a2b8; /* text-info */
   }
 }
 
+@media (max-width: 750px) {
+  li.list-inline-item.dropdown{
+    text-align: center!important;
+  }
+  .carousel-image {
+    height: auto!important;
+  }
+  .carousel-indicators {
+    display: none!important;
+  }
+}
+  
+
 
 /* Mailchimp embedded form */
 
