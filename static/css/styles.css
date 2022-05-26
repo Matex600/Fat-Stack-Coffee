@@ -224,6 +224,13 @@ color: #17a2b8; /* text-info */
   border-radius: 0;
 }
 
+.edit-padding {
+  padding-left: 50px!important;
+  text-align: center;
+}
+
+
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
