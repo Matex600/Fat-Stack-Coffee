@@ -19,3 +19,8 @@
 #id_default_country option:first-child {
     color: #aab7c4;
 }
+
+.favourites-padding {
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
