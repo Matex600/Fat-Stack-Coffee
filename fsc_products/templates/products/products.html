@@ -78,9 +78,14 @@
                                             <small class="text-muted"><i class="fas fa-star mr-1"></i>{% if product.get_rating == 0 %}No ratings yet{% else %}{{ product.get_rating|floatformat:1 }}{% endif %} </small>
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
-                                                    <a href="{% url 'fsc_edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'fsc_delete_product' product.id %}">Delete</a>
+                                                    <a class="btn btn-info"href="{% url 'fsc_edit_product' product.id %}">Edit</a> |
+                                                    <!-- Button trigger delete product modal -->
+                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteProductModal{{ product.id}}">
+                                                        Remove
+                                                    </button>
                                                 </small>
+                                                <!-- Favourites remove modal -->
+                                                {% include 'products/includes/delete_product_modal.html' %}
                                             {% endif %}
                                         </div>
                                     </div>
