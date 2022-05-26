@@ -4,7 +4,7 @@
 {% block content %}
     <div class="overlay"></div>
     <div class="container">
-        <div class="row">
+        <div class="row edit-padding">
             <div class="col-12 col-md-6">
                 <hr>
                 <h2 class="logo-font mb-4">Coffee Management</h2>
@@ -14,7 +14,7 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 edit-padding">
                 <form method="POST" action="{% url 'fsc_add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -25,7 +25,7 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
+                        <a class="btn btn-custom rounded-0" href="{% url 'products' %}">Cancel</a>
                         <button class="btn btn-custom rounded-0" type="submit">Add Product</button>
                     </div>
                 </form>
