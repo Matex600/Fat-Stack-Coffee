@@ -8,6 +8,7 @@ Inspired by Code Institute's Boutique Ado project.
 # - - - - - Django Imports - - - - - - - - -
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import User
 
 # - - - - - Internal Imports - - - - - - - - -
 from fsc_users.models import UserProfile
@@ -124,3 +125,17 @@ class Review(models.Model):
             MinValueValidator(1)
         ])
     review_time = models.DateTimeField(auto_now_add=True)
+
+
+class FavouritesList(models.Model):
+    """
+    Class based model for storing users favourited items.
+    """
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE
+    )
+    product = models.ManyToManyField(
+        Product,
+        blank=True
+    )
