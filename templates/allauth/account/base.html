@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container header-container">
+    <div class="container py-5 h-100">
         <div class="overlay"></div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <div class="allauth-form-inner-content">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-auto col-xl-auto">
+              <div class="card card-body p-5 text-center">
+                <div class="allauth-form-inner-content ">
                     {% block inner_content %}
                     {% endblock %}
                 </div>
+            </div>
             </div>
         </div>
     </div>
