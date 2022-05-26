@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
 
 # - - - - - Internal imports - - - - - - - - -
-from .models import Contact
+
 from .forms import ContactForm
 
 
