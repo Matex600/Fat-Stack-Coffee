@@ -5,6 +5,7 @@ Credit to Code Institute's Boutique Ado project.
 
 # - - - - - Django Imports - - - - - - - - -
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import Http404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -12,7 +13,7 @@ from django.db.models.functions import Lower
 from django.core.paginator import Paginator
 
 # - - - - - Internal imports - - - - - - - - -
-from .models import Product, Category, Review
+from .models import Product, Category, Review, FavouritesList
 from fsc_users.models import UserProfile
 from .forms import ProductForm, ReviewForm
 
@@ -25,6 +26,7 @@ def fsc_products(request):
 
     """
     products = Product.objects.all()
+    favourites = FavouritesList.objects.filter(user=request.user.id)
     query = None
     categories = None
     sort = None
@@ -77,6 +79,7 @@ def fsc_products(request):
         'page_obj': page_obj,
         'search_term': query,
         'current_categories': categories,
+        'favourites': favourites,
         'current_sorting': current_sorting,
         'nums': nums,
     }
@@ -87,12 +90,21 @@ def fsc_products(request):
 def fsc_product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
+    try:
+        favouritesList = get_object_or_404(FavouritesList,
+                                           user=request.user.id)
+    except Http404:
+        favouritesList = {}
+        favourites = None
+    else:
+        favourites = favouritesList.product.all()
     reviews = Review.objects.filter(product=product)
     review_form = ReviewForm()
     product.save()
 
     context = {
         'product': product,
+        'favourites': favourites,
         'reviews': reviews,
         'review_form': review_form,
     }
