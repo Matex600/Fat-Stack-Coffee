@@ -25,7 +25,7 @@ def fsc_products(request):
     depending on the users sorting or queries.
 
     """
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('category')
     favourites = FavouritesList.objects.filter(user=request.user.id)
     query = None
     categories = None
@@ -68,12 +68,12 @@ def fsc_products(request):
             products = products.filter(queries)
 
     # Pagination: https://docs.djangoproject.com/en/3.2/topics/pagination/
-    p = Paginator(Product.objects.all(), 12)
+    p = Paginator(products, 12)
     page = request.GET.get('page')
     page_obj = p.get_page(page)
     nums = "a" * page_obj.paginator.num_pages
-
     current_sorting = f'{sort}_{direction}'
+    product_page = True
     context = {
         'products': products,
         'page_obj': page_obj,
@@ -82,6 +82,7 @@ def fsc_products(request):
         'favourites': favourites,
         'current_sorting': current_sorting,
         'nums': nums,
+        'product_page': product_page,
     }
 
     return render(request, 'products/products.html', context)
