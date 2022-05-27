@@ -1,70 +1,81 @@
 {% block content %}
 {% load static %}
-    <!-- Review header -->
+<!-- Review header -->
 <div class="container review-container mt-0 mb-5">
-    <div class="row mt-0">
-        <div class="col-12">
-            <div>
-                <h3>User Reviews</h3>
+  <div class="row mt-0">
+    <div class="col-12">
+      <div>
+        <h3 class="mb-0">User Reviews
+        </h3>
+      </div>
+      <!-- Bootstrap accordion -->
+      <div class="bs-example review-accordion">
+        <div class="accordion" id="accordionReview">
+          <div class="card">
+            <div class="card-header review-card" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseExample">
+                  Check out what others think!
+                </button>
+              </h2>
+              {% if request.user.is_authenticated %}
+              <a href="{% url 'add_review' product.id %}" >
+                <button class="btn btn-custom rounded-0 mt-3">
+                  Add Your Review
+                </button>
+              </a>
+              {% endif %}					
             </div>
-            <!-- Bootstrap accordion -->
-            <div class="bs-example review-accordion">
-                <div class="accordion" id="accordionReview">
-                    <div class="card">
-                        <div class="card-header review-card" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseExample">
-                                    Check out what others think!
-                                </button>
-                            </h2>
-                                {% if request.user.is_authenticated %}
-                                <a href="{% url 'add_review' product.id %}" >
-                                <button class="btn btn-custom rounded-0 mt-3">
-                                    Add Your Review
-                                </button>
-                                </a>
-                                {% endif %}					
-                            
-                        </div>
-                        <div id="collapseOne" class="collapse view-review" aria-labelledby="headingOne" data-parent="#accordionReview">
-                            <div class="card-body">
-                                {% if reviews %}
-                                    {% for review in reviews %}
-                                        <span>Posted on: &nbsp;{{ review.review_time|date:"M d, Y" }}</span><br>
-                                        <p>{{ review.description }}</p>
-                                        <p>Review added by - <strong>{{ review.user }}</strong>
-                                            <i class="fas fa-star mr-1"></i> - <strong>{{ review.star_rating }}</strong>  
-                                        {% if request.user.is_authenticated %} 
-                                        {% if request.user|lower == review.user|lower %}
-                                            <span>
-                                            <a href="{% url 'edit_review' review.id %}" data-toggle="tooltip" title="Edit Review" data-placement="top" class="btn">
-                                                <i class="far fa-edit"></i>
-                                            </a>
-                                            </span>
-                                            <span>
-                                            <a href="{% url 'delete_review' review.id %}" data-toggle="tooltip" title="Delete Review" data-placement="top" class="btn">
-                                                <i class="far fa-trash-alt"></i>
-                                            </a>
-                                            </span>
-                                        {% endif %}
-                                        {% endif %}
-                                        </p>
-                                        <hr>
-                                    
-                                    {% endfor %}
-                                {% else %}
-                                <p>No reviews available for this product</p>
-                            {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="collapseOne" class="collapse view-review" aria-labelledby="headingOne" data-parent="#accordionReview">
+              <div class="card-body">
+                {% if reviews %}
+                {% for review in reviews %}
+                <span>Posted on: &nbsp;{{ review.review_time|date:"M d, Y" }}
+                </span>
+                <br>
+                <p>{{ review.description }}
+                </p>
+                <p>Review added by - 
+                  <strong>{{ review.user }}
+                  </strong>
+                  <i class="fas fa-star mr-1">
+                  </i> - 
+                  <strong>{{ review.star_rating }}
+                  </strong>  
+                  {% if request.user.is_authenticated %} 
+                  {% if request.user|lower == review.user|lower %}
+                  <span>
+                    <a href="{% url 'edit_review' review.id %}" data-toggle="tooltip" title="Edit Review" data-placement="top" class="btn">
+                      <i class="far fa-edit">
+                      </i>
+                    </a>
+                  </span>
+                  <span>
+                    <a href="{% url 'delete_review' review.id %}" data-toggle="tooltip" title="Delete Review" data-placement="top" class="btn">
+                      <i class="far fa-trash-alt">
+                      </i>
+                    </a>
+                  </span>
+                  {% endif %}
+                  {% endif %}
+                </p>
+                <hr>
+                {% endfor %}
+                {% else %}
+                <p>No reviews available for this product
+                </p>
+                {% endif %}
+              </div>
             </div>
-{% endblock %}
-{% block postloadjs %}
-<script>
-    $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip();
-    });
-    </script>
-{% endblock %}
+          </div>
+        </div>
+      </div>
+      {% endblock %}
+      {% block postloadjs %}
+      <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+        }
+                         );
+      </script>
+      {% endblock %}
