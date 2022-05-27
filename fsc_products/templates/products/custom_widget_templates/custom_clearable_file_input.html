@@ -1,23 +1,28 @@
 {% if widget.is_initial %}
-    <p>{{ widget.initial_text }}:</p>
-    <a href="{{ widget.value.url }}">
-        <img width="96" height="96" class="rounded shadow-sm" src="{{ widget.value.url }}">
-    </a>
-    {% if not widget.required %}
-        <div class="custom-control custom-checkbox mt-2">
-            <input class="custom-control-input" type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}">
-            <label class="custom-control-label text-danger" for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
-        </div>
-    {% endif %}<br>
-    {{ widget.input_text }}
+<p>{{ widget.initial_text }}:
+</p>
+<a href="{{ widget.value.url }}">
+  <img width="96" height="96" class="rounded shadow-sm" src="{{ widget.value.url }}">
+</a>
+{% if not widget.required %}
+<div class="custom-control custom-checkbox mt-2">
+  <input class="custom-control-input" type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}">
+  <label class="custom-control-label text-danger" for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}
+  </label>
+</div>
+{% endif %}
+<br>
+{{ widget.input_text }}
 {% endif %}
 <div class="row">
-    <div class="col-12 col-md-6">
-        <span class="btn btn-blue btn-file btn-block">
-            Select Image <input id="new-image"  type="{{ widget.type }}" aria-label="Select Image" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
-        </span>
-    </div>
-    <div class="col-12">
-        <strong class="text-danger" id="filename"></strong>
-    </div>
+  <div class="col-12 col-md-6">
+    <span class="btn btn-blue btn-file btn-block">
+      Select Image 
+      <input id="new-image"  type="{{ widget.type }}" aria-label="Select Image" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+    </span>
+  </div>
+  <div class="col-12">
+    <strong class="text-danger" id="filename">
+    </strong>
+  </div>
 </div>
