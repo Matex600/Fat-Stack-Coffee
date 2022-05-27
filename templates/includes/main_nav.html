@@ -4,54 +4,54 @@
         <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'store' %}" id="home-link">
             Store
         </a>
-    </li>
-        <div class="dropdown">
-            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+      </li>
+        <li class="dropdown">
+            <a class="btn dropdown-toggle" href="#" role="button" id="AllProductsLink" data-bs-toggle="dropdown" aria-expanded="false">
               All products
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <ul class="dropdown-menu" aria-labelledby="AllProductsLink">
               <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Price</a></li>
               <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating</a></li>
               <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">Category</a></li>
               <li><a class="dropdown-item" href="{% url 'products' %}">All products</a></li>
             </ul>
-          </div>
-        <div class="dropdown">
-            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+         </li>
+        <li class="dropdown">
+            <a class="btn dropdown-toggle" href="#" role="button" id="CoffeeMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               Coffee
             </a>
           
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <ul class="dropdown-menu" aria-labelledby="CoffeeMenuLink">
               <li><a class="dropdown-item" href="{% url 'products' %}?category=light_roast">Light Roast</a></li>
               <li><a class="dropdown-item" href="{% url 'products' %}?category=medium_roast">Medium Roast</a></li>
               <li><a class="dropdown-item" href="{% url 'products' %}?category=medium_dark_roast">Medium-Dark Roast</a></li>
               <li><a class="dropdown-item" href="{% url 'products' %}?category=dark_roast">Dark Roast</a></li>
               <li><a class="dropdown-item" href="{% url 'products' %}?category=light_roast,medium_roast,medium_dark_roast,dark_roast">All Coffee</a></li>
             </ul>
-          </div>
-        <div class="dropdown">
-        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            Coffee Mugs
-        </a>
-        
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=coding_mugs">Coding Mugs</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=gaming_mugs">Gaming Mugs</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=regular_mugs">Regular Mugs</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=coding_mugs,gaming_mugs,regular_mugs">All Mugs</a></li>
-        </ul>
-        </div>
+          </li>
+        <li class="dropdown">
+          <a class="btn dropdown-toggle" href="#" role="button" id="CoffeeMugsMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              Coffee Mugs
+          </a>
+          
+          <ul class="dropdown-menu" aria-labelledby="CoffeeMugsMenuLink">
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=coding_mugs">Coding Mugs</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=gaming_mugs">Gaming Mugs</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=regular_mugs">Regular Mugs</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category=coding_mugs,gaming_mugs,regular_mugs">All Mugs</a></li>
+          </ul>
+       </li>
 
-        <div class="dropdown">
-            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="dropdown">
+            <a class="btn dropdown-toggle" href="#" role="button" id="CoffeeMakersMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               Coffee Makers
             </a>
           
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <ul class="dropdown-menu" aria-labelledby="CoffeeMakersMenuLink">
               <li><a class="dropdown-item" href="{% url 'products' %}?category=coffee_machines">Coffee Machines</a></li>
               <li><a class="dropdown-item" href="{% url 'products' %}?category=coffee_grinders">Coffee Grinders</a></li>
               <li><a class="dropdown-item" href="{% url 'products' %}?category=coffee_machines,coffee_grinders">All accessories</a></li>
             </ul>
-          </div>
+         </li>
     </ul>
 </div>
