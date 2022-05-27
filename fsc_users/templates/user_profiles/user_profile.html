@@ -1,125 +1,136 @@
 {% extends "base.html" %}
 {% load static %}
-
-
-
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'user_profile/css/user_profile.css' %}">
+<link rel="stylesheet" href="{% static 'user_profile/css/user_profile.css' %}">
 {% endblock %}
-
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
-                <hr>
+<div class="overlay">
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <hr>
+      <h2 class="logo-font mb-4">My Profile
+      </h2>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <!-- Displays Favourited items -->
+      <h3 class="text-orange my-4">Favourites ({{ favourite_coffee|length}})
+      </h3>
+      {% if not favourite_coffee %}
+      <p class="text-white">Add something to your Favourites!
+      </p>
+      {% else %}
+      <div class="row favourites-padding">
+        {% for item in favourite_coffee %}
+        <!-- Favourite items details -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-lg-100">
+            <a  href="{% url 'product_detail' item.id %}">
+              <p class="mb-0 product-title text-orange">{{ item.name }}
+              </p>
+              {% if item.image %}
+              <img class="product-image" src="{{ item.image.url }}" alt="{{ item.name }}">
+              {% else %}
+              <a href="{% url 'product_detail' product.id %}">
+                <img class="card-img-top" src="https://res.cloudinary.com/matts-cloud/image/upload/v1652901667/default-product-image_an1sg9.png" alt="{{ product.name }}">
+              </a>
+              {% endif %}
+            </a>
+            <div class="card-body pb-0 pt-2">
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <!-- Displays Favourited items -->
-                <h3 class="text-orange my-4">Favourites ({{ favourite_coffee|length}})</h3>
-                {% if not favourite_coffee %}
-                    <p class="text-white">Add something to your Favourites!</p>
-                {% else %}
-                    <div class="row favourites-padding">
-                        {% for item in favourite_coffee %}
-                            <!-- Favourite items details -->
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <div class="card h-lg-100">
-                                    <a  href="{% url 'product_detail' item.id %}">
-                                        <p class="mb-0 product-title text-orange">{{ item.name }}</p>
-                                    {% if item.image %}
-                                        <img class="product-image" src="{{ item.image.url }}" alt="{{ item.name }}">
-                                        {% else %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="card-img-top" src="https://res.cloudinary.com/matts-cloud/image/upload/v1652901667/default-product-image_an1sg9.png" alt="{{ product.name }}">
-                                        </a>
-                                    {% endif %}
-                                    </a>
-                                    <div class="card-body pb-0 pt-2">
-                                    </div>
-                                    <div class="card-footer pt-0 border-0">
-                                        <div class="row">
-                                            <div class="col-6 px-0 text-left">
-                                                <p class="text-orange mb-0">
-                                                    <span class="font-weight-bold">£{{ item.price }}</span>
-                                                </p>
-                                            </div>
-                                            <div class="col-6 px-0 text-right">
-                                                <small class="ml-md-3">
-                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#removeFromfavouritesModal{{ item.id }}">
-                                                        Remove
-                                                    </button>
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Favourites remove modal -->
-                            {% include 'user_profiles/includes/delete_from_favourites.html' %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-6 form-pad">
-                <p class="text-muted">Default Delivery Information</p>
-                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn btn-custom rounded-0 text-uppercase float-right">Update Information</button>
-                </form>
-            </div>
-            <div class="col-12 col-lg-6 order-pad">
-                <p class="text-muted">Order History</p>
-                <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
-                        <thead>
-                            <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>Order Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
-                                        </a>
-                                    </td>
-                                    <td>{{ order.date }}</td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                                <li class="small">
-                                                    {% if item.product.has_weight %}
-                                                        Weight {{ item.product.weight|upper }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    <td>${{ order.grand_total }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+            <div class="card-footer pt-0 border-0">
+              <div class="row">
+                <div class="col-6 px-0 text-left">
+                  <p class="text-orange mb-0">
+                    <span class="font-weight-bold">£{{ item.price }}
+                    </span>
+                  </p>
                 </div>
+                <div class="col-6 px-0 text-right">
+                  <small class="ml-md-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn text-danger" data-bs-toggle="modal" data-bs-target="#removeFromfavouritesModal{{ item.id }}">
+                      Remove
+                    </button>
+                  </small>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-{% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript" src="{% static 'user_profile/js/countryfield.js' %}"></script>
-{% endblock %}
+        <!-- Favourites remove modal -->
+        {% include 'user_profiles/includes/delete_from_favourites.html' %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-6 form-pad">
+      <p class="text-muted">Default Delivery Information
+      </p>
+      <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-custom rounded-0 text-uppercase float-right">Update Information
+        </button>
+      </form>
+    </div>
+    <div class="col-12 col-lg-6 order-pad">
+      <p class="text-muted">Order History
+      </p>
+      <div class="order-history table-responsive">
+        <table class="table table-sm table-borderless">
+          <thead>
+            <tr>
+              <th>Order Number
+              </th>
+              <th>Date
+              </th>
+              <th>Items
+              </th>
+              <th>Order Total
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in orders %}
+            <tr>
+              <td>
+                <a href="{% url 'order_history' order.order_number %}"
+                   title="{{ order.order_number }}">
+                  {{ order.order_number|truncatechars:6 }}
+                </a>
+              </td>
+              <td>{{ order.date }}
+              </td>
+              <td>
+                <ul class="list-unstyled">
+                  {% for item in order.lineitems.all %}
+                  <li class="small">
+                    {% if item.product.has_weight %}
+                    Weight {{ item.product.weight|upper }}
+                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                  </li>
+                  {% endfor %}
+                </ul>
+              </td>
+              <td>${{ order.grand_total }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+  {% block postloadjs %}
+  {{ block.super }}
+  <script type="text/javascript" src="{% static 'user_profile/js/countryfield.js' %}">
+  </script>
+  {% endblock %}

@@ -1,147 +1,168 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block content%}
 <div id="fatstack-carousel-hero" class="carousel slide" data-bs-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-bs-target="#fatstack-carousel-hero" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#fatstack-carousel-hero" data-bs-slide-to="1"></li>
-        <li data-bs-target="#fatstack-carousel-hero" data-bs-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img class="carousel-image" src="https://res.cloudinary.com/matts-cloud/image/upload/v1653401338/nathan-dumlao-pMW4jzELQCw-unsplash_tbiidd.jpg" alt="Coffee Varieties from light to dark">
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left align-self-center">
-                            <h1 class="h1 text-success"><b></b> </h1>
-                            <h3 class="h2">Coders.. what is your favourite type of coffee?</h3>
-                            <p>
-                                Do you like instant, black, white, americano and plenty of others send us a message <a href="{% url 'contact' %}" target="_blank">here</a>
-                                and let us know which one is your favourite shown.
-                                1 being lightest and 8 darkest!
-                            </p>
-                        </div>
-                    </div>
-                </div>
+  <ol class="carousel-indicators">
+    <li data-bs-target="#fatstack-carousel-hero" data-bs-slide-to="0" class="active">
+    </li>
+    <li data-bs-target="#fatstack-carousel-hero" data-bs-slide-to="1">
+    </li>
+    <li data-bs-target="#fatstack-carousel-hero" data-bs-slide-to="2">
+    </li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row p-5">
+          <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+            <img class="carousel-image" src="https://res.cloudinary.com/matts-cloud/image/upload/v1653401338/nathan-dumlao-pMW4jzELQCw-unsplash_tbiidd.jpg" alt="Coffee Varieties from light to dark">
+          </div>
+          <div class="col-lg-6 mb-0 d-flex align-items-center">
+            <div class="text-align-left align-self-center">
+              <h2 class="h2">Coders.. what is your favourite type of coffee?
+              </h2>
+              <p>
+                Do you like instant, black, white, americano and plenty of others send us a message 
+                <a href="{% url 'contact' %}" target="_blank">here
+                </a>
+                and let us know which one is your favourite shown.
+                1 being lightest and 8 darkest!
+              </p>
             </div>
+          </div>
         </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img class="carousel-image" src="https://res.cloudinary.com/matts-cloud/image/upload/v1653400310/woman-6956065_1280_oup9vy.png" alt="Cartoon Woman with coffee and coding">
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left">
-                            <h1 class="h1">Coffee Mugs: A Developer Status Symbol?</h1>
-                            <blockquote>
-                            <p>
-                                What's great about drinking coffee is that programmers
-                                then also get to show off their coffee mugs.
-                                I noticed developers seem quite eager to get a cool
-                                or funny coffee mug to show their love for a certain programming
-                                language or technology stack. Every software engineer wants a nice coffee mug on their desk
-                            </p>
-                            </blockquote>
-                            <figcaption>Paragraph from <cite><a href="https://nerdlettering.com/blogs/articles/why-do-programmers-love-coffee" target="_blank">nerdlettering.com</a></cite>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img class="carousel-image" src="https://res.cloudinary.com/matts-cloud/image/upload/v1653399611/christina-rumpf-LMzwJDu6hTE-unsplash_a0xmoa.jpg" alt="Variety of ground and coffee beans">
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left">
-                            <h1 class="h1">Is Coffee Good for Office Productivity?</h1>
-                            <blockquote>
-                            <p>
-                                Coffee has proven to improve cognitive function and memory
-                                therefore coffee can be associated with improved performance
-                                and this isn't just a short term effect.
-                                Research has actually shown that over time,
-                                the impact of drinking coffee on our cognitive function
-                                and memory has a long-lasting effect.
-                            </p>
-                            </blockquote>
-                            <figcaption>Paragraph from <cite><a href="https://www.office-coffee.co.uk/blog/why-coffee-is-good-for-productivity/#:~:text=Coffee%20has%20proven%20to%20improve,has%20a%20long%2Dlasting%20effect." target="_blank">OfficeCoffeeco.</a></cite>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#fatstack-carousel-hero" role="button" data-bs-slide="prev">
-        <i class="fas fa-chevron-left"></i>
-    </a>
-    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#fatstack-carousel-hero" role="button" data-bs-slide="next">
-        <i class="fas fa-chevron-right"></i>
-    </a>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row p-5">
+          <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+            <img class="carousel-image" src="https://res.cloudinary.com/matts-cloud/image/upload/v1653400310/woman-6956065_1280_oup9vy.png" alt="Cartoon Woman with coffee and coding">
+          </div>
+          <div class="col-lg-6 mb-0 d-flex align-items-center">
+            <div class="text-align-left">
+              <h2 class="h2">Coffee Mugs: A Developer Status Symbol?
+              </h2>
+              <blockquote>
+                <p>
+                  What's great about drinking coffee is that programmers
+                  then also get to show off their coffee mugs.
+                  I noticed developers seem quite eager to get a cool
+                  or funny coffee mug to show their love for a certain programming
+                  language or technology stack. Every software engineer wants a nice coffee mug on their desk
+                </p>
+              </blockquote>
+              <p>Paragraph from 
+                <cite>
+                  <a href="https://nerdlettering.com/blogs/articles/why-do-programmers-love-coffee" target="_blank">nerdlettering.com
+                  </a>
+                </cite>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row p-5">
+          <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+            <img class="carousel-image" src="https://res.cloudinary.com/matts-cloud/image/upload/v1653399611/christina-rumpf-LMzwJDu6hTE-unsplash_a0xmoa.jpg" alt="Variety of ground and coffee beans">
+          </div>
+          <div class="col-lg-6 mb-0 d-flex align-items-center">
+            <div class="text-align-left">
+              <h2 class="h2">Is Coffee Good for Office Productivity?
+              </h2>
+              <blockquote>
+                <p>
+                  Coffee has proven to improve cognitive function and memory
+                  therefore coffee can be associated with improved performance
+                  and this isn't just a short term effect.
+                  Research has actually shown that over time,
+                  the impact of drinking coffee on our cognitive function
+                  and memory has a long-lasting effect.
+                </p>
+              </blockquote>
+              <p>Paragraph from 
+                <cite>
+                  <a href="https://www.office-coffee.co.uk/blog/why-coffee-is-good-for-productivity/#:~:text=Coffee%20has%20proven%20to%20improve,has%20a%20long%2Dlasting%20effect." target="_blank">OfficeCoffeeco.
+                  </a>
+                </cite>
+              </p> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#fatstack-carousel-hero" role="button" data-bs-slide="prev">
+    <i class="fas fa-chevron-left">
+    </i>
+  </a>
+  <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#fatstack-carousel-hero" role="button" data-bs-slide="next">
+    <i class="fas fa-chevron-right">
+    </i>
+  </a>
 </div>
 <section class="bg-light">
-    <div class="container py-5">
-        <div class="row text-center py-3">
-            <div class="col-lg-6 m-auto">
-                <h1 class="h1">Featured Products</h1>
-                <p>
-                    Checkout this months featured products!
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <a href="{% url 'products' %}?category=light_roast">
-                        <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1652215803/pexels-photo-4109743_hdcg2t.jpg" class="img-thumbnail featured-img" alt="Light roast coffee category">
-                    </a>
-                    <div class="card-body">
-                        <h4>Light Roast Coffee</h4>
-                        <p class="card-text">
-                            Lightly roasted coffee is featured this month
-                            Light roast offers multilayered complexity, revealing traces of sweetness, fruit tanginess, or even a subtle floral aroma
-                            as well as potentially the highest caffeine for that extra kick in the morning
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <a href="{% url 'products' %}?category=dark_roast">
-                        <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1653401313/mike-kenneally-TD4DBagg2wE-unsplash_dgsv4n.jpg" class="img-thumbnail featured-img" alt="Dark roast coffee category">
-                    </a>
-                    <div class="card-body">
-                        <h4>Dark Roast Coffee</h4>
-                        <p class="card-text">
-                            Dark roasted coffee is featured this month
-                            dark brown, even close to a blackened color.
-                            Coffee made from a Dark Roast has a robust, full body.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <a href="{% url 'products' %}?category=coding_mugs">
-                        <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1653479653/media/editcodingmug_sj2w7k.jpg" class="img-thumbnail featured-img" alt="Featured coding mug">
-                    </a>
-                    <div class="card-body">
-                        <h4>While True Coding Mug</h4>
-                        <p class="card-text">
-                            Favourite coding mug with our customers
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container py-5">
+    <div class="row text-center py-3">
+      <div class="col-lg-6 m-auto">
+        <h1 class="h1">Featured Products
+        </h1>
+        <p>
+          Checkout this months featured products!
+        </p>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100">
+          <a href="{% url 'products' %}?category=light_roast">
+            <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1652215803/pexels-photo-4109743_hdcg2t.jpg" class="img-thumbnail featured-img" alt="Light roast coffee category">
+          </a>
+          <div class="card-body">
+            <h4>Light Roast Coffee
+            </h4>
+            <p class="card-text">
+              Lightly roasted coffee is featured this month
+              Light roast offers multilayered complexity, revealing traces of sweetness, fruit tanginess, or even a subtle floral aroma
+              as well as potentially the highest caffeine for that extra kick in the morning
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100">
+          <a href="{% url 'products' %}?category=dark_roast">
+            <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1653401313/mike-kenneally-TD4DBagg2wE-unsplash_dgsv4n.jpg" class="img-thumbnail featured-img" alt="Dark roast coffee category">
+          </a>
+          <div class="card-body">
+            <h4>Dark Roast Coffee
+            </h4>
+            <p class="card-text">
+              Dark roasted coffee is featured this month
+              dark brown, even close to a blackened color.
+              Coffee made from a Dark Roast has a robust, full body.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100">
+          <a href="{% url 'products' %}?category=coding_mugs">
+            <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1653479653/media/editcodingmug_sj2w7k.jpg" class="img-thumbnail featured-img" alt="Featured coding mug">
+          </a>
+          <div class="card-body">
+            <h4>While True Coding Mug
+            </h4>
+            <p class="card-text">
+              Favourite coding mug with our customers
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 {% endblock %}
