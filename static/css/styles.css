@@ -362,7 +362,12 @@ color: #17a2b8; /* text-info */
   text-align: center;
 }
 
-
+/* fixed top navbar only on medium and up */
+@media (max-width: 1000px) {
+  a#dropdownMenuLink {
+    margin-left: 43%;
+  }
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -428,12 +433,7 @@ color: #17a2b8; /* text-info */
   }
 }
 
-/* fixed top navbar only on medium and up */
-@media (max-width: 1000px) {
-  a#dropdownMenuLink {
-    margin-left: 42%;
-  }
-}
+
 
 
 /* Media query for carousel 750px */
