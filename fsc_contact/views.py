@@ -12,33 +12,33 @@ from django.conf import settings
 
 # - - - - - Internal imports - - - - - - - - -
 
-from .forms import ContactForm
+# from .forms import ContactForm
 
 
 def contact(request):
     """ A view to return the contact page """
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        # form = ContactForm(request.POST)
         email = request.POST['email']
         subject = request.POST['subject']
         message = request.POST['message']
-        if form.is_valid():
-            send_mail(
-                'Message from' + email,
-                subject,
-                message,
-                ['settings.DEFAULT_FROM_EMAIL']
-            )
-            form.save()
-            messages.success(request, 'Your Email has been sent !!')
-            return redirect(reverse('contact'))
-        else:
-            messages.error(
-                request,
-                'There Was an Error Trying to Send Email Message,\
-                    Please check your form.'
-            )
+        # if form.is_valid():
+        send_mail(
+            'Message from' + email,
+            subject,
+            message,
+            [settings.DEFAULT_FROM_EMAIL]
+        )
+        # form.save()
+        messages.success(request, 'Your Email has been sent !!')
+        return redirect(reverse('contact'))
+        # else:
+        #     messages.error(
+        #         request,
+        #         'There Was an Error Trying to Send Email Message,\
+        #             Please check your form.'
+        #     )
     else:
-        form = ContactForm()
-    context = {'form': form}
-    return render(request, 'contact/contact.html', context)
+        #     form = ContactForm()
+        # context = {'form': form}
+        return render(request, 'contact/contact.html', {})
