@@ -1,4 +1,4 @@
-![AmIresponsive](documentation/readme_images/amiresponsivep5fsc.png)
+![AmIresponsive](https://res.cloudinary.com/matts-cloud/image/upload/v1653770268/amiresponsivep5fsc_k2cc5r.png)
 
 # Fat Stack Coffee 
 
