@@ -27,7 +27,7 @@ def contact(request):
             'Message from' + email,
             subject,
             message,
-            [settings.DEFAULT_FROM_EMAIL]
+            [settings.DEFAULT_FROM_EMAIL, ]
         )
         # form.save()
         messages.success(request, 'Your Email has been sent !!')
@@ -39,6 +39,6 @@ def contact(request):
         #             Please check your form.'
         #     )
     else:
-        #     form = ContactForm()
+        # form = ContactForm()
         # context = {'form': form}
         return render(request, 'contact/contact.html', {})

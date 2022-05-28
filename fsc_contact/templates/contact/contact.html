@@ -7,7 +7,7 @@
 <!-- Start Content Page -->
 <div class="container-fluid bg-light py-5">
   <div class="col-md-6 m-auto text-center">
-    <h2 class="logo-font mb-4">Contact us for more coffee! 
+    <h2 class="logo-font mb-4">Contact us for more coffee!
       <i class="fa-solid fa-mug-hot">
       </i>
     </h2>
@@ -15,7 +15,10 @@
   </div>
 </div>
 <div id="map-container">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19829.697553209233!2d0.1846741671606131!3d51.59183795920515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a23174b37231%3A0x932de78a76329f31!2sRomford!5e0!3m2!1sen!2suk!4v1653319509180!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19829.697553209233!2d0.1846741671606131!3d51.59183795920515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a23174b37231%3A0x932de78a76329f31!2sRomford!5e0!3m2!1sen!2suk!4v1653319509180!5m2!1sen!2suk"
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </div>
 <!-- Overlay -->
@@ -38,12 +41,140 @@
         <div class="row">
           <div class="col form-margin">
             <form action="{% url 'contact' %}" method="POST">
-              {% csrf_token %}
-              {% for field in form %}
-              {{ field | as_crispy_field}}
-              {% endfor %}
-              <input type="submit" value="Submit" class="btn btn-custom">
-            </form>
+                <input type="hidden" name="csrfmiddlewaretoken"
+                  value="2h6PTZ1eJuer5bfWAho7fJagegqHOt3jQE8KjRxyKhKOf50ufc3KdrRuh1PgKQex">
+
+
+
+
+
+                <div id="div_id_email" class="mb-3">
+
+
+                  <label for="id_email" class="form-label requiredField">
+                    Email<span class="asteriskField">*</span>
+                  </label>
+
+
+
+
+
+
+
+
+                  <input type="email" name="email" maxlength="254" class="emailinput form-control" required=""
+                    id="id_email">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <div id="div_id_subject" class="mb-3">
+
+
+                  <label for="id_subject" class="form-label requiredField">
+                    Subject<span class="asteriskField">*</span>
+                  </label>
+
+
+
+
+
+
+
+
+                  <input type="text" name="subject" maxlength="255" class="textinput textInput form-control" required=""
+                    id="id_subject">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <div id="div_id_message" class="mb-3">
+
+
+                  <label for="id_message" class="form-label requiredField">
+                    Message<span class="asteriskField">*</span>
+                  </label>
+
+
+
+
+
+
+
+
+                  <textarea name="message" cols="40" rows="10" class="textarea form-control" required=""
+                    id="id_message"></textarea>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+                <input type="submit" value="Submit" class="btn btn-custom">
+              </form>
           </div>
         </div>
       </div>
