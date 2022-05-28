@@ -24,10 +24,10 @@ def contact(request):
         message = request.POST['message']
         if form.is_valid():
             send_mail(
-                'Message from' + email,
                 subject,
                 message,
-                [settings.DEFAULT_FROM_EMAIL, ]
+                'Message from ' + email,
+                [settings.DEFAULT_FROM_EMAIL, email]
             )
             form.save()
             messages.success(request, 'Your Email has been sent !!')
