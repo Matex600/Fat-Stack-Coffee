@@ -22,10 +22,12 @@ def contact(request):
         subject = request.POST['subject']
         message = request.POST['message']
         email = request.POST['email']
+        sender = "Contact request from" + " "+ str(email)
+        msg_mail = str(message) + ", " + str(sender)
         if form.is_valid():
             send_mail(
                 subject,
-                message,
+                msg_mail,
                 email,
                 [settings.DEFAULT_FROM_EMAIL, ]
             )
