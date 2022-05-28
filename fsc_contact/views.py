@@ -7,6 +7,8 @@ fsc_contact/views.py: views to display contact page.
 # - - - - - Django Imports - - - - - - - - -
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
+from django.core.mail import send_mail
+from django.conf import settings
 
 # - - - - - Internal imports - - - - - - - - -
 
@@ -17,7 +19,16 @@ def contact(request):
     """ A view to return the contact page """
     if request.method == 'POST':
         form = ContactForm(request.POST)
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
         if form.is_valid():
+            send_mail(
+                'Message from' + email,
+                subject,
+                message,
+                ['settings.DEFAULT_FROM_EMAIL']
+            )
             form.save()
             messages.success(request, 'Your Email has been sent !!')
             return redirect(reverse('contact'))
