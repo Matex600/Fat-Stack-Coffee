@@ -19,14 +19,14 @@ def contact(request):
     """ A view to return the contact page """
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        email = request.POST['email']
         subject = request.POST['subject']
         message = request.POST['message']
+        email = request.POST['email']
         if form.is_valid():
             send_mail(
                 subject,
                 message,
-                'Message from ' + email,
+                'Contact from ' + email,
                 [settings.DEFAULT_FROM_EMAIL, email]
             )
             form.save()
