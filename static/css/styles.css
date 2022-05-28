@@ -22,6 +22,10 @@ body {
   color: #ffffff;
 }
 
+.checkout_padding {
+  padding-left: 15px!Important;
+}
+
 /* Images */
 
 .img-fluid {
@@ -179,6 +183,16 @@ div#mc_embed_signup_scroll {
   background-color: #000000;
 }
 
+#mc_embed_signup .mc-field-group {
+  width: 100%!important;
+}
+
+#mc_embed_signup h2 {
+  margin: 25px 0!important;
+}
+
+/* Button classes */
+
 .btn-custom:disabled {
   pointer-events: none;
 }
@@ -241,17 +255,16 @@ div#mc_embed_signup_scroll {
   
 }
 
+#unsubscribe {
+  margin: 10px 20px 20px 0px!important;
+}
+
+
 .form-margin {
   margin-left: 25px;
 }
 
-#mc_embed_signup .mc-field-group {
-  width: 100%!important;
-}
 
-#mc_embed_signup h2 {
-  margin: 25px 0!important;
-}
 
 /* -------------------------------- Media Queries */
 
@@ -422,6 +435,8 @@ color: #17a2b8; /* text-info */
   }
 }
 
+
+/* Media query for carousel 750px */
 
 @media (max-width: 750px) {
   li.list-inline-item.dropdown{
