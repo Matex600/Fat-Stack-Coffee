@@ -41,54 +41,17 @@
         <div class="row">
           <div class="col form-margin">
             <form action="{% url 'contact' %}" method="POST">
+              {% csrf_token %}
                 <input type="hidden" name="csrfmiddlewaretoken"
                   value="2h6PTZ1eJuer5bfWAho7fJagegqHOt3jQE8KjRxyKhKOf50ufc3KdrRuh1PgKQex">
-
-
-
-
-
                 <div id="div_id_email" class="mb-3">
-
-
                   <label for="id_email" class="form-label requiredField">
                     Email<span class="asteriskField">*</span>
                   </label>
-
-
-
-
-
-
-
-
                   <input type="email" name="email" maxlength="254" class="emailinput form-control" required=""
                     id="id_email">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
-
-
-
-
-
-
 
 
                 <div id="div_id_subject" class="mb-3">
@@ -99,78 +62,23 @@
                   </label>
 
 
-
-
-
-
-
-
                   <input type="text" name="subject" maxlength="255" class="textinput textInput form-control" required=""
                     id="id_subject">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
 
-
-
-
-
-
-
-
                 <div id="div_id_message" class="mb-3">
-
 
                   <label for="id_message" class="form-label requiredField">
                     Message<span class="asteriskField">*</span>
                   </label>
 
 
-
-
-
-
-
-
                   <textarea name="message" cols="40" rows="10" class="textarea form-control" required=""
                     id="id_message"></textarea>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
-
-
 
 
                 <input type="submit" value="Submit" class="btn btn-custom">
