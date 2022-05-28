@@ -1,4 +1,4 @@
-![AmIresponsive](media/readme_docs/readme_images/amiresponsivep5fsc.png)
+![AmIresponsive](documentation/readme_images/amiresponsivep5fsc.png)
 
 # Fat Stack Coffee 
 
@@ -6,7 +6,7 @@
 *Version 1.0*
 <hr>
 
-### Click [me](https://project4-matt-ci.herokuapp.com/) for live Site.
+### Click [me](https://fat-stack-coffee.herokuapp.com/) for live Site.
 #### *Hosted on Heroku*
 
 I recommend clicking any links found in this README with Ctrl + Left mouse click for (Windows) and Control + click (Mac).
