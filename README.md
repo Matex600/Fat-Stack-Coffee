@@ -601,9 +601,9 @@ class FavouritesList(models.Model):
     * FavouritesList - A Model that handles creating a list of products that a user has saved, which appears in the users profile page as a list.
 
 ## Database Schema
-![DBSchema](documentation/readme_images/db_schema_fscoffee_Mateusz.png)
+![DBSchema](documentation/readme_images/database_schema/db_schema_fscoffee_Mateusz.png)
 
-My Schema of models used in this application made with lucidchart.
+My Schema of models used in this application made with lucidchart it was created at project conception and I have added after contact, reviews, rating and favourites models.
 
 ## Technologies Used
   * Coding Languages
@@ -659,6 +659,139 @@ My Schema of models used in this application made with lucidchart.
   * [Pylint](https://pylint.org/). - Analysing python code.
 
   * [Beautify](https://htmlbeautify.com/) - Improving layout of html templates.
+
+
+# SEO Research and Implementation
+
+## SEO Research
+
+### Marketing research
+Code Institute, Lesson Excercise
+
+* Who are your users?
+    * Coders.
+
+    * Developers.
+
+    * Coffee Drinkers.
+
+    * Nerds.
+
+* Which online platforms would you find lots of your users?
+
+    * Twitter.
+
+    * Reddit.
+
+    * Slack.
+
+    * Instagram.
+
+    * Facebook.
+
+    * Forums.
+
+* Would your users use social media? If yes, which platforms do you think you would find them on?
+
+    * Twitter.
+
+    * Reddit.
+
+    * Slack.
+
+    * Instagram.
+
+    * Facebook.
+
+    * Forums.
+
+* Would your business run sales or offer discounts? How do you think your users would most like to hear about these offers?
+
+    * Run sales during months with high engagements to keep increasing customer base.
+    Email marketing/newsletter.
+    Pop up ads.
+
+* What are the goals of your business? Which marketing strategies would offer the best ways to meet those goals?
+
+    * Goals of the business is to make buying high quality coffee easier for busy developers.
+
+    * Ease of use across the site.
+
+    * Increasing customers value.
+
+    * Boosting brand engagement.
+
+    * Acquire new customers.
+
+    * Increasing brand awareness.
+
+* Would your business have a budget to spend on advertising? Or would it need to work with free or low-cost options to market itself?
+
+    * At the beginning the business would need to focus on free advertisement
+    And market itself
+    Once the business picks up the budget could increase according to the buinesss revenue.
+
+
+### Keyword Research
+
+* What do your users need?
+    * My users need a product “coffee” for their daily work because they are coders who typically spend a long time infront of a computer screen and it may help them with a high quality coffee.
+
+* What information and features can you provide to meet those needs?
+
+    * Add to cart button, product description, volume of product, pricing, product search.
+
+* How can you make the information easy to understand?
+
+    * Clear font and font colours as well as a accessible colour scheme across site.	
+
+* How can you demonstrate expertise, authoritativeness and trustworthiness in your content?
+
+    * Keep content up to date
+
+    * Wikipedia page
+
+    * User reviews
+
+    * Hire experts
+
+    * Trusted sources
+
+    * Contact details
+
+* Would there be other pages within your own site you could link to from your chosen page?
+    * Index *page*
+
+    * Footer *all/pages*
+
+    * About us *page*
+
+    * Contact *page*
+
+    * Accounts *page*
+
+* Are there opportunities to link back to external websites that already rank highly on Google?
+
+    * Facebook
+
+    * Github
+
+    * Linkedin
+
+    * Wikipedia
+
+* How can you help users discover other relevant parts of your web application?
+
+    * Clear navigation on the site
+    with the use of a navigation bar
+    and social links that open in another tab
+
+
+### SEO Keywords
+<hr>
+
+![KeywordsSEO](documentation/readme_images/web_marketing/seo/keywords.png)
+
 
 # Web Marketing 
 
