@@ -155,11 +155,61 @@ How to Create a Kanban Board project and steps taken.
 
 * My friend tested my contact page form after bug fix and I can confirm that emails are being sent out to admin.
 
+## Technologies Used
+  * Coding Languages
+
+    * [HTML5](https://en.wikipedia.org/wiki/HTML5). - Site structure.
+
+    * [CSS3](https://en.wikipedia.org/wiki/CSS). - Site Design.
+
+    * [Python3.2](https://en.wikipedia.org/wiki/Python_(programming_language)). - Used with Django.
+
+    * [Javascript](https://www.javascript.com/) - Used mainly for front-end tweaking of numbers especially quantity and pricing.
 
 
+* Libraries, Frameworks & Tools
 
-# tools used so far
-ALLAUTH https://django-allauth.readthedocs.io/en/latest/installation.html
+  * [Django](https://www.djangoproject.com/) - Framework used to build the site and admin page.
+
+  * [HerokuSQL](https://www.heroku.com/postgres) - Database used in the project.
+
+  * [Python OS](https://docs.python.org/3/library/os.html). - Used for ```os.environ``` to help with automated development ```DEBUG```
+
+  * [Markdown](https://en.wikipedia.org/wiki/Markdown). - Used for creating README.md document.
+
+  * [Bootstrap 5](https://getbootstrap.com/). - Used for styling the site a framework addition to CSS3.
+
+  * [Stripe](https://stripe.com/gb) - Handling Payments
+
+  * [jQuery](https://jquery.com/) - Minimising Code
+
+  * [Font Awesome](https://fontawesome.com/)- Used for icons and their animations
+
+  * [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - Used to handle user authentication
+
+  * [Sending Mail](https://docs.djangoproject.com/en/3.2/topics/email/) - Used in conjunction with gmail for sending mail from contact to user
+
+  * [Gmail](https://mail.google.com/mail) - Used to acquire app password
+
+* Hosting Technologies
+
+  * [Heroku](https://dashboard.heroku.com/login). - Deployment and hosting environment.
+
+  * [Cloudinary](https://cloudinary.com/). - Storing images and static files.
+
+  * [Github](https://github.com/). - Hosting Repository code.
+
+* Testing Technologies
+
+  * [Nu Html Checker](https://validator.w3.org/nu/#textarea). - Validate HTML.
+
+  * [W3C CSS3](https://jigsaw.w3.org/css-validator/). - Validate CSS.
+
+  * [DiffChecker](https://www.diffchecker.com/#). - Comparing code changes.
+
+  * [Pylint](https://pylint.org/). - Analysing python code.
+
+  * [Beautify](https://htmlbeautify.com/) - Improving layout of html templates.
 
 # Deployment
 
@@ -301,7 +351,6 @@ ALLAUTH https://django-allauth.readthedocs.io/en/latest/installation.html
 
     5. Move to Heroku part of deployment.
 
-  * Heroku
     6. Create an account with [Heroku](https://signup.heroku.com/).
 
     7. Create a new app
