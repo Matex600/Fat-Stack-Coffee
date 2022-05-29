@@ -157,19 +157,200 @@ How to Create a Kanban Board project and steps taken.
 
 
 
-https://www.amazon.co.uk/Hario-Medium-Coffee-Grinder-Ceramic/dp/B001802PIQ
-https://www.amazon.co.uk/DeLonghi-KG79-Professional-Burr-Grinder/dp/B002OHDBQC?th=1
-https://www.amazon.co.uk/DeLonghi-KG210-Capacity-Stainless-Adjustable/dp/B07YZWZCF9?th=1
-https://www.johnlewis.com/bodum-bistro-blade-electric-coffee-grinder-black/p5153737
-https://www.johnlewis.com/smeg-bcc02-bean-to-cup-coffee-machine/black/p5599733?sku=240100409&irclickid=0t631OQ1dxyIWMgyNtyDcWtLUkDxhDQZh3ZeRY0&irgwc=1&tmcampid=99&s_afcid=af_1226424&Ptype=af_Subnetwork%20-%20Content
-https://www.delonghi.com/en-gb/pump-espresso-coffee-machine-dedica-ec685-m/p/EC685.M?awc=25781_1653493308_a216d00df8edcd978321a803be9969bd&utm_source=aw&utm_medium=affiliation_uk&utm_campaign=immediate.co.uk
-https://www.johnlewis.com/smeg-ecf01-coffee-machine/p3081576?irclickid=0t631OQ1dxyIWMgyNtyDcWtLUkDxhDzNh3ZeRY0&irgwc=1&tmcampid=99&s_afcid=af_1236178&Ptype=af_Content%20-%20Media
-https://www.geekcore.co.uk/collections/coffee-travel-mugs/products/nintendo-64-logo-mug
-https://unsplash.com/
-https://www.amazon.co.uk/MMO-Mug-Legendary-Coffee-Ceramic/dp/B07TJZJ996
-https://www.amazon.co.uk/LBS4ALL-Charmander-Pokemon-Starbucks-Ceramic/dp/B07F6ZPRDR/ref=asc_df_B07F6ZPRDR/?tag=googshopuk-21&linkCode=df0&hvadid=345559925731&hvpos=&hvnetw=g&hvrand=7628739590917426292&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9045006&hvtargid=pla-844102480797&psc=1
-https://www.etsy.com/uk/listing/1045511369/grim-fandango-mug-perfect-gamer-gift?gpla=1&gao=1&&utm_source=google&utm_medium=cpc&utm_campaign=shopping_uk_en_gb_d-home_and_living-kitchen_and_dining-drink_and_barware-drinkware-mugs&utm_custom1=_k_Cj0KCQjwhLKUBhDiARIsAMaTLnFarMhN0PejPLWlLjYNM_93nQEMDFLIWLbQp4MrVrLulClLuRB5o4saAkYvEALw_wcB_k_&utm_content=go_12603364216_125103423732_508660996287_aud-463075091998:pla-498657395952_c__1045511369engb_556156514&utm_custom2=12603364216&gclid=Cj0KCQjwhLKUBhDiARIsAMaTLnFarMhN0PejPLWlLjYNM_93nQEMDFLIWLbQp4MrVrLulClLuRB5o4saAkYvEALw_wcB
-https://www.redbubble.com/i/mug/Developer-Handwritten-Code-Black-BG-Short-by-yalco-dev/58005207.9Q0AD
-https://www.redbubble.com/i/mug/Programming-Cup-Mug-If-Not-Empty-Drink-Else-Refill-by-Goodsauce/69271140.9Q0AD
-# tools used so far
-ALLAUTH https://django-allauth.readthedocs.io/en/latest/installation.html
+
+
+# Deployment
+
+## Cloning Project with Github
+  **[Repository Link](https://github.com/Matex600/Fat-Stack-Coffee)**
+
+  * Create Account with Github
+
+  * Login To Github account.
+  
+  * Access my repository using the above link.
+
+  * In the File menu, click Clone Repository.
+    * Search for repo
+    * Or 
+  * In the repository page select code next to Gitpod.
+
+  * Button, make sure HTTPS is selected.
+
+  * Click on the copy button on the right (Two overlapping squares)
+
+  * Open a new workspace in Gitpod.
+
+  * Once the workspace loads in the terminal type.
+        ```
+        git clone https://github.com/Matex600/Fat-Stack-Coffee
+        ```
+
+## Forking Project Via Github
+
+* To Fork and continue working on the project without affecting the main branch follow steps outlined below.
+
+    1. Navigate to github repositores select this **[repository](https://github.com/Matex600/Fat-Stack-Coffee)**.
+
+    2. Navigate to top right of the web page and click on **Fork**.
+
+    3. After this has been done a fork will be created for you to use!
+
+## Deployment via Heroku
+
+  * Development Environment
+    1. Create Github Account
+        * Login
+        * Create project using Code Institutes **[Project](https://github.com/Code-Institute-Org/gitpod-full-template)**  template.
+        * Open workspace using gitpod button, Only do this once.
+        * Install required dependancies.
+        <hr>
+
+        ```
+            asgiref==3.5.0
+            cloudinary==1.29.0
+            crispy-bootstrap5==0.6
+            dj-database-url==0.5.0
+            dj3-cloudinary-storage==0.0.6
+            Django==3.2
+            django-allauth==0.41.0
+            django-countries==7.2.1
+            django-crispy-forms==1.14.0
+            django-jazzmin==2.5.0
+            gunicorn==20.1.0
+            oauthlib==3.2.0
+            Pillow==9.1.0
+            psycopg2-binary==2.9.3
+            python3-openid==3.2.0
+            pytz==2022.1
+            requests-oauthlib==1.3.1
+            sqlparse==0.4.2
+            stripe==3.0.0
+        ```
+        <hr>
+
+        * In gitpod terminal use code 
+
+        <br>
+
+        ```
+        pip3 freeze > requirements.txt
+
+        ```
+        <hr>
+
+        * This will create a requirements file used by Heroku
+
+        * Create Procfile containing application name and ensure proper formatting or else deployment will fail..
+
+        ``` 
+        web: gunicorn app_name_goes_here.wsgi:application 
+        ```
+
+    2. Create env.py it needs to contain these 9 variables.
+
+      * Cloudinary can be obtained here [URL](https://cloudinary.com/)
+
+      * Secret key is a password of your choosing make it a strong one [KEY](https://djecrety.ir/)
+
+      * Obtain Heroku postgreSQL [HERE](https://dashboard.heroku.com/apps)
+
+      * Obtain Stripe Keys [Here](https://stripe.com/gb)
+
+        * Stripe public and secret key found under Developers tab
+        * Stripe Wh Secret found when creating Webhook
+
+      * EMAIL_HOST_USER = Gmail, Email address
+
+      * EMAIL_HOST_Pass = Gmail, App Password
+
+        * Create [App](https://devanswers.co/create-application-specific-password-gmail/) password
+
+        ```
+            import os
+
+            os.environ['DATABASE_URL'] = 'postgres:// '...'
+
+            os.environ['SECRET_KEY'] = '...'
+
+            os.environ["DEVELOPMENT"] = "True"
+
+            os.environ['CLOUDINARY_URL'] = '...'
+
+            os.environ["STRIPE_PUBLIC_KEY"] = "..."
+
+            os.environ["STRIPE_SECRET_KEY"] = "..."
+
+            os.environ["STRIPE_WH_SECRET"] = "..."
+
+            os.environ["EMAIL_HOST_PASS"] = "..."
+
+            os.environ["EMAIL_HOST_USER"] = "..."
+        ```
+        * Add these in to Heroku Variables as well
+
+        <br>
+
+        ![SecuredVarExample](https://res.cloudinary.com/matts-cloud/image/upload/v1653828408/config-vars_en303z.png)
+
+    3. Create Procfile containing application name to ensure proper formatting or deployment will fail.
+
+    4. Commit and push changes to Github.
+
+    5. Move to Heroku part of deployment.
+
+  * Heroku
+    6. Create an account with [Heroku](https://signup.heroku.com/).
+
+    7. Create a new app
+        * Choose region
+        * Choose appropriate app name
+        * Add app name to Procfile
+
+    8. In **Resources** add **Heroku Postgres** hobby plan.
+
+    9. Within your newly created app
+    go to settings go to **Config Vars**
+    use the **DATABASE_URL** Value and add it to your env.py file and connect it via settings.py.
+
+        ```
+        import dj_database_url
+        if os.path.isfile('env.py'):
+        """
+        Conditional import to prevent application
+        error if it cannot find env
+        """
+        import env
+        ```
+
+        ```
+        if 'DATABASE_URL' in os.environ:
+            DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+            }
+
+        else:
+         DATABASES = {
+            'default': {
+            'ENGINE': 
+            'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+        ```
+
+    10. Create a **SECRET_KEY** Key and the Value as the desired key.
+        * Add to env.py
+
+    11. Next go to the **Deploy** tab next to **Deployment Method** click **GitHub** connect your account and repository.
+        * You may choose manual deployment **[Here](https://devcenter.heroku.com/articles/heroku-cli)** Using Heroku Cli
+
+    12. I **Recommended** enabling automatic deploys as it makes the process much easier and you update Github and Heroku at the same time.
+
+    13. At the bottom of the page click deploy branch making sure it is set to **main** / **master**
+
+    #### **Note.**
+
+    This project uses Python and has to be deployed with a hosting platform such as Heroku as it handles backend functionality.
+
+# Credits
