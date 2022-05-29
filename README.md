@@ -33,13 +33,19 @@ Visitors to the site may also subscribe or unsubscribe to a newsletter provided 
 
 ## Purpose
 
+<br>
+
 The projects purpose is to enable customers/registered users to make purchases, register an account and review products while enjoying smooth user experience and user interface.
 
 ## Project Future
 
+<br>
+
 This project has been built with the future in mind, post 1.0 release I am eager to implement further features, optimisation, new technologies, modernised design, styling improvements, added responsiveness and new features!
 
 ## Future Features
+
+<br>
 
 - Live chat
     - Customer Support
@@ -73,6 +79,8 @@ This project has been built with the future in mind, post 1.0 release I am eager
 
 ## UX
 
+<br>
+
 User experience has been designed with a minimalistic, clean and professional look.
 A light coloured background and bold dark colours for text as well as sharp images to portray the purpose and goal of the ecommerce-site.
 
@@ -82,10 +90,14 @@ find out more about the benefits of coffee, User can open facebook social links 
 
 Users can also make payments via the checkout app using a credit/debit card via *[stripe](https://stripe.com/gb)* technology.
 
+<br>
+
 ### Card Testing
 Payment testing use information below.
 
 ![Payment-Test](https://res.cloudinary.com/matts-cloud/image/upload/v1653775390/payment-test_djckc9.png)
+
+<br>
 
 ## User Stories 
 
@@ -130,6 +142,8 @@ How to Create a Kanban Board project and steps taken.
     4. 'Future content' (Content implemented post-release).
 6. Assign issues to columns as project progresses and development continues, deciding along the journey.
 
+<br>
+
 ## Significance and Complexity
 
 ![Significance and Complexity](https://res.cloudinary.com/matts-cloud/image/upload/v1653774696/Significance-and-complexity-fs-coffee-Mateusz_pohqgf.png)
@@ -139,6 +153,8 @@ How to Create a Kanban Board project and steps taken.
 7. All of the above have been Completed
     1. I have chosen Cloudinary over AWS as I am more comfortable with it.
 8. I increased scope of the project after initial plannin, as I had more time than I expected.
+
+<br>
 
 ## User Testing
 <hr>
@@ -154,6 +170,24 @@ How to Create a Kanban Board project and steps taken.
 * I asked my brother to test the site and he tested the site with an Iphone 13 Pro max as well as his desktop pc (2560x1440) he logged in with provided user details and tested purchasing an item as well as without an account, This test passed successfully.
 
 * My friend tested my contact page form after bug fix and I can confirm that emails are being sent out to admin.
+
+<br>
+
+# Wireframes
+
+### PC Wireframes
+* [Desktop](documentation/wireframes/desktop)
+
+### Laptop Wireframes
+*   [Laptop](documentation/wireframes/laptop)
+
+### Tablet Wireframes
+*   [Tablet](documentation/wireframes/tablet)
+
+### Mobile
+*   [Mobile](documentation/wireframes/mobile)
+
+<br>
 
 # Database Models 
 
@@ -553,6 +587,8 @@ class FavouritesList(models.Model):
     * Category - Products are grouped with categories.
 
     * Product - Product model for displaying models.
+
+    * Contact - Contact model displays contact form and sends mail.
 
     * Review - Review model to enable users to make reviews and rate products.
 
