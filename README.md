@@ -546,8 +546,28 @@ class FavouritesList(models.Model):
     )
 ```
 
+* The database models above populate the database and perform their functions as expected.
+
+    * User - Django built in User model with basic information.
+
+    * Category - Products are grouped with categories.
+
+    * Product - Product model for displaying models.
+
+    * Review - Review model to enable users to make reviews and rate products.
+
+    * Order - When a user makes a successful purchase, an instance of the Order model is created, which stores delivery and user information.
+
+    * OrderLineItem - a model that holds product information for a particular product and connects the product model and the order model.
+
+    * UserProfile - Model storing users personal and order information.
+
+    * FavouritesList - A Model that handles creating a list of products that a user has saved, which appears in the users profile page as a list.
+
 ## Database Schema
 ![DBSchema](documentation/readme_images/db_schema_fscoffee_Mateusz.png)
+
+My Schema of models used in this application made with lucidchart.
 
 ## Technologies Used
   * Coding Languages
