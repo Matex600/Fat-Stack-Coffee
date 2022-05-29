@@ -415,12 +415,6 @@ class OrderLineItem(models.Model):
 
 ```
 
-## fsc_reviews app model structure
-<hr>
-
-```py
-```
-
 ## fsc_products app model structure (Category, Products, Review, FavouritesList)
 <hr>
 
@@ -551,14 +545,6 @@ class FavouritesList(models.Model):
         blank=True
     )
 ```
-
-fsc_checkout app model structure
-<hr>
-fsc_checkout app model structure
-<hr>
-fsc_checkout app model structure
-<hr>
-
 
 ## Database Schema
 ![DBSchema](documentation/readme_images/db_schema_fscoffee_Mateusz.png)
