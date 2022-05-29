@@ -660,6 +660,35 @@ My Schema of models used in this application made with lucidchart.
 
   * [Beautify](https://htmlbeautify.com/) - Improving layout of html templates.
 
+# Web Marketing 
+
+## Newsletter
+
+I have used a newsletter from mailchimp where users will get a welcome email within a few days as I am on the free plan this may be quicker or slower depending on service. 
+Users can subscribe or unsubscribe whenever they wish.
+
+## Facebook business page
+
+Fat stack coffee is on has a facebook business page for marketing and research purposes as well as to post and advertise, create engaging content and attract visitor and customers.
+
+![Header](documentation/readme_images/web_marketing/facebook/Facebook-Header.png)
+<hr>
+
+![Insights](documentation/readme_images/web_marketing/facebook/Facebook-Insights.png)
+<hr>
+
+![Page-tips](documentation/readme_images/web_marketing/facebook/Facebook-Page-tips.png)
+<hr>
+
+![Page-Post](documentation/readme_images/web_marketing/facebook/Facebook-Post.png)
+<hr>
+
+![Profile-Picture](documentation/readme_images/web_marketing/facebook/Facebook-Profile-Picture.png)
+<hr>
+
+![Created-on](documentation/readme_images/web_marketing/facebook/Facebook-Business-Page-Created.png)
+<hr>
+
 # Deployment
 
 ## Cloning Project with Github
