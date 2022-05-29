@@ -158,6 +158,8 @@ How to Create a Kanban Board project and steps taken.
 
 
 
+# tools used so far
+ALLAUTH https://django-allauth.readthedocs.io/en/latest/installation.html
 
 # Deployment
 
@@ -354,3 +356,98 @@ How to Create a Kanban Board project and steps taken.
     This project uses Python and has to be deployed with a hosting platform such as Heroku as it handles backend functionality.
 
 # Credits
+
+## Media
+
+All of these images below have been acquired for non-commercial use and for education and teaching purposes only I do not intend to profit from said images.
+
+* [Site Bear Logo](https://www.creativefabrica.com/) I purchased this logo from Creative fabrica and have a license to use it.
+
+## Product Images
+
+* [Placeholder Produt Image](https://nayemdevs.com/changing-the-default-thumbnail-placeholder-of-woocommerce-product-is-easy/) (No Image for Product) this Image was procured from Nayemdevs.com
+
+* [Hario Medium Glass Hand Coffee Grinder](https://www.amazon.co.uk/Hario-Medium-Coffee-Grinder-Ceramic/dp/B001802PIQ)
+
+* [De'Longhi, Coffee grinder KG79, Black](https://www.amazon.co.uk/DeLonghi-KG79-Professional-Burr-Grinder/dp/B002OHDBQC?th=1)
+
+* [De'Longhi KG210 Electric Coffee Grinder, Stainless Steel, Black](https://www.amazon.co.uk/DeLonghi-KG210-Capacity-Stainless-Adjustable/dp/B07YZWZCF9?th=1)
+
+* [BODUM Bistro Blade Electric Coffee Grinder, Black](https://www.johnlewis.com/bodum-bistro-blade-electric-coffee-grinder-black/p5153737)
+
+* [Smeg BCC02 Bean To Cup Coffee Machine, Black](https://www.johnlewis.com/smeg-bcc02-bean-to-cup-coffee-machine/black/p5599733?sku=240100409&irclickid=0t631OQ1dxyIWMgyNtyDcWtLUkDxhDQZh3ZeRY0&irgwc=1&tmcampid=99&s_afcid=af_1226424&Ptype=af_Subnetwork%20-%20Content)
+
+* [Dedica Style EC685.M Pump Espresso Coffee Machine](https://www.delonghi.com/en-gb/pump-espresso-coffee-machine-dedica-ec685-m/p/EC685.M?awc=25781_1653493308_a216d00df8edcd978321a803be9969bd&utm_source=aw&utm_medium=affiliation_uk&utm_campaign=immediate.co.uk)
+
+* [Smeg ECF01CR Coffee Machine, Cream](https://www.johnlewis.com/smeg-ecf01-coffee-machine/p3081576?irclickid=0t631OQ1dxyIWMgyNtyDcWtLUkDxhDzNh3ZeRY0&irgwc=1&tmcampid=99&s_afcid=af_1236178&Ptype=af_Content%20-%20Media)
+
+* [Nintendo 64 Logo Mug](https://www.geekcore.co.uk/collections/coffee-travel-mugs/products/nintendo-64-logo-mug)
+
+* [MMO Mug - Legendary Coffee Mug Level 110](https://www.amazon.co.uk/MMO-Mug-Legendary-Coffee-Ceramic/dp/B07TJZJ996)
+
+* [LBS4ALL Charmander Coffee 11oz Pokemon Parody Ceramic Mug](https://www.amazon.co.uk/LBS4ALL-Charmander-Pokemon-Starbucks-Ceramic/dp/B07F6ZPRDR/ref=asc_df_B07F6ZPRDR/?tag=googshopuk-21&linkCode=df0&hvadid=345559925731&hvpos=&hvnetw=g&hvrand=7628739590917426292&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9045006&hvtargid=pla-844102480797&psc=1)
+
+* [Grim Fandango Mug](https://www.etsy.com/uk/listing/1045511369/grim-fandango-mug-perfect-gamer-gift?gpla=1&gao=1&&utm_source=google&utm_medium=cpc&utm_campaign=shopping_uk_en_gb_d-home_and_living-kitchen_and_dining-drink_and_barware-drinkware-mugs&utm_custom1=_k_Cj0KCQjwhLKUBhDiARIsAMaTLnFarMhN0PejPLWlLjYNM_93nQEMDFLIWLbQp4MrVrLulClLuRB5o4saAkYvEALw_wcB_k_&utm_content=go_12603364216_125103423732_508660996287_aud-463075091998:pla-498657395952_c__1045511369engb_556156514&utm_custom2=12603364216&gclid=Cj0KCQjwhLKUBhDiARIsAMaTLnFarMhN0PejPLWlLjYNM_93nQEMDFLIWLbQp4MrVrLulClLuRB5o4saAkYvEALw_wcB)
+
+* [Developer Handwritten Code](https://www.redbubble.com/i/mug/Developer-Handwritten-Code-Black-BG-Short-by-yalco-dev/58005207.9Q0AD)
+
+* [Programming Mug - If Not Empty Drink Else Refill Mug](https://www.redbubble.com/i/mug/Programming-Cup-Mug-If-Not-Empty-Drink-Else-Refill-by-Goodsauce/69271140.9Q0AD)
+
+## Site-Wide Images
+
+Procured from
+
+* [Unsplash](https://unsplash.com/)
+* [Pexels](https://www.pexels.com/)
+
+## Technology Acknowledgments
+
+* [Ecommerce Inspiration](https://youtu.be/_ELCMngbM0E) - This Video by Dennis Ivy gave me inspiration on how to create this application.
+
+* [Intro To Python Programming: Beginners](https://www.amazon.co.uk/Intro-Python-Programming-Beginners-Guide/dp/B09VW7ZMY5/ref=sr_1_1?keywords=john+elder&qid=1653832841&sr=8-1) - Helping me improve further knowledge by reading this book by John Elder
+
+* [Django Documentation](https://docs.djangoproject.com/en/3.2/). - Reading up to improve my knowledge further and understand why and how things are done
+
+    * [Send_mail-Django](https://docs.djangoproject.com/en/3.2/topics/email/) - Documentation
+    * [Pagination-Django](https://docs.djangoproject.com/en/3.2/topics/pagination/) - Documentation
+
+    * [Deploying static files](https://docs.djangoproject.com/en/3.2/howto/static-files/deployment/) - Documentation
+
+* [Code-Institute](https://codeinstitute.net/) - For preparing me for this project with their template and lessons.
+
+    * Boutique Ado Walkthrough Project
+        * helping me understand ecommerce using stripe
+    * Code-Institute Slack channel
+        * Code Review
+    * Code-Institute Tutor support
+    
+    * Code-Institute Mentor support
+        * Thank you to my mentor Maranatha Ilesanmi, for guiding me through this course and helping me overcome anxiety about my projects as well as helping me resolve issues I have come across with my code and projects as well as teaching me!
+
+<br>
+
+* [Stack Overflow](https://stackoverflow.com/) - Has helped me countlessly on fixing issues and incompatibilites with my project such as pip errors and send_mail not functioning properly and many more!
+
+* [Microsoft Excel](https://www.microsoft.com/en-gb/microsoft-365/excel) - Creating tables for my documentation
+
+* [Microsoft Paint](https://en.wikipedia.org/wiki/Microsoft_Paint) - Editing pictures
+
+* [Balsamiq](https://balsamiq.com/wireframes/) - Helping me create wireframes for this project.
+
+* [Favicon](https://favicon.io/) - For converting my logo into a favicon.
+
+* [Font-Awesome](https://fontawesome.co) - For icons in my website.
+
+* [Intl.NumberFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat) - Helping me better format product price after weight change.
+
+* [Markdown best practices](https://www.markdownguide.org/basic-syntax/) - Guiding on syntax for writing README document
+
+* [Bootstrap5](https://getbootstrap.com/) - Styling classes and site layout
+
+* [Site layout Inspiration](https://www.wholesalecoffeecompany.co.uk/product-category/coffee-beans/) - I took inspiration on templating and creating styles for my site.
+
+* [Mailchimp](https://mailchimp.com/en-gb/) - Mailchimp Subscribe form
+
+* [Lucid-Chart](https://www.lucidchart.com/pages/) - Database Schema
+
+* [AmiResponsive](https://ui.dev/amiresponsive) - Hero Image README.md
