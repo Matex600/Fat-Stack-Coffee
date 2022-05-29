@@ -155,6 +155,414 @@ How to Create a Kanban Board project and steps taken.
 
 * My friend tested my contact page form after bug fix and I can confirm that emails are being sent out to admin.
 
+# Database Models 
+
+## fsc_users app model structure (UserProfile)
+<hr>
+
+```py
+class UserProfile(models.Model):
+"""
+A user profile model for maintaining default
+delivery information and order history
+"""
+user = models.OneToOneField(
+    User,
+    on_delete=models.CASCADE
+)
+default_phone_number = models.CharField(
+    max_length=20,
+    null=True,
+    blank=True
+)
+default_street_address1 = models.CharField(
+    max_length=80,
+    null=True,
+    blank=True
+)
+default_street_address2 = models.CharField(
+    max_length=80,
+    null=True,
+    blank=True
+)
+default_town_or_city = models.CharField(
+    max_length=40,
+    null=True,
+    blank=True
+)
+default_county = models.CharField(
+    max_length=80,
+    null=True,
+    blank=True
+)
+default_postcode = models.CharField(
+    max_length=20,
+    null=True,
+    blank=True
+)
+default_country = CountryField(
+    blank_label='Country',
+    null=True,
+    blank=True
+)
+
+def __str__(self):
+    return self.user.username
+
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """
+    Create or update the user profile
+    """
+    if created:
+        UserProfile.objects.create(user=instance)
+    # Existing users: just save the profile
+    instance.userprofile.save()
+```
+
+## fsc_contact app model structure (Contact)
+<hr>
+
+```py
+class Contact(models.Model):
+    email = models.EmailField()
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.email
+```
+
+## fsc_checkout app model structure (Order, OrderLineItem)
+<hr>
+
+```py
+class Order(models.Model):
+    """
+    Model saves instances with user and purchase information.
+    """
+    order_number = models.CharField(
+        max_length=32,
+        null=False,
+        editable=False
+    )
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='orders'
+    )
+    full_name = models.CharField(
+        max_length=50,
+        null=False,
+        blank=False
+    )
+    email = models.EmailField(
+        max_length=254,
+        null=False,
+        blank=False
+    )
+    phone_number = models.CharField(
+        max_length=20,
+        null=False,
+        blank=False
+    )
+    country = CountryField(
+        blank_label='Country *',
+        null=False,
+        blank=False
+    )
+    postcode = models.CharField(
+        max_length=20,
+        null=True,
+        blank=True
+    )
+    town_or_city = models.CharField(
+        max_length=40,
+        null=False,
+        blank=False
+    )
+    street_address1 = models.CharField(
+        max_length=80,
+        null=False,
+        blank=False
+    )
+    street_address2 = models.CharField(
+        max_length=80,
+        null=True,
+        blank=True
+    )
+    county = models.CharField(
+        max_length=80,
+        null=True,
+        blank=True
+    )
+    date = models.DateTimeField(
+        auto_now_add=True
+    )
+    delivery_cost = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=False,
+        default=0
+    )
+    order_total = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=False,
+        default=0
+    )
+    grand_total = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=False,
+        default=0
+    )
+    original_cart = models.TextField(
+        null=False,
+        blank=False,
+        default=''
+    )
+    stripe_pid = models.CharField(
+        max_length=254,
+        null=False,
+        blank=False,
+        default=''
+    )
+
+    def _generate_order_number(self):
+        """
+        Function generates a randomised unique
+        order number using UUID
+        """
+        return uuid.uuid4().hex.upper()
+
+    def update_total(self):
+        """
+        Update grand total each time a line item is added,
+        accounting for delivery costs.
+        """
+
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
+            sdp = settings.STANDARD_DELIVERY_PERCENTAGE
+            self.delivery_cost = self.order_total * sdp / 100
+        else:
+            self.delivery_cost = 0
+        self.grand_total = self.order_total + self.delivery_cost
+        self.save()
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the order number
+        if it hasn't been set already.
+        """
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.order_number
+
+
+class OrderLineItem(models.Model):
+    """
+    Model to save each item in an Order instance as a lineitem.
+    """
+    order = models.ForeignKey(
+        Order,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='lineitems'
+    )
+    product = models.ForeignKey(
+        Product,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE
+    )
+    product_weight = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True
+    )
+    quantity = models.IntegerField(
+        null=False,
+        blank=False,
+        default=0
+    )
+    lineitem_total = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=False,
+        blank=False,
+        editable=False
+    )
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the lineitem total
+        and update the order total.
+        """
+        self.lineitem_total = self.product.price * self.quantity
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'SKU {self.product.sku} on order {self.order.order_number}'
+
+```
+
+## fsc_reviews app model structure
+<hr>
+
+```py
+```
+
+## fsc_products app model structure (Category, Products, Review, FavouritesList)
+<hr>
+
+```py
+class Category(models.Model):
+    """
+    The Category model class, with fields for the category name.
+    """
+    class Meta:
+        """
+        Meta class to return plural name of category.
+        """
+        verbose_name_plural = 'Categories'
+
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(
+        max_length=254,
+        null=True,
+        blank=True
+    )
+
+    def __str__(self):
+        """
+        Returns the category name as string.
+        Args:
+            self (object)
+        Returns:
+            The category name field as string
+        """
+        return self.name
+
+    def get_friendly_name(self):
+        """
+        Returns the user readable category name as string.
+        Args:
+            self (object)
+        Returns:
+            The category friendly name string
+        """
+        return self.friendly_name
+
+
+class Product(models.Model):
+    """
+    The Product model class, used to generate an instance of a product
+    """
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
+    sku = models.CharField(
+        max_length=254,
+        null=True,
+        blank=True
+    )
+    name = models.CharField(
+        max_length=254
+    )
+    description = models.TextField()
+    coffee_amounts = models.BooleanField(
+        default=False,
+        null=True,
+        blank=True
+    )
+    price = models.DecimalField(
+        max_digits=6,
+        decimal_places=2
+    )
+    image_url = models.URLField(
+        max_length=2024,
+        null=True,
+        blank=True
+    )
+    image = models.ImageField(
+        max_length=2024,
+        null=True,
+        blank=True
+    )
+    
+    def __str__(self):
+        """
+        Returns the product name
+        Args:
+            self (object)
+        Returns:
+            The product name field as string
+        """
+        return self.name
+
+    def get_rating(self):
+        total = (sum(int(review['star_rating']) for review
+                 in self.reviews.values()))
+
+        if self.reviews.count() > 0:
+            return total / self.reviews.count()
+        else:
+            return 0
+
+
+class Review(models.Model):
+    """
+    The review model class, with fields for
+    user and products using a foreign key (unique value)
+    A prod_description and review_time
+    """
+
+    user = models.ForeignKey(UserProfile, related_name='reviews',
+                             on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='reviews',
+                                on_delete=models.CASCADE)
+    description = models.TextField(max_length=450, null=False,
+                                   blank=False)
+    star_rating = models.IntegerField(validators=[
+            MaxValueValidator(5),
+            MinValueValidator(1)
+        ])
+    review_time = models.DateTimeField(auto_now_add=True)
+
+
+class FavouritesList(models.Model):
+    """
+    Class based model for storing users favourited items.
+    """
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE
+    )
+    product = models.ManyToManyField(
+        Product,
+        blank=True
+    )
+```
+
+fsc_checkout app model structure
+<hr>
+fsc_checkout app model structure
+<hr>
+fsc_checkout app model structure
+<hr>
+
+
+## Database Schema
+![DBSchema](documentation/readme_images/db_schema_fscoffee_Mateusz.png)
+
 ## Technologies Used
   * Coding Languages
 
@@ -165,7 +573,6 @@ How to Create a Kanban Board project and steps taken.
     * [Python3.2](https://en.wikipedia.org/wiki/Python_(programming_language)). - Used with Django.
 
     * [Javascript](https://www.javascript.com/) - Used mainly for front-end tweaking of numbers especially quantity and pricing.
-
 
 * Libraries, Frameworks & Tools
 
