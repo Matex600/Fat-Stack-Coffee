@@ -97,6 +97,7 @@ width: 100%
   padding-left: 50px!important;
 }
 
+
 .carousel-image {
   height: auto;
   min-height: 200px;
@@ -212,6 +213,15 @@ div#mc_embed_signup_scroll {
   transform: translateY(0);
 }
 
+/* About / Contact */ 
+
+.about-padding {
+  padding: 0 20px 0 20px!important;
+}
+
+.contact-padding{
+  padding: 0 20px 0 20px!important;
+}
 
 /* Footer */
 
