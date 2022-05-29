@@ -93,6 +93,10 @@ width: 100%
     object-fit: cover;
 }
 
+.row.container.text-center.py-3{
+  padding-left: 50px!important;
+}
+
 .carousel-image {
   height: auto;
   min-height: 200px;
