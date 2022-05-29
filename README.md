@@ -137,10 +137,24 @@ How to Create a Kanban Board project and steps taken.
 ![Key](https://res.cloudinary.com/matts-cloud/image/upload/v1653774696/Significance-and-complexity-key-fs-coffee_rslwst.png)
 
 7. All of the above have been Completed
-    1. I have chosen Cloudinary over AWS as I am more comfortable with it
+    1. I have chosen Cloudinary over AWS as I am more comfortable with it.
 8. I increased scope of the project after initial plannin, as I had more time than I expected.
 
 ## User Testing
+<hr>
+
+* My mentor gave me a feedback on design and styling of my project, which I had acted upon, improving padding across different templates as well as improving colour usage across the site.
+
+* I have receieved feedback from fellow student Joanna Gorska, she gave me feedback about review button colours and some responsiveness improvements.
+
+* I recieved feedback from code review channel on slack also by getting feedback on contact form not working as expected this has now been reworked and users should expect a reply within 1-2 working days.
+
+* I was also given feedback about the footer and subscribe not being the same width to improve consistency this has also been resolved successfully.
+
+* I asked my brother to test the site and he tested the site with an Iphone 13 Pro max as well as his desktop pc (2560x1440) he logged in with provided user details and tested purchasing an item as well as without an account, This test passed successfully.
+
+* My friend tested my contact page form after bug fix and I can confirm that emails are being sent out to admin.
+
 
 
 https://www.amazon.co.uk/Hario-Medium-Coffee-Grinder-Ceramic/dp/B001802PIQ
