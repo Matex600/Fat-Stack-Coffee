@@ -46,7 +46,7 @@
             <strong>{{ item.product.name }}
             </strong>
           </p>
-          <p class="my-0 small">Weight: {% if item.product.coffee_amounts %}{{ item.weight|upper }}{% else %}N/A{% endif %}
+          <p class="my-0 small">Weight: {% if item.product.coffee_amounts %}{{ item.weight }}g{% else %}N/A{% endif %}
           </p>
           <p class="my-0 small text-muted">Qty: {{ item.quantity }}
           </p>
@@ -80,7 +80,7 @@
       </div>
     </div>
     <div class="col-12 col-lg-6">
-      <p class="text-muted">Please fill out the form below to complete your order
+      <p class="text-muted text-center">Please fill out the form below to complete your order
       </p>
       <form action="{% url 'checkout' %}" method="POST" id="payment-form">
         {% csrf_token %}
@@ -130,10 +130,8 @@
         <div class="submit-button text-right mt-5 mb-2">                    
           <a href="{% url 'view_cart' %}" class="btn btn-outline-black rounded-0">
             <span class="icon">
-              <i class="fas fa-chevron-left">
-              </i>
             </span>
-            <span class="font-weight-bold">Adjust shopping cart
+            <span class="font-weight-bold btn btn-custom">Back to cart
             </span>
           </a>
           <button id="submit-button" class="btn btn-custom rounded-0">
@@ -144,7 +142,7 @@
               </i>
             </span>
           </button>
-          <p class="small text-danger my-0">
+          <p class="small text-danger my-0 text-center">
             <span class="icon">
               <i class="fas fa-exclamation-circle">
               </i>
