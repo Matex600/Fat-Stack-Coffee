@@ -724,7 +724,7 @@ My Schema of models used in this application made with lucidchart it was created
 
 ### Fat stack coffee google maps location
 
-![Google-Maps-Fat-Stack]](documentation/features/map_contact_google.png)
+![Google-Maps-Fat-Stack](documentation/features/map_contact_google.png)
 
 * Google map embbeded with location using html.
 
