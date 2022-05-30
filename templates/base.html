@@ -6,7 +6,7 @@
 <head>
 
   {% block meta %}
-  <meta http-equiv="X-UA-Compatibles" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% endblock %}
@@ -71,7 +71,7 @@
           <a class="navbar-sm-brand text-light text-decoration-none"
             href="mailto:fatstack.info@gmail.com">fatstack.info@gmail.com</a>
           <i class="fa fa-phone mx-2"></i>
-          <a class="navbar-sm-brand text-light text-decoration-none" href="tel:07700 900615">07700 900615</a>
+          <a class="navbar-sm-brand text-light text-decoration-none" href="tel:07700900615">07700 900615</a>
         </div>
         <h4 id="delivery_msg">Free delivery on orders over £{{ free_delivery_threshold }}!</h4> 
         <div id="icons-pad">
@@ -95,7 +95,7 @@
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#fsc_main_nav"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon" id="navbarSupportedContent"></span>
       </button>
 
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -159,7 +159,7 @@
             </li>
             <li class="list-inline-item dropdown">
                   <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-labelledby="user-options" aria-expanded="false">
-                    <div><i class="fas fa-user fa-lg"></i></div>
+                    <div id="user-options"><i class="fas fa-user fa-lg"></i></div>
                     User Account
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -195,8 +195,6 @@
           </ul>
         </div>
       </div>
-    </div>
-    </div>
     </div>
   </nav>
   <div class="row container bg-white">
@@ -234,7 +232,7 @@
   {% endblock %}
 
   {% block postloadjs %}
-  <script type="text/javascript">
+  <script>
     $(document).ready(function() {
       $(".toast").toast('show');
     });
