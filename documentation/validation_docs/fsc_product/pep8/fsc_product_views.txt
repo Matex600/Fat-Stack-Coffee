@@ -1,0 +1,264 @@
+Check results
+=============
+
+
+
+Code
+=============
+"""
+fsc_products/views.py: views to display all pages in the products app.
+Credit to Code Institute's Boutique Ado project.
+"""
+
+# - - - - - Django Imports - - - - - - - - -
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import Http404
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+from django.db.models.functions import Lower
+from django.core.paginator import Paginator
+
+# - - - - - Internal imports - - - - - - - - -
+from .models import Product, Category, Review, FavouritesList
+from fsc_users.models import UserProfile
+from .forms import ProductForm, ReviewForm
+
+
+def fsc_products(request):
+    """
+
+    View displays products on the products template,
+    depending on the users sorting or queries.
+
+    """
+    products = Product.objects.all().order_by('category')
+    favourites = FavouritesList.objects.filter(user=request.user.id)
+    query = None
+    categories = None
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+
+            if sortkey == 'category':
+                sortkey = 'category__name'
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "Please try to specify \
+                                         your search query!")
+                return redirect(reverse('products'))
+
+            queries = (
+                Q(name__icontains=query) | Q(description__icontains=query)
+                )
+            products = products.filter(queries)
+
+    # Pagination: https://docs.djangoproject.com/en/3.2/topics/pagination/
+    p = Paginator(products, 12)
+    page = request.GET.get('page')
+    page_obj = p.get_page(page)
+    nums = "a" * page_obj.paginator.num_pages
+    current_sorting = f'{sort}_{direction}'
+    product_page = True
+    context = {
+        'products': products,
+        'page_obj': page_obj,
+        'search_term': query,
+        'current_categories': categories,
+        'favourites': favourites,
+        'current_sorting': current_sorting,
+        'nums': nums,
+        'product_page': product_page,
+    }
+
+    return render(request, 'products/products.html', context)
+
+
+def fsc_product_detail(request, product_id):
+
+    product = get_object_or_404(Product, pk=product_id)
+    try:
+        favouritesList = get_object_or_404(FavouritesList,
+                                           user=request.user.id)
+    except Http404:
+        favouritesList = {}
+        favourites = None
+    else:
+        favourites = favouritesList.product.all()
+    reviews = Review.objects.filter(product=product)
+    review_form = ReviewForm()
+    product.save()
+
+    context = {
+        'product': product,
+        'favourites': favourites,
+        'reviews': reviews,
+        'review_form': review_form,
+    }
+
+    return render(request, 'products/product_detail.html', context)
+
+
+@login_required
+def fsc_add_product(request):
+    """ Add a product to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to add product. \
+                 Please ensure the form is valid and try again.')
+    else:
+        form = ProductForm()
+
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def fsc_edit_product(request, product_id):
+    """ Edit a product in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update product.'
+                           'Please ensure the form is valid.')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def fsc_delete_product(request, product_id):
+    """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only store owners can do that.. \
+             don't be cheeky.")
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products'))
+
+
+@login_required
+def add_review(request, product_id):
+    """
+    Add a product review
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    user = get_object_or_404(UserProfile, user=request.user)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            star_rating = request.POST.get('star_rating', 3)
+            description = form.cleaned_data['description']
+            Review.objects.create(user=user,
+                                  product=get_object_or_404
+                                  (Product, pk=product_id),
+                                  description=description,
+                                  star_rating=star_rating)
+            messages.success(request, 'You review has been \
+                successfully added.')
+            return redirect(reverse('product_detail', args=[product_id]))
+        else:
+            messages.error(request, 'Please try again.')
+    else:
+        form = ReviewForm()
+    template = 'reviews/add_review.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_review(request, review_id):
+    """
+    Edit a product review
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'You review has been \
+            successfully edited.')
+            return redirect(
+                reverse('product_detail', args=(review.product.id,)))
+        else:
+            messages.error(request, 'Please try again.')
+    else:
+        form = ReviewForm(instance=review)
+
+    template = "reviews/edit_review.html"
+    context = {
+        "form": form,
+        "review": review,
+        "product": review.product,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    """
+    Delete a product review
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'Review deleted!')
+    return redirect(reverse('product_detail', args=(review.product.id,)))

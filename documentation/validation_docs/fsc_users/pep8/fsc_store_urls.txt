@@ -1,0 +1,28 @@
+Check results
+=============
+
+
+
+Code
+=============
+"""
+
+fsc_store/urls.py: all urls for the home app.
+
+"""
+
+from django.urls import path
+from. import views
+
+# Handler path to handler views
+HANDLER400 = 'fsc_store.views.handler400'
+HANDLER403 = 'fsc_store.views.handler403'
+HANDLER404 = 'fsc_store.views.handler404'
+HANDLER500 = 'fsc_store.views.handler500'
+
+urlpatterns = [
+    path('', views.index, name='store'),
+    path('about/', views.about, name='about'),
+    path('terms', views.terms, name='terms'),
+    path('privacy', views.privacy, name='privacy'),
+]

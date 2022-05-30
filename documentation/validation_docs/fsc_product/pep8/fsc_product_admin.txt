@@ -1,0 +1,63 @@
+Check results
+=============
+
+
+
+Code
+=============
+"""
+
+fsc_products/admin.py: Admin models for superuser  with models
+Category and Product. Based on admin in
+Code Institute's Boutique Ado project.
+
+"""
+
+# - - - - - Django Imports - - - - - - - - -
+from django.contrib import admin
+
+# - - - - - Internal imports - - - - - - - -
+from .models import Product, Category, Review
+
+
+class ProductsAdmin(admin.ModelAdmin):
+    """
+    The Admin product class
+    """
+    list_display = (
+        'sku',
+        'name',
+        'category',
+        'price',
+        'image',
+    )
+
+    ordering = ('sku',)
+
+
+class CategoriesAdmin(admin.ModelAdmin):
+    """
+    The Admin category class
+    """
+    list_display = (
+        'friendly_name',
+        'name',
+    )
+
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    """
+    Admin class for Review model
+    With list_display to show fields
+    to user
+    """
+    list_display = (
+        'product',
+        'user',
+        'review_time',
+    )
+
+
+admin.site.register(Product, ProductsAdmin)
+admin.site.register(Category, CategoriesAdmin)
