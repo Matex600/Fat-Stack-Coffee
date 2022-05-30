@@ -937,65 +937,105 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Signup](documentation/manual_testing/sign-upMT.png)
 
+* User now has to verify email which works as expected.
+
 ![Verify-Email](documentation/manual_testing/verify-MT.png)
+
+* Example of email confirmation from console 
+<hr>
 
 ![Verify-Email-link](documentation/manual_testing/verify2-MT.png)
 
+* Working email confirmation from production on [Temp-Mail](https://temp-mail.org/en/)
+
+![Verify-Email-Production](documentation/manual_testing/email-verify2.5prod-MT.png)
+
+* Prompt to confirm email address.
+
 ![Email-confirm](documentation/manual_testing/verify3-MT.png)
+
+* Success message after verifying email.
 
 ![Verify-Email-link-success](documentation/manual_testing/verify4-MT.png)
 
 ## Sign in
 <hr>
 
+* Sign in window with user entering their details
+
 ![Sign-in](documentation/manual_testing/sign-inMT.png)
+
+* Success message upon signing in with correct details.
 
 ![Sign-in-success](documentation/manual_testing/sign-in2MT.png)
 
 ## Sign out
 <hr>
 
-![Sign-out](documentation/manual_testing/sign-upMT.png)
+* Signing out prompt
+
+![Sign-out](documentation/manual_testing/sign-outMT.png)
+
+* Signed out and recieved a success message 
 
 ![Sign-out-success](documentation/manual_testing/sign-out2MT.png)
 
 ## Checkout
 <hr>
 
+* Checkout Summary showing Users personal details(test-details) and order summary.
+
 ![Checkout-summary](documentation/manual_testing/checkout-summary-MT.png)
 
+* Checkout success with loading overlay and a message success after completion.
+
 ![Checkout-success](documentation/manual_testing/checkout-success-MT.png)
+
+* Thank you for ordering page after successfully checking out with order.
 
 ![Checkout-thankyou](documentation/manual_testing/thanks-for-purchase-MT.png)
 
 ## Newsletter
 <hr>
 
+* Newsletter, thank you for subscribing and an email after 2-3 days from mailchimp(Due to free account)
+
 ![Newsletter](documentation/manual_testing/subscribe-MT.png)
 
 ## Admin
 <hr>
 
+* Admin panel after using Jazzmin with bootstrap styling
+
 ![Admin](documentation/manual_testing/admin-MT.png)
+
+* Adding product in admin panel.
 
 ![Admin-Product](documentation/manual_testing/admintest_MT.png)
 
+* Logging in admin panel.
+
 ![Admin-login](documentation/manual_testing/login-admin-MT.png)
+
+* Admin sign out message.
 
 ![Admin-Sign-out](documentation/manual_testing/admin-sign-out-MT.png)
 
 ## Product detail
 <hr>
 
+* Testing Product weight changing unit price in the shopping cart.
+
 ![Product-weight](documentation/manual_testing/cart-weight-test-price-MT.png)
-
-![Add-product-success](documentation/manual_testing/add-product-success-MT.png)
-
 
 ## Add product
 <hr>
 
+* Adding product in production.
+
 ![Add-product](documentation/manual_testing/add-product-MT.png)
+
+* Product successfully added in production.
 
 ![Add-product-success](documentation/manual_testing/add-product-success-MT.png)
 
@@ -1003,28 +1043,44 @@ My Schema of models used in this application made with lucidchart it was created
 ## Edit product
 <hr>
 
+* Editing product in production.
+
 ![Edit-product](documentation/manual_testing/edit-product-MT.png)
+
+* Product has been edited.
 
 ![Edit-product-success](documentation/manual_testing/edit-product-success-MT.png)
 
 ## Delete product
 <hr>
 
+* Deleting product in production with modal to confirm this action as it is irreversible.
+
 ![Delete-product](documentation/manual_testing/delete-product-MT.png)
+
+* Deleting product modal to give a confirmation for deleting product.
 
 ![Delete-product-success](documentation/manual_testing/delete-product-success-MT.png)
 
 ## Add review/Ratings
 <hr>
 
+* Image of reviews before adding a review.
+
 ![Reviews](documentation/manual_testing/User-reviews-MT.png)
 
+* Adding Review as a user.
+
 ![Add-review](documentation/manual_testing/add_review-MT.png)
+
+* Review added and showing up correctly with rating.
 
 ![Add-review-success](documentation/manual_testing/add_review-success-MT.png)
 
 ## Pagination
 <hr>
+
+* Page pagination working as intended
 
 ![Pagination-1](documentation/manual_testing/pagination-1-MT.png)
 
@@ -1033,7 +1089,11 @@ My Schema of models used in this application made with lucidchart it was created
 ## Contact
 <hr>
 
+* Contact form inputting details into fields
+
 ![Contact](documentation/manual_testing/contact-MT.png)
+
+* Confirmation email of contact being established successfully.
 
 ![Contact-success](documentation/manual_testing/contact-success-MT.png)
 
