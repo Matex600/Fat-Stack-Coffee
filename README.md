@@ -830,6 +830,14 @@ My Schema of models used in this application made with lucidchart it was created
 
 ## Javascript
 
+### Jshint
+
+* Product detail and Products [template](documentation/validation_docs/fsc_product/jshint) - all passed!
+
+* fsc_users [stripe_elements](documentation/validation_docs/fsc_users/jshint) - all passed!
+
+* fsc_checkout [country_fields](documentation/validation_docs/fsc_users/jshint) - all passed!
+
 ## Python
 
 ### Pep8
