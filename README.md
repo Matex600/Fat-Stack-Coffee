@@ -606,6 +606,59 @@ class FavouritesList(models.Model):
 
 My Schema of models used in this application made with lucidchart it was created at project conception and I have added after contact, reviews, rating and favourites models.
 
+# Project Design
+
+## Composition
+<hr>
+
+### Fonts
+<hr>
+
+* Heading Fonts:
+    * I have used Lato for my heading fonts as I like the style of this font and I feel like it compliments my project design.
+
+<hr>
+
+* Body Text Fonts:
+    * I have used Montserrat as this font style goes with Lato and I feel like they work well together in the purpose of this website.
+
+<hr>
+
+* Font size:
+    * has been kept to mostly default with css and otherwise handled by bootstrap 5
+
+<hr>
+
+### Color Scheme
+
+* The idea for the site is minimalistic and clean
+
+* Color: #000000
+    * I have chosen this color for my headings as to keep them minimalistic and visible.
+    * This colour is also used for button-custom background.
+    * as well as profile background form
+    * I am using #000000 for hovers on the main navbar to create an animation and indicate to users what they are hovering over
+
+* Color: #ffffff 
+    * This colour is used for the site background as well as white text on button-custom
+    * Delivery message at the top of the screen
+
+* Color: #e9ecef
+    * This colour is used by the mail chimp signup form to make it stand out.
+    * as well as the footer links.
+
+* Color: #68bb7d
+    * This colour is used for the footer a:hover links
+    and list hover
+
+* Color: #00008B
+    * This colour is used for when the cart has products inside.
+
+* Color: #212934 
+    * This colour is used to create the hover effect for the footer icons
+
+* Color: #dc3545 Is used for custom checkboxes in products form.
+
 # Project Features
 
 ## Home Page
@@ -740,8 +793,25 @@ My Schema of models used in this application made with lucidchart it was created
 
 * Contact details display when the shop is open and address.
 
+## Allauth
 
+### Sign in
 
+![Sign-In](documentation/features/sign_in.png)
+
+* Allows user to sign in or reset password.
+
+### Sign out
+
+![Sign-Out](documentation/features/sign_out.png)
+
+* Allows user to sign out and asks to confirm.
+
+### Sign up
+
+![Sign-Up](documentation/features/sign_up.png)
+
+* Allows users to register an account.
 
 ## Technologies Used
   * Coding Languages
