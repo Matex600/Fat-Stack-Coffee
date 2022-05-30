@@ -78,6 +78,8 @@
               </select>
             </div>
             {% endif %}
+          </div>
+        </form>
             <p class="mt-3">
               <strong>Quantity:
               </strong>
@@ -111,7 +113,7 @@
           </div>
           <div class="row">
             <div class="col-12 col-lg-6">
-              <!-- If user is logged in and has item in wishlist, this is visible on the button -->
+              <!-- If user is logged in and has item in favouriteslist, this is visible on the button -->
               {% if request.user.is_authenticated %}
               {% if product in wishlist %}
               <a href="{% url 'delete_from_favourites' product.id %}" aria-label="Remove product from Wishlist" class="w-100 btn inline btn-grey">
@@ -149,11 +151,8 @@
           <input type="hidden" name="redirect_url" value="{{ request.path }}">
           {% endwith %}
           </div>
-        </form>
     </div>
   </div>
-</div>
-</div>
 {% include 'reviews/includes/reviews.html' %}
 {% endblock %}
 {% block postloadjs %}
