@@ -119,6 +119,7 @@ Future user stories planned for next sprint review.
 
 - As a site administrator I can further customise the admin panel to enable easier management of the site and products.
 
+## Agile Methodology 
 
 ![KanBanBoard](https://res.cloudinary.com/matts-cloud/image/upload/v1653780377/kanbanfsc_zcya6d.png)
 
@@ -613,17 +614,31 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Main-Navbar](documentation/features/main_nav.png)
 
+* Easy to navigate with the main navbar with clear colours, function and design made with Bootstrap5.
+
 ### Carousel & filter nav
 
 ![Carousel](documentation/features/nav_and_carousel.png)
+
+* Carousel is used on the home page with 3 automatically scrolling images on the right with educational and inspirational text on the left.
 
 ### Featured products
 
 ![Featured-Products](documentation/features/featured_products.png)
 
+* Featured products section shows two coffees that are featured as well as a coding mug to entice coders to purchase a product as well as helping bring attention to potentially good products
+
+### Newsletter
+
+![FSC-Newsletter](documentation/features/newsletter.png)
+
+* Mailchimp newsletter allows users to subscribe on unsubscribe and recieve an email with 2-3 days.
+
 ### Footer and social links
 
 ![Footer-and-Social-links](documentation/features/footer.png)
+
+* Footer includes links to products as well as links to the sites other pages in addition it contains contact details.
 
 ## Products Page
 
@@ -631,25 +646,37 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Products-view](documentation/features/products_view.png)
 
+* Products view image is an admins version of products view, non super-users will not have the ability to edit or delete products, this area shows product name, price, category, image (placeholder if none), and allowing users to click on the image to be taken to the product details page.
+
 ### Products detail
 
 ![Product-Details](documentation/features/product_detail.png)
 
+* Product details page shows an enlarged product image for improved viewing, product name, price, how good the ratings are, a product description, product weight drop down, products quantity selectors as well as a go back button and add to cart button.
+
 ### Add product
 
-![Product-Edit](documentation/features/add_product.png)
+![Product-Add](documentation/features/add_product.png)
+
+* Add product page contains form fields for adding products.
 
 ### Edit product
 
-![Product-Add](documentation/features/edit_product.png)
+![Product-Edit](documentation/features/edit_product.png)
+
+* Edit product page contains form fields for edditing products.
 
 ### Add review
 
 ![Add-Review](documentation/features/add_review.png)
 
+* Add review page contains content and a star rating to rate and review product.
+
 ### Reviews
 
 ![User-reviews](documentation/features/user_reviews.png)
+
+* User review section shows a user review with a rating and content as well as username.
 
 ## Checkout
 
@@ -657,13 +684,19 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Shopping-Cart](documentation/features/shopping_cart.png)
 
+* Shopping cart page shows products added to cart as well as details about the products and also allows the user to change product quantity as well as see unit price, subtotal and grand totla as well as go to checkout button.
+
 ### Order summary
 
 ![Order-Summary](documentation/features/checkout_order_summary.png)
 
+* Order summary page shows products that are in cart and the total price, as well as form fields to checkout using stripe with a country fields drop down box and secure checkout button.
+
 ### Checkout successful
 
 ![Checkout-Success](documentation/features/checkout_success.png)
+
+* This page shows an invoice after a successful purchase displaying order information and order number with a button to check out other products.
 
 ## Profiles page
 
@@ -671,25 +704,41 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Profile-Favourites-List-Order-History](documentation/features/profile_favouriteslist_order_history.png)
 
+* Profiles page shows favourites, order history and personal details.
+
 ## About Page
 
 ### Fat stack coffee ethos
 
 ![Fat-Stack-Coffee-Ethos](documentation/features/fat_stack_ethos.png)
 
+* Fat stack coffee company ethos with thumbnail image
+
 ### Fat stack coffee services
 
 ![Fat-Stack-Coffee-Services](documentation/features/our_services.png)
 
+* Fat stack coffee company services animated with font awesome animations.
+
 ## Contact Page
+
+### Fat stack coffee google maps location
+
+![Google-Maps-Fat-Stack]](documentation/features/map_contact_google.png)
+
+* Google map embbeded with location using html.
 
 ### Fat stack coffee contact form
 
 ![Contact-Form](documentation/features/contact_form.png)
 
+* Fat stack coffee company Contact form allowing users to contact an administrator.
+
 ### Fat stack coffee contact details
 
 ![Contact_Details](documentation/features/contact_details.png)
+
+* Contact details display when the shop is open and address.
 
 
 
