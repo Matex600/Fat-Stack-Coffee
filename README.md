@@ -1087,6 +1087,72 @@ Fat stack coffee is on has a facebook business page for marketing and research p
 ![Created-on](documentation/readme_images/web_marketing/facebook/Facebook-Business-Page-Created.png)
 <hr>
 
+
+# Bug report
+
+## Squashed bugs
+
+1. MultidictKeyerror.
+    * Cause = more than 1 superuser with same email.
+    * Fix = Ensure only 1 user with same email
+
+2. NoReverseMatch.
+    * Cause = Incorrect url
+    * Fix = Repair url link and urls.py path
+
+3. Unsubscribe button mailchimp
+    * Cause = Unknown/Error with MC source code
+    * Fix = Remove element
+
+4. Sorting via star rating
+    * Cause = Unknown/Views
+    * Fix = Disable sorting via ratings
+
+5. Cloudinary Media/Static images with relative paths
+    * Cause = Cloudinary Bug
+    * Fix = Use cloudinary links for images in production.
+    * Fix = None
+
+6. Circular import error fsc_reviews/fsc_products
+    * Cause = Circular import
+    * Fix = Move fsc_reviews model and views to fsc_products app.
+
+7. Imagefield not working
+    * Cause = Max_length too low
+    * Fix = Increase Max_length, migrate.
+
+8. Weight not changing price products
+    * Cause = Not enough login
+    * Fix add javascript to product_details page
+
+
+## Remaining bugs
+
+* None reported as of 1.0 release
+
+## Security 
+
+  I have set debug to be automatic using the following.
+  * settings .py
+      ```
+      SECURITY WARNING: don't run with debug turned on in production!
+
+      DEBUG = "DEVELOPMENT" in os.environ
+      ```
+  * env.py
+      ```
+      os.environ["DEVELOPMENT"] = "True"
+      ```
+  * urls.py
+      
+      ```
+      from django.conf import settings
+
+      from django.conf.urls.static import static
+
+      urlpatterns = [ path(...... ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+      ```
+
 # Deployment
 
 ## Cloning Project with Github
