@@ -90,7 +90,7 @@
       <img class="img-fluid img-thumbnail"
         src="https://res.cloudinary.com/matts-cloud/image/upload/v1651747021/rsz_imageedit_3_2818077152_n8bjfp.png"
         alt="Site logo navy and light blue bear">
-      <a class="navbar-brand logo h1 align-self-center" href="{% url 'store' %}">
+      <a class="navbar-brand logo h1 align-self-center" rel="ugc" href="{% url 'store' %}">
         Fat Stack Coffee
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#fsc_main_nav"
@@ -118,7 +118,7 @@
         <div class="flex-fill">
           <ul class="nav navbar-nav d-flex justify-content-around mx-lg-auto">
             <li class="list-inline-item">
-              <a class="nav-link" href="{% url 'store' %}">
+              <a class="nav-link" rel="ugc" href="{% url 'store' %}">
                 <div class="text-center">
                   <div><i class="fa-solid fa-house"></i></div>
                   <p class="my-0">
@@ -128,7 +128,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a class="nav-link" href="{% url 'products' %}">
+              <a class="nav-link" rel="ugc" href="{% url 'products' %}">
                 <div class="text-center">
                   <div><i class="fa-solid fa-mug-hot"></i></div>
                   <p class="my-0">
@@ -138,7 +138,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a class="nav-link" href="{% url 'about' %}">
+              <a class="nav-link" rel="ugc" href="{% url 'about' %}">
                 <div class="text-center">
                   <div><i class="fa-solid fa-id-card-clip"></i></div>
                   <p class="my-0">
@@ -148,7 +148,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a class="nav-link" href="{% url 'contact' %}">
+              <a class="nav-link" rel="ugc" href="{% url 'contact' %}">
                 <div class="text-center">
                   <div><i class="fa-solid fa-address-book"></i></div>
                   <p class="my-0">
@@ -165,15 +165,15 @@
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                          <li><a class="dropdown-item" href="{% url 'fsc_add_product' %}">
+                          <li><a class="dropdown-item" rel="ugc" href="{% url 'fsc_add_product' %}">
                             Coffee Management</a>
                           </li>
                         {% endif %}
-                        <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
-                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                        <li><a class="dropdown-item" rel="ugc" href="{% url 'profile' %}">My Profile</a></li>
+                        <li><a class="dropdown-item" rel="ugc" href="{% url 'account_logout' %}">Logout</a></li>
                     {% else %}
-                      <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-                      <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                      <li><a class="dropdown-item" rel="ugc" href="{% url 'account_signup' %}">Register</a></li>
+                      <li><a class="dropdown-item" rel="ugc" href="{% url 'account_login' %}">Login</a></li>
                     {% endif %}
                     
                   </ul>
