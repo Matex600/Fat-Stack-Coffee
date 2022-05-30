@@ -605,6 +605,95 @@ class FavouritesList(models.Model):
 
 My Schema of models used in this application made with lucidchart it was created at project conception and I have added after contact, reviews, rating and favourites models.
 
+# Project Features
+
+## Home Page
+
+### Main navbar
+
+![Main-Navbar](documentation/features/main_nav.png)
+
+### Carousel & filter nav
+
+![Carousel](documentation/features/nav_and_carousel.png)
+
+### Featured products
+
+![Featured-Products](documentation/features/featured_products.png)
+
+### Footer and social links
+
+![Footer-and-Social-links](documentation/features/footer.png)
+
+## Products Page
+
+### Products view
+
+![Products-view](documentation/features/products_view.png)
+
+### Products detail
+
+![Product-Details](documentation/features/product_detail.png)
+
+### Add product
+
+![Product-Edit](documentation/features/add_product.png)
+
+### Edit product
+
+![Product-Add](documentation/features/edit_product.png)
+
+### Add review
+
+![Add-Review](documentation/features/add_review.png)
+
+### Reviews
+
+![User-reviews](documentation/features/user_reviews.png)
+
+## Checkout
+
+### Shopping cart
+
+![Shopping-Cart](documentation/features/shopping_cart.png)
+
+### Order summary
+
+![Order-Summary](documentation/features/checkout_order_summary.png)
+
+### Checkout successful
+
+![Checkout-Success](documentation/features/checkout_success.png)
+
+## Profiles page
+
+### Profile favourites list order history
+
+![Profile-Favourites-List-Order-History](documentation/features/profile_favouriteslist_order_history.png)
+
+## About Page
+
+### Fat stack coffee ethos
+
+![Fat-Stack-Coffee-Ethos](documentation/features/fat_stack_ethos.png)
+
+### Fat stack coffee services
+
+![Fat-Stack-Coffee-Services](documentation/features/our_services.png)
+
+## Contact Page
+
+### Fat stack coffee contact form
+
+![Contact-Form](documentation/features/contact_form.png)
+
+### Fat stack coffee contact details
+
+![Contact_Details](documentation/features/contact_details.png)
+
+
+
+
 ## Technologies Used
   * Coding Languages
 
