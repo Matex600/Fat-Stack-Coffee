@@ -817,7 +817,36 @@ My Schema of models used in this application made with lucidchart it was created
 
 * Allows users to register an account.
 
-## Technologies Used
+
+# Code Validation
+
+## HTML
+
+### Beautify
+
+### Nu Html Checker
+
+## CSS
+
+## Javascript
+
+## Python
+
+### Pep8
+
+* [Project level ](documentation/validation_docs/fat_stack_coffee) - all passed!
+
+* [fsc_cart](documentation/validation_docs/fsc_cart) - all passed!
+
+* [fsc_checkout](documentation/validation_docs/fsc_checkout) - all passed!
+
+* [fsc_contact](documentation/validation_docs/fsc_contact) - all passed!
+
+* [fsc_product](documentation/validation_docs/fsc_product) - all passed!
+
+* [fsc_users](documentation/validation_docs/fsc_users) - all passed!
+
+# Technologies Used
   * Coding Languages
 
     * [HTML5](https://en.wikipedia.org/wiki/HTML5). - Site structure.
