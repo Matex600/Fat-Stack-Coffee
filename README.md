@@ -926,6 +926,118 @@ My Schema of models used in this application made with lucidchart it was created
   * [Beautify](https://htmlbeautify.com/) - Improving layout of html templates.
 
 
+# Manual Testing
+
+## Sign up
+<hr>
+
+* Testing Signup I have tested local and production with sucess on both ends
+    * User has to enter email to register as well as verify it.
+    * Cannot enter password similar to username/email.
+
+![Signup](documentation/manual_testing/sign-upMT.png)
+
+![Verify-Email](documentation/manual_testing/verify-MT.png)
+
+![Verify-Email-link](documentation/manual_testing/verify2-MT.png)
+
+![Email-confirm](documentation/manual_testing/verify3-MT.png)
+
+![Verify-Email-link-success](documentation/manual_testing/verify4-MT.png)
+
+## Sign in
+<hr>
+
+![Sign-in](documentation/manual_testing/sign-inMT.png)
+
+![Sign-in-success](documentation/manual_testing/sign-in2MT.png)
+
+## Sign out
+<hr>
+
+![Sign-out](documentation/manual_testing/sign-upMT.png)
+
+![Sign-out-success](documentation/manual_testing/sign-out2MT.png)
+
+## Checkout
+<hr>
+
+![Checkout-summary](documentation/manual_testing/checkout-summary-MT.png)
+
+![Checkout-success](documentation/manual_testing/checkout-success-MT.png)
+
+![Checkout-thankyou](documentation/manual_testing/thanks-for-purchase-MT.png)
+
+## Newsletter
+<hr>
+
+![Newsletter](documentation/manual_testing/subscribe-MT.png)
+
+## Admin
+<hr>
+
+![Admin](documentation/manual_testing/admin-MT.png)
+
+![Admin-Product](documentation/manual_testing/admintest_MT.png)
+
+![Admin-login](documentation/manual_testing/login-admin-MT.png)
+
+![Admin-Sign-out](documentation/manual_testing/admin-sign-out-MT.png)
+
+## Product detail
+<hr>
+
+![Product-weight](documentation/manual_testing/cart-weight-test-price-MT.png)
+
+![Add-product-success](documentation/manual_testing/add-product-success-MT.png)
+
+
+## Add product
+<hr>
+
+![Add-product](documentation/manual_testing/add-product-MT.png)
+
+![Add-product-success](documentation/manual_testing/add-product-success-MT.png)
+
+
+## Edit product
+<hr>
+
+![Edit-product](documentation/manual_testing/edit-product-MT.png)
+
+![Edit-product-success](documentation/manual_testing/edit-product-success-MT.png)
+
+## Delete product
+<hr>
+
+![Delete-product](documentation/manual_testing/delete-product-MT.png)
+
+![Delete-product-success](documentation/manual_testing/delete-product-success-MT.png)
+
+## Add review/Ratings
+<hr>
+
+![Reviews](documentation/manual_testing/User-reviews-MT.png)
+
+![Add-review](documentation/manual_testing/add_review-MT.png)
+
+![Add-review-success](documentation/manual_testing/add_review-success-MT.png)
+
+## Pagination
+<hr>
+
+![Pagination-1](documentation/manual_testing/pagination-1-MT.png)
+
+![Pagination-2](documentation/manual_testing/pagination-2-MT.png)
+
+## Contact
+<hr>
+
+![Contact](documentation/manual_testing/contact-MT.png)
+
+![Contact-success](documentation/manual_testing/contact-success-MT.png)
+
+
 # SEO Research and Implementation
 
 ## SEO Research
