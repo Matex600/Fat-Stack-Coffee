@@ -609,7 +609,7 @@ My Schema of models used in this application made with lucidchart it was created
 # Project Design
 
 ## Composition
-<hr>
+
 
 ### Fonts
 <hr>
@@ -658,6 +658,10 @@ My Schema of models used in this application made with lucidchart it was created
     * This colour is used to create the hover effect for the footer icons
 
 * Color: #dc3545 Is used for custom checkboxes in products form.
+
+### Color Contrast Grid
+
+![Eight-Shapes](documentation/readme_images/colors/contrast-grid-fs-coffee-Mateusz.png)
 
 # Project Features
 
