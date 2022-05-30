@@ -828,6 +828,16 @@ My Schema of models used in this application made with lucidchart it was created
 
 ## CSS
 
+### Jigsaw
+
+* Project Level [base.html](documentation/validation_docs/fat_stack_coffee/jigsaw_css) - all passed!
+
+* fsc_users [user_profile.css](documentation/validation_docs/fsc_users/jigsaw_css) - all passed!
+
+* fsc_checkout [checkout.css](documentation/validation_docs/fsc_checkout/jigsaw_css) - all passed!
+
+* fsc_contact [contact.css](documentation/validation_docs/fsc_contact/jigsaw_css) - all passed!
+
 ## Javascript
 
 ### Jshint
