@@ -13,6 +13,7 @@ h3.mb-0 {
 /* Body */
 
 body {
+    background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     overflow-x: scroll;
     overflow-y: scroll;
@@ -51,7 +52,7 @@ width: 100%
       width: 100%;
       height: 4px;
       border-radius: 4px;
-      background-color: #01081B;
+      background-color: #000000;
       bottom: 0;
       left: 0;
       transform-origin: right;
@@ -64,8 +65,12 @@ width: 100%
     transform: scaleX(1);
   }
 
-#fsc_main_nav a:hover { color: #01081B;}
+#fsc_main_nav a:hover { color: #000000;}
 #fsc_main_nav .navbar .nav-icon { margin-right: 20px;}
+
+.text-cart {
+  color: #00008B!important;
+}
 
 #icons-pad {
   padding-right: 15px;
@@ -78,7 +83,7 @@ width: 100%
 /* Carousel Hero */
 #fatstack-carousel-hero .carousel-indicators li {
   margin-top: -50px;
-  background-color: #01081B;
+  background-color: #000000;
 }
 
 #fatstack-carousel-hero .carousel-control-next i,
@@ -113,7 +118,7 @@ width: 100%
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: #ffffff;
 	z-index: -1;
 }
 
@@ -226,7 +231,7 @@ div#mc_embed_signup_scroll {
 /* Footer */
 
 #fatstack_footer a { 
-  color: #dcdde1;
+  color: #e9ecef;;
 }
 #fatstack_footer a:hover { 
   color: #68bb7d;
@@ -240,7 +245,7 @@ div#mc_embed_signup_scroll {
   line-height: 2.6em;
 }
 #fatstack_footer ul.footer-icons li:hover {
-  background-color: #cfd6e1;
+  background-color: #e9ecef;
   transition: .5s;
 }
 #fatstack_footer ul.footer-icons li:hover i {
@@ -297,7 +302,7 @@ div#mc_embed_signup_scroll {
 }
 
 .allauth-form-inner-content input {
-  border-color: #000;
+  border-color: #000000;
   border-radius: 0;
 }
 
@@ -314,7 +319,7 @@ div#mc_embed_signup_scroll {
 /* btn */
 display: inline-block;
   font-weight: 400;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -334,14 +339,11 @@ display: inline-block;
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-color: #fff;
+  color: #ffffff;
   background-color: #222;
   border-color: #222;
 }
 
-.allauth-form-inner-content a {
-color: #17a2b8; /* text-info */
-}
 
 /* Product Form */
 
