@@ -80,8 +80,7 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for weight, quantity in item_data['items_by_weight'].items():
-                            # flake8: noqa
+                        for weight, quantity in item_data['items_by_weight'].items():  # noqa
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -99,14 +98,15 @@ def checkout(request):
                     return redirect(reverse('view_cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success', args=[order.order_number]))  # noqa
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in your cart at the moment")
+            messages.error(request, "There's nothing in your"
+                                    "cart at the moment")
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
