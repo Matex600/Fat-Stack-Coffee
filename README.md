@@ -824,7 +824,13 @@ My Schema of models used in this application made with lucidchart it was created
 
 ### Beautify
 
+* I used HTML Beautify to help improve layout of html jinja templates this also formats code for better viewing.
+
 ### Nu Html Checker
+
+* HTML Validation using [nu-html](documentation/validation_docs/nu_html) - all passed!
+    * Only error encountered was an issue with mailchimp in the footer if followed instructions breaking mailchimp (Mailchimp code).
+
 
 ## CSS
 
