@@ -45,12 +45,15 @@
           </i>{% if product.get_rating == 0 %}No ratings yet{% else %}{{ product.get_rating|floatformat:1 }}{% endif %} 
         </small>
         {% if request.user.is_superuser %}
-        <small class="ml-3">
-          <a href="{% url 'fsc_edit_product' product.id %}">Edit
-          </a> | 
-          <a class="text-danger" href="{% url 'fsc_delete_product' product.id %}">Delete
-          </a>
-        </small>
+          <small class="ml-3">
+              <a class="btn btn-secondary" href="{% url 'fsc_edit_product' product.id %}">Edit</a>
+              <!-- Button trigger delete product modal -->
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteProductModal{{ product.id}}">
+                  Remove
+              </button>
+          </small>
+          <!-- Favourites remove modal -->
+          {% include 'products/includes/delete_product_modal.html' %}
         {% endif %}
         <p class="mt-3">{{ product.description }}
         </p>
@@ -79,7 +82,7 @@
             </div>
             {% endif %}
           </div>
-        </form>
+        
             <p class="mt-3">
               <strong>Quantity:
               </strong>
