@@ -5,6 +5,8 @@
 
 {% endblock %}
 {% block content %}
+
+<!-- Products and Category -->
 <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
@@ -23,12 +25,11 @@
                 <div class="row mt-1 mb-2">
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                         <div class="sort-select-wrapper w-50">
+                            <!-- Sorting by price, category and name -->
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
-                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
                                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                                 <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
                                 <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
@@ -36,6 +37,7 @@
                             </select>
                         </div>
                     </div>
+                    <!-- Search terms -->
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
@@ -47,6 +49,7 @@
                 </div>
             </div>
         </div>
+        <!-- Product Display -->
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
@@ -77,6 +80,7 @@
                                                 </a>
                                             </p>
                                             {% endif %}
+                                            <!-- Review Ratings -->
                                             <small class="text-muted"><i class="fas fa-star mr-1"></i>{% if product.get_rating == 0 %}No ratings yet{% else %}{{ product.get_rating|floatformat:1 }}{% endif %} </small>
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
@@ -94,6 +98,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Displays amount on products on a row for different screens -->
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>
@@ -145,6 +150,8 @@
         </div>
     </div>
 {% endblock %}
+
+<!-- Javascript -->
 
 {% block postloadjs %}
     {{ block.super }}
