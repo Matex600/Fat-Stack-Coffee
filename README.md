@@ -1,4 +1,4 @@
-![AmIresponsive](https://res.cloudinary.com/matts-cloud/image/upload/v1653770268/amiresponsivep5fsc_k2cc5r.png)
+![AmIresponsive](documentation/readme_images/amiresponsivep5fsc.png)
 
 # Fat Stack Coffee 
 
@@ -162,32 +162,43 @@ This project has been built with the future in mind, post 1.0 release I am eager
 <br>
 
 - Live chat
-    - Customer Support
+    * Customer Support
 
 - Ajax Queries
-    - Improved page loading
+    * Improved page loading
 
 - Improved Products
+    * Descriptions
 
 - Subscription Model
+    * Cancel anytime
 
 - Ability to checkout in different Currencies
+    * Easier checkout
 
 - Ability to change site language
+    * Improved access for users with different languages
 
 - Dark/Light Theme
+    * For greater UX
 
 - Expanded user-profile
+    * Greater customisability 
 
 - FSC Blog
-    - Comments
-    - Likes
+    * Comments
+    * Likes
 
 - Performance optimisation
+     * Better Performance
 
 - Bug Fixes
 
 - Responsiveness Improvements
+
+- Extended security systems
+
+- Expanded SEO
 
 [Back to Table Of Content](#tableOfContents)
 
@@ -210,13 +221,13 @@ Users can also make payments via the checkout app using a credit/debit card via 
 ### Card Testing
 Payment testing use information below.
 
-![Payment-Test](https://res.cloudinary.com/matts-cloud/image/upload/v1653775390/payment-test_djckc9.png)
+![Payment-Test](documentation/readme_images/payment-test.png)
 
 <br>
 
 ## User Stories 
 
-![User-Stories](https://res.cloudinary.com/matts-cloud/image/upload/v1653774696/user-stories-epics-fs-coffee_e0uqah.png)
+![User-Stories](documentation/readme_images/user-stories-epics-fs-coffee.png)
 
 I have created my user stories and epics using an agile approach and would like to continue improving on this aspect in the future with newer and updated previous projects.
 
@@ -238,7 +249,7 @@ Future user stories are planned for the next sprint review.
 
 [Back to Table Of Content](#tableOfContents)
 
-![KanBanBoard](https://res.cloudinary.com/matts-cloud/image/upload/v1653780377/kanbanfsc_zcya6d.png)
+![KanBanBoard](documentation/readme_images/kanbanfsc.png)
 
 All Github issues and project was created according to the MoSCoW to allow to plan and reach a consensus on resource allocation on the project.
 
@@ -266,9 +277,9 @@ How to Create a Kanban Board project and steps taken.
 
 [Back to Table Of Content](#tableOfContents)
 
-![Significance and Complexity](https://res.cloudinary.com/matts-cloud/image/upload/v1653774696/Significance-and-complexity-fs-coffee-Mateusz_pohqgf.png)
+![Significance and Complexity](documentation/readme_images/Significance-and-complexity-fs-coffee-Mateusz.png)
 
-![Key](https://res.cloudinary.com/matts-cloud/image/upload/v1653774696/Significance-and-complexity-key-fs-coffee_rslwst.png)
+![Key](documentation/readme_images/Significance-and-complexity-key-fs-coffee.PNG)
 
 7. All of the above have been Completed
     1. I have chosen Cloudinary over AWS as I am more comfortable with it.
@@ -1585,7 +1596,7 @@ Fat stack coffee is on has a Facebook business page for marketing and research p
       * EMAIL_HOST_Pass = Gmail, App Password
 
         * Create [App](https://devanswers.co/create-application-specific-password-gmail/) password
-        
+
         <br>
 
         ```
@@ -1613,7 +1624,7 @@ Fat stack coffee is on has a Facebook business page for marketing and research p
 
         <br>
 
-        ![SecuredVarExample](https://res.cloudinary.com/matts-cloud/image/upload/v1653828408/config-vars_en303z.png)
+        ![SecuredVarExample](documentation/readme_images/config-vars.png)
 
     3. Create Procfile containing the application name to ensure proper formatting or deployment will fail.
 
