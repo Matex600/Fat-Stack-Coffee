@@ -11,6 +11,120 @@
 
 I recommend clicking any links found in this README with Ctrl + Left mouse click for (Windows) and Control + click (Mac).
 
+# TableOfContent
+
+<a name="tableOfContents"></a>
+
+- [Project Overview](#project-overview)
+  * [Introduction](#introduction)
+  * [Goals](#goals)
+  * [Purpose](#purpose)
+  * [Project Future](#project-future)
+  * [Future Features](#future-features)
+- [User Experience](#user-experience)
+  * [UX](#ux)
+    + [Card Testing](#card-testing)
+  * [User Stories](#user-stories)
+  * [Agile Methodology](#agile-methodology)
+  * [Significance and Complexity](#significance-and-complexity)
+  * [User Testing](#user-testing)
+- [Wireframes](#wireframes)
+    + [PC Wireframes](#pc-wireframes)
+    + [Laptop Wireframes](#laptop-wireframes)
+    + [Tablet Wireframes](#tablet-wireframes)
+    + [Mobile](#mobile)
+- [Database Models](#database-models)
+  * [fsc_users app model structure (UserProfile)](#fsc-users-app-model-structure--userprofile-)
+  * [fsc_contact app model structure (Contact)](#fsc-contact-app-model-structure--contact-)
+  * [fsc_checkout app model structure (Order, OrderLineItem)](#fsc-checkout-app-model-structure--order--orderlineitem-)
+  * [fsc_products app model structure (Category, Products, Review, FavouritesList)](#fsc-products-app-model-structure--category--products--review--favouriteslist-)
+  * [Database Schema](#database-schema)
+- [Project Design](#project-design)
+  * [Composition](#composition)
+    + [Fonts](#fonts)
+    + [Color Scheme](#color-scheme)
+    + [Color Contrast Grid](#color-contrast-grid)
+- [Project Features](#project-features)
+  * [Home Page](#home-page)
+    + [Main navbar](#main-navbar)
+    + [Carousel & filter nav](#carousel---filter-nav)
+    + [Featured products](#featured-products)
+    + [Newsletter](#newsletter)
+    + [Footer and social links](#footer-and-social-links)
+  * [Products Page](#products-page)
+    + [Products view](#products-view)
+    + [Products detail](#products-detail)
+    + [Add product](#add-product)
+    + [Edit product](#edit-product)
+    + [Add review](#add-review)
+    + [Reviews](#reviews)
+  * [Checkout](#checkout)
+    + [Shopping cart](#shopping-cart)
+    + [Order summary](#order-summary)
+    + [Checkout successful](#checkout-successful)
+  * [Profiles page](#profiles-page)
+    + [Profile favourites list order history](#profile-favourites-list-order-history)
+  * [About Page](#about-page)
+    + [Fat stack coffee ethos](#fat-stack-coffee-ethos)
+    + [Fat stack coffee services](#fat-stack-coffee-services)
+  * [Contact Page](#contact-page)
+    + [Fat stack coffee google maps location](#fat-stack-coffee-google-maps-location)
+    + [Fat stack coffee contact form](#fat-stack-coffee-contact-form)
+    + [Fat stack coffee contact details](#fat-stack-coffee-contact-details)
+  * [Allauth](#allauth)
+    + [Sign in](#sign-in)
+    + [Sign out](#sign-out)
+    + [Sign up](#sign-up)
+- [Code Validation](#code-validation)
+  * [HTML](#html)
+    + [Beautify](#beautify)
+    + [Nu Html Checker](#nu-html-checker)
+  * [CSS](#css)
+    + [Jigsaw](#jigsaw)
+  * [Javascript](#javascript)
+    + [Jshint](#jshint)
+  * [Python](#python)
+    + [Pep8](#pep8)
+- [Technologies Used](#technologies-used)
+- [Manual Testing](#manual-testing)
+  * [Sign up](#sign-up-1)
+  * [Sign in](#sign-in-1)
+  * [Sign out](#sign-out-1)
+  * [Checkout](#checkout-1)
+  * [Newsletter](#newsletter-1)
+  * [Admin](#admin)
+  * [Product detail](#product-detail)
+  * [Add product](#add-product-1)
+  * [Edit product](#edit-product-1)
+  * [Delete product](#delete-product)
+  * [Add review/Ratings](#add-review-ratings)
+  * [Pagination](#pagination)
+  * [Contact](#contact)
+- [SEO Research and Implementation](#seo-research-and-implementation)
+  * [SEO Research](#seo-research)
+    + [Marketing research](#marketing-research)
+    + [Keyword Research](#keyword-research)
+    + [SEO Keywords](#seo-keywords)
+- [Web Marketing](#web-marketing)
+  * [Newsletter](#newsletter-2)
+  * [Facebook business page](#facebook-business-page)
+- [Bug report](#bug-report)
+  * [Squashed bugs](#squashed-bugs)
+  * [Remaining bugs](#remaining-bugs)
+  * [Security](#security)
+- [Deployment](#deployment)
+  * [Cloning Project with Github](#cloning-project-with-github)
+  * [Forking Project Via Github](#forking-project-via-github)
+  * [Deployment via Heroku](#deployment-via-heroku)
+      - [**Note.**](#--note--)
+- [Credits](#credits)
+  * [Media](#media)
+  * [Product Images](#product-images)
+  * [Site-Wide Images](#site-wide-images)
+  * [Technology Acknowledgments](#technology-acknowledgments)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 # Project Overview
 
 ## Introduction
@@ -75,6 +189,8 @@ This project has been built with the future in mind, post 1.0 release I am eager
 
 - Responsiveness Improvements
 
+[Back to Table Of Content](#tableOfContents)
+
 # User Experience
 
 ## UX
@@ -120,6 +236,8 @@ Future user stories are planned for the next sprint review.
 
 ## Agile Methodology 
 
+[Back to Table Of Content](#tableOfContents)
+
 ![KanBanBoard](https://res.cloudinary.com/matts-cloud/image/upload/v1653780377/kanbanfsc_zcya6d.png)
 
 All Github issues and project was created according to the MoSCoW to allow to plan and reach a consensus on resource allocation on the project.
@@ -146,13 +264,15 @@ How to Create a Kanban Board project and steps taken.
 
 ## Significance and Complexity
 
+[Back to Table Of Content](#tableOfContents)
+
 ![Significance and Complexity](https://res.cloudinary.com/matts-cloud/image/upload/v1653774696/Significance-and-complexity-fs-coffee-Mateusz_pohqgf.png)
 
 ![Key](https://res.cloudinary.com/matts-cloud/image/upload/v1653774696/Significance-and-complexity-key-fs-coffee_rslwst.png)
 
 7. All of the above have been Completed
     1. I have chosen Cloudinary over AWS as I am more comfortable with it.
-8. I increased scope of the project after initial plannin, as I had more time than I expected.
+8. I increased scope of the project after initial plannig, as I had more time than I expected.
 
 <br>
 
@@ -174,6 +294,8 @@ How to Create a Kanban Board project and steps taken.
 <br>
 
 # Wireframes
+
+[Back to Table Of Content](#tableOfContents)
 
 ### PC Wireframes
 * [Desktop](documentation/wireframes/desktop)
@@ -449,6 +571,8 @@ class OrderLineItem(models.Model):
 
 ```
 
+[Back to Table Of Content](#tableOfContents)
+
 ## fsc_products app model structure (Category, Products, Review, FavouritesList)
 <hr>
 
@@ -600,6 +724,8 @@ class FavouritesList(models.Model):
 
     * FavouritesList - A Model that handles creating a list of products that a user has saved, which appears on the users profile page as a list.
 
+[Back to Table Of Content](#tableOfContents)
+
 ## Database Schema
 ![DBSchema](documentation/readme_images/database_schema/db_schema_fscoffee_Mateusz.png)
 
@@ -629,6 +755,8 @@ My Schema of models used in this application made with lucidchart it was created
 <hr>
 
 ### Color Scheme
+
+[Back to Table Of Content](#tableOfContents)
 
 * The idea for the site is minimalistic and clean
 
@@ -687,6 +815,8 @@ My Schema of models used in this application made with lucidchart it was created
 ### Newsletter
 
 ![FSC-Newsletter](documentation/features/newsletter.png)
+
+[Back to Table Of Content](#tableOfContents)
 
 * Mailchimp newsletter allows users to subscribe on unsubscribe and receive an email within 2-3 days.
 
@@ -756,6 +886,8 @@ My Schema of models used in this application made with lucidchart it was created
 
 ## Profiles page
 
+[Back to Table Of Content](#tableOfContents)
+
 ### Profile favourites list order history
 
 ![Profile-Favourites-List-Order-History](documentation/features/profile_favouriteslist_order_history.png)
@@ -797,6 +929,8 @@ My Schema of models used in this application made with lucidchart it was created
 * Contact details display when the shop is open and address.
 
 ## Allauth
+
+[Back to Table Of Content](#tableOfContents)
 
 ### Sign in
 
@@ -869,6 +1003,8 @@ My Schema of models used in this application made with lucidchart it was created
 
 * [fsc_users](documentation/validation_docs/fsc_users) - all passed!
 
+[Back to Table Of Content](#tableOfContents)
+
 # Technologies Used
   * Coding Languages
 
@@ -926,6 +1062,8 @@ My Schema of models used in this application made with lucidchart it was created
 
 
 # Manual Testing
+
+[Back to Table Of Content](#tableOfContents)
 
 ## Sign up
 <hr>
@@ -1038,6 +1176,7 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Add-product-success](documentation/manual_testing/add-product-success-MT.png)
 
+[Back to Table Of Content](#tableOfContents)
 
 ## Edit product
 <hr>
@@ -1098,6 +1237,8 @@ My Schema of models used in this application made with lucidchart it was created
 
 
 # SEO Research and Implementation
+
+[Back to Table Of Content](#tableOfContents)
 
 ## SEO Research
 
@@ -1223,6 +1364,9 @@ Code Institute, Lesson Excercise
     and social links that open in another tab
 
 
+[Back to Table Of Content](#tableOfContents)
+
+
 ### SEO Keywords
 <hr>
 
@@ -1297,6 +1441,9 @@ Fat stack coffee is on has a Facebook business page for marketing and research p
     * Fix add javascript to product_details page
 
 
+[Back to Table Of Content](#tableOfContents)
+
+
 ## Remaining bugs
 
 * None reported as of 1.0 release
@@ -1360,6 +1507,9 @@ Fat stack coffee is on has a Facebook business page for marketing and research p
     2. Navigate to the top right of the web page and click on **Fork**.
 
     3. After this has been done a fork will be created for you to use!
+
+
+[Back to Table Of Content](#tableOfContents)
 
 
 ## Deployment via Heroku
@@ -1518,6 +1668,8 @@ Fat stack coffee is on has a Facebook business page for marketing and research p
 
     This project uses Python and has to be deployed with a hosting platform such as Heroku as it handles backend functionality.
 
+[Back to Table Of Content](#tableOfContents)
+
 # Credits
 
 ## Media
@@ -1588,6 +1740,9 @@ Procured from
         * Thank you to my mentor Maranatha Ilesanmi, for guiding me through this course and helping me overcome anxiety about my projects as well as helping me resolve issues I have come across with my code and projects as well as teaching me!
 
 <br>
+
+[Back to Table Of Content](#tableOfContents)
+
 
 * [Stack Overflow](https://stackoverflow.com/) - Has helped me countlessly on fixing issues and incompatibilites with my project such as pip errors and send_mail not functioning properly and many more!
 
