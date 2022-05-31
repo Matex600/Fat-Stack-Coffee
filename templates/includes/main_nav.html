@@ -5,6 +5,7 @@
             Store
         </a>
       </li>
+      <!-- Sorting all products -->
         <li class="dropdown">
             <a class="btn dropdown-toggle" href="#" role="button" id="AllProductsLink" data-bs-toggle="dropdown" aria-expanded="false">
               All products
@@ -15,6 +16,7 @@
               <li><a class="dropdown-item" href="{% url 'products' %}">All products</a></li>
             </ul>
          </li>
+        <!-- Sorting by coffee -->
         <li class="dropdown">
             <a class="btn dropdown-toggle" href="#" role="button" id="CoffeeMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               Coffee
@@ -28,6 +30,7 @@
               <li><a class="dropdown-item" href="{% url 'products' %}?category=light_roast,medium_roast,medium_dark_roast,dark_roast">All Coffee</a></li>
             </ul>
           </li>
+        <!-- sorting by coffee mugs -->
         <li class="dropdown">
           <a class="btn dropdown-toggle" href="#" role="button" id="CoffeeMugsMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               Coffee Mugs
@@ -40,7 +43,7 @@
               <li><a class="dropdown-item" href="{% url 'products' %}?category=coding_mugs,gaming_mugs,regular_mugs">All Mugs</a></li>
           </ul>
        </li>
-
+       <!-- sorting by coffee machines -->
         <li class="dropdown">
             <a class="btn dropdown-toggle" href="#" role="button" id="CoffeeMakersMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               Coffee Makers
