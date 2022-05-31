@@ -1235,6 +1235,10 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Contact-success](documentation/manual_testing/contact-success-MT.png)
 
+## Automatic testing 
+
+* Automated tests have not been created due to time constraints during the development of this project.
+
 
 # SEO Research and Implementation
 
@@ -1581,6 +1585,8 @@ Fat stack coffee is on has a Facebook business page for marketing and research p
       * EMAIL_HOST_Pass = Gmail, App Password
 
         * Create [App](https://devanswers.co/create-application-specific-password-gmail/) password
+        
+        <br>
 
         ```
             import os
