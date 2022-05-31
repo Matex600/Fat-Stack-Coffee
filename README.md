@@ -17,31 +17,31 @@ I recommend clicking any links found in this README with Ctrl + Left mouse click
 
 **Project Portfolio 5 - Ecommerce for  [CodeInstitute](https://codeinstitute.net/) Full-stack course (5P)**
 
-I have created this full-stack application using the Python, Django framework, Heroku PostgreSQL as well as front end technologies, HTML, CSS and Javascript.
+I have created this full-stack application using the Python, Django framework, Heroku PostgreSQL and front-end technologies, HTML, CSS, and Javascript.
 
-In addition to this, I made extensive use of git, Gitpod and Github functionality.
+In addition to this, I made extensive use of git, Gitpod, and Github functionality.
 
 ## Goals
 
-The goal for this project, was to allow users to register and confirm email address, create a profile which would store user order information, order history and favourited products as well as being able to log back in and log out again.
+The goal for this project was to allow users to register and confirm their email address, create a profile that would store user order information, order history, and favourited products as well as be able to log back in and log out again.
 
-Users also have the ability to browse filter and sort products by name, price and category.
+Users also can browse filter and sort products by name, price, and category.
 
 As well as allow purchases of products themed around coffee, with different weights that are reflective of pricing, favouriting products to save for later this also includes making reviews for products.
 
-Visitors to the site may also subscribe or unsubscribe to a newsletter provided by mailchimp, and receive a confirmation email with their order, visitors may also use the contact form provided in the contacts section to contact an administrator and get a response within 1-2 working days.
+Visitors to the site may also subscribe or unsubscribe to a newsletter provided by MailChimp, and receive a confirmation email with their order, visitors may also use the contact form provided in the contacts section to contact an administrator and get a response within 1-2 working days.
 
 ## Purpose
 
 <br>
 
-The projects purpose is to enable customers/registered users to make purchases, register an account and review products while enjoying smooth user experience and user interface.
+The project's purpose is to enable customers/registered users to make purchases, register an account, and review products while enjoying a smooth user experience and user interface.
 
 ## Project Future
 
 <br>
 
-This project has been built with the future in mind, post 1.0 release I am eager to implement further features, optimisation, new technologies, modernised design, styling improvements, added responsiveness and new features!
+This project has been built with the future in mind, post 1.0 release I am eager to implement further features, optimisation, new technologies, modernised design, styling improvements, added responsiveness, and new features!
 
 ## Future Features
 
@@ -81,12 +81,11 @@ This project has been built with the future in mind, post 1.0 release I am eager
 
 <br>
 
-User experience has been designed with a minimalistic, clean and professional look.
-A light coloured background and bold dark colours for text as well as sharp images to portray the purpose and goal of the ecommerce-site.
+User experience has been designed with a minimalistic, clean, and professional look.
+A light-colored background and bold dark colors for text as well as sharp images portray the purpose and goal of the e-commerce-site.
 
-Customer can browse the site finding out more about featured products, as well as
-find out more about the benefits of coffee, User can open facebook social links in a new tab, subscribe to a newsletter. Users have the ability to reach out to the site owner with the contact page as well as read more about the company on the about us page.
-
+Customers can browse the site to find out more about featured products, as well as
+find out more about the benefits of coffee, User can open Facebook social links in a new tab, and subscribe to a newsletter. Users can reach out to the site owner with the contact page as well as read more about the company on the about us page.
 
 Users can also make payments via the checkout app using a credit/debit card via *[stripe](https://stripe.com/gb)* technology.
 
@@ -105,15 +104,15 @@ Payment testing use information below.
 
 I have created my user stories and epics using an agile approach and would like to continue improving on this aspect in the future with newer and updated previous projects.
 
-I am planning to expand my knowledge on user stories and epics in the future and greatly expand them.
+I am planning to expand my knowledge of user stories and epics in the future and greatly expand them.
 
-Future user stories planned for next sprint review.
+Future user stories are planned for the next sprint review.
 
-- As a customer I will experience greater performance on the site.
+- As a customer, I will experience greater performance on the site.
 
-- As a site owner I can the same products with different colours in one product.
+- As a site owner I can the same products with different colors in one product.
 
-- As a customer I can enter my post code or zip code and can select my address from a drop down input.
+- As a customer, I can enter my postcode or zip code and can select my address from a drop-down input.
 
 - As a customer entering details I can see input validation while I am typing in my details so I can be reminded and correct them.
 
@@ -160,17 +159,17 @@ How to Create a Kanban Board project and steps taken.
 ## User Testing
 <hr>
 
-* My mentor gave me a feedback on design and styling of my project, which I had acted upon, improving padding across different templates as well as improving colour usage across the site.
+* My mentor gave me feedback on the design and styling of my project, which I had acted upon, improving padding across different templates as well as improving color usage across the site.
 
-* I have receieved feedback from fellow student Joanna Gorska, she gave me feedback about review button colours and some responsiveness improvements.
+* I have received feedback from fellow student Joanna Gorska, she gave me feedback about review button colors and some responsiveness improvements.
 
-* I recieved feedback from code review channel on slack also by getting feedback on contact form not working as expected this has now been reworked and users should expect a reply within 1-2 working days.
+* I received feedback from the code review channel on slack also by getting feedback on the contact form not working as expected this has now been reworked and users should expect a reply within 1-2 working days.
 
 * I was also given feedback about the footer and subscribe not being the same width to improve consistency this has also been resolved successfully.
 
-* I asked my brother to test the site and he tested the site with an Iphone 13 Pro max as well as his desktop pc (2560x1440) he logged in with provided user details and tested purchasing an item as well as without an account, This test passed successfully.
+* I asked my brother to test the site and he tested the site with an iPhone 13 Pro max as well as his desktop pc (2560x1440) he logged in with provided user details and tested purchasing an item as well without an account, This test passed successfully.
 
-* My friend tested my contact page form after bug fix and I can confirm that emails are being sent out to admin.
+* My friend tested my contact page form after the bug fix and I can confirm that emails are being sent out to the admin.
 
 <br>
 
@@ -583,9 +582,9 @@ class FavouritesList(models.Model):
 
 * The database models above populate the database and perform their functions as expected.
 
-    * User - Django built in User model with basic information.
+    * User - Django built-in User model with basic information.
 
-    * Category - Products are grouped with categories.
+    * Category - Products are grouped into categories.
 
     * Product - Product model for displaying models.
 
@@ -597,14 +596,14 @@ class FavouritesList(models.Model):
 
     * OrderLineItem - a model that holds product information for a particular product and connects the product model and the order model.
 
-    * UserProfile - Model storing users personal and order information.
+    * UserProfile - Model storing user's personal and order information.
 
-    * FavouritesList - A Model that handles creating a list of products that a user has saved, which appears in the users profile page as a list.
+    * FavouritesList - A Model that handles creating a list of products that a user has saved, which appears on the users profile page as a list.
 
 ## Database Schema
 ![DBSchema](documentation/readme_images/database_schema/db_schema_fscoffee_Mateusz.png)
 
-My Schema of models used in this application made with lucidchart it was created at project conception and I have added after contact, reviews, rating and favourites models.
+My Schema of models used in this application made with lucidchart it was created at project conception and I have added after contact, reviews, rating, and favourites models.
 
 # Project Design
 
@@ -620,12 +619,12 @@ My Schema of models used in this application made with lucidchart it was created
 <hr>
 
 * Body Text Fonts:
-    * I have used Montserrat as this font style goes with Lato and I feel like they work well together in the purpose of this website.
+    * I have used Montserrat as this font style goes with Lato and I feel like they work well together for the purpose of this website.
 
 <hr>
 
 * Font size:
-    * has been kept to mostly default with css and otherwise handled by bootstrap 5
+    * has been kept to mostly default with css and otherwise handled by bootstrap 5.
 
 <hr>
 
@@ -634,30 +633,30 @@ My Schema of models used in this application made with lucidchart it was created
 * The idea for the site is minimalistic and clean
 
 * Color: #000000
-    * I have chosen this color for my headings as to keep them minimalistic and visible.
-    * This colour is also used for button-custom background.
-    * as well as profile background form
+    * I have chosen this color for my headings to keep them minimalistic and visible.
+    * This color is also used for the button-custom background.
+    * as well as a profile background form
     * I am using #000000 for hovers on the main navbar to create an animation and indicate to users what they are hovering over
 
 * Color: #ffffff 
-    * This colour is used for the site background as well as white text on button-custom
+    * This color is used for the site background as well as white text on button-custom
     * Delivery message at the top of the screen
 
 * Color: #e9ecef
-    * This colour is used by the mail chimp signup form to make it stand out.
+    * This color is used by the mail chimp signup form to make it stand out.
     * as well as the footer links.
 
 * Color: #68bb7d
-    * This colour is used for the footer a:hover links
+    * This color is used for the footer a: hover links
     and list hover
 
 * Color: #00008B
-    * This colour is used for when the cart has products inside.
+    * This color is used when the cart has products inside.
 
 * Color: #212934 
-    * This colour is used to create the hover effect for the footer icons
+    * This color is used to create the hover effect for the footer icons
 
-* Color: #dc3545 Is used for custom checkboxes in products form.
+* Color: #dc3545 Is used for custom checkboxes in product form.
 
 ### Color Contrast Grid
 
@@ -683,19 +682,19 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Featured-Products](documentation/features/featured_products.png)
 
-* Featured products section shows two coffees that are featured as well as a coding mug to entice coders to purchase a product as well as helping bring attention to potentially good products
+* The featured products section shows two coffees that are featured as well as a coding mug to entice coders to purchase a product as well as help bring attention to potentially good products.
 
 ### Newsletter
 
 ![FSC-Newsletter](documentation/features/newsletter.png)
 
-* Mailchimp newsletter allows users to subscribe on unsubscribe and recieve an email with 2-3 days.
+* Mailchimp newsletter allows users to subscribe on unsubscribe and receive an email within 2-3 days.
 
 ### Footer and social links
 
 ![Footer-and-Social-links](documentation/features/footer.png)
 
-* Footer includes links to products as well as links to the sites other pages in addition it contains contact details.
+* The footer includes links to products as well as links to the sites other pages in addition it contains contact details.
 
 ## Products Page
 
@@ -703,13 +702,13 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Products-view](documentation/features/products_view.png)
 
-* Products view image is an admins version of products view, non super-users will not have the ability to edit or delete products, this area shows product name, price, category, image (placeholder if none), and allowing users to click on the image to be taken to the product details page.
+* Products view image is an admins version of products view, non-super-users will not have the ability to edit or delete products, this area shows product name, price, category, image (placeholder if none), and allows users to click on the image to be taken to the product details page.
 
 ### Products detail
 
 ![Product-Details](documentation/features/product_detail.png)
 
-* Product details page shows an enlarged product image for improved viewing, product name, price, how good the ratings are, a product description, product weight drop down, products quantity selectors as well as a go back button and add to cart button.
+* The product details page shows an enlarged product image for improved viewing, product name, price, how good the ratings are, a product description, product weight drop down, product quantity selectors as well as a go back button and add to cart button.
 
 ### Add product
 
@@ -721,7 +720,7 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Product-Edit](documentation/features/edit_product.png)
 
-* Edit product page contains form fields for edditing products.
+* Edit product page contains form fields for editing products.
 
 ### Add review
 
@@ -733,7 +732,7 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![User-reviews](documentation/features/user_reviews.png)
 
-* User review section shows a user review with a rating and content as well as username.
+* The user review section shows a user review with a rating and content as well as username.
 
 ## Checkout
 
@@ -741,13 +740,13 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Shopping-Cart](documentation/features/shopping_cart.png)
 
-* Shopping cart page shows products added to cart as well as details about the products and also allows the user to change product quantity as well as see unit price, subtotal and grand totla as well as go to checkout button.
+* The shopping cart page shows products added to the cart as well as details about the products and also allows the user to change product quantity as well as see the unit price, subtotal, and grand total as well as go to the checkout button.
 
 ### Order summary
 
 ![Order-Summary](documentation/features/checkout_order_summary.png)
 
-* Order summary page shows products that are in cart and the total price, as well as form fields to checkout using stripe with a country fields drop down box and secure checkout button.
+* Order summary page shows products that are in the cart and the total price, as well as form fields to checkout using stripe with a country fields drop-down box and secure checkout button.
 
 ### Checkout successful
 
@@ -761,7 +760,7 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Profile-Favourites-List-Order-History](documentation/features/profile_favouriteslist_order_history.png)
 
-* Profiles page shows favourites, order history and personal details.
+* The profiles page shows favourites, order history, and personal details.
 
 ## About Page
 
@@ -769,13 +768,13 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Fat-Stack-Coffee-Ethos](documentation/features/fat_stack_ethos.png)
 
-* Fat stack coffee company ethos with thumbnail image
+* Fat stack coffee company ethos with a thumbnail image.
 
 ### Fat stack coffee services
 
 ![Fat-Stack-Coffee-Services](documentation/features/our_services.png)
 
-* Fat stack coffee company services animated with font awesome animations.
+* Fat stack coffee company services are animated with font awesome animations.
 
 ## Contact Page
 
@@ -783,13 +782,13 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Google-Maps-Fat-Stack](documentation/features/map_contact_google.png)
 
-* Google map embbeded with location using html.
+* Google map embedded with a location using HTML.
 
 ### Fat stack coffee contact form
 
 ![Contact-Form](documentation/features/contact_form.png)
 
-* Fat stack coffee company Contact form allowing users to contact an administrator.
+* Fat stack coffee company Contact form allows users to contact an administrator.
 
 ### Fat stack coffee contact details
 
@@ -824,7 +823,7 @@ My Schema of models used in this application made with lucidchart it was created
 
 ### Beautify
 
-* I used HTML Beautify to help improve layout of html jinja templates this also formats code for better viewing.
+* I used HTML Beautify to help improve the layout of HTML jinja templates and format code for better viewing.
 
 ### Nu Html Checker
 
@@ -931,17 +930,17 @@ My Schema of models used in this application made with lucidchart it was created
 ## Sign up
 <hr>
 
-* Testing Signup I have tested local and production with sucess on both ends
+* Testing Signup I have tested local and production with success on both ends
     * User has to enter email to register as well as verify it.
     * Cannot enter password similar to username/email.
 
 ![Signup](documentation/manual_testing/sign-upMT.png)
 
-* User now has to verify email which works as expected.
+* The user now has to verify the email which works as expected.
 
 ![Verify-Email](documentation/manual_testing/verify-MT.png)
 
-* Example of email confirmation from console 
+* Example of email confirmation from the console .
 <hr>
 
 ![Verify-Email-link](documentation/manual_testing/verify2-MT.png)
@@ -972,11 +971,11 @@ My Schema of models used in this application made with lucidchart it was created
 ## Sign out
 <hr>
 
-* Signing out prompt
+* Signing out prompt.
 
 ![Sign-out](documentation/manual_testing/sign-outMT.png)
 
-* Signed out and recieved a success message 
+* Signed out and recieved a success message.
 
 ![Sign-out-success](documentation/manual_testing/sign-out2MT.png)
 
@@ -998,26 +997,26 @@ My Schema of models used in this application made with lucidchart it was created
 ## Newsletter
 <hr>
 
-* Newsletter, thank you for subscribing and an email after 2-3 days from mailchimp(Due to free account)
+* Newsletter, thank you for subscribing and an email after 2-3 days from MailChimp(Due to free account)
 
 ![Newsletter](documentation/manual_testing/subscribe-MT.png)
 
 ## Admin
 <hr>
 
-* Admin panel after using Jazzmin with bootstrap styling
+* Admin panel after using Jazzmin with bootstrap styling.
 
 ![Admin](documentation/manual_testing/admin-MT.png)
 
-* Adding product in admin panel.
+* Adding product in the admin panel.
 
 ![Admin-Product](documentation/manual_testing/admintest_MT.png)
 
-* Logging in admin panel.
+* Logging in the admin panel.
 
 ![Admin-login](documentation/manual_testing/login-admin-MT.png)
 
-* Admin sign out message.
+* Admin sign-out message.
 
 ![Admin-Sign-out](documentation/manual_testing/admin-sign-out-MT.png)
 
@@ -1058,7 +1057,7 @@ My Schema of models used in this application made with lucidchart it was created
 
 ![Delete-product](documentation/manual_testing/delete-product-MT.png)
 
-* Deleting product modal to give a confirmation for deleting product.
+* Deleting product modal to confirm deleting product.
 
 ![Delete-product-success](documentation/manual_testing/delete-product-success-MT.png)
 
@@ -1080,7 +1079,7 @@ My Schema of models used in this application made with lucidchart it was created
 ## Pagination
 <hr>
 
-* Page pagination working as intended
+* Page pagination functions as intended.
 
 ![Pagination-1](documentation/manual_testing/pagination-1-MT.png)
 
@@ -1089,11 +1088,11 @@ My Schema of models used in this application made with lucidchart it was created
 ## Contact
 <hr>
 
-* Contact form inputting details into fields
+* Contact form inputting details into fields.
 
 ![Contact](documentation/manual_testing/contact-MT.png)
 
-* Confirmation email of contact being established successfully.
+* A confirmation email of contact being established successfully.
 
 ![Contact-success](documentation/manual_testing/contact-success-MT.png)
 
@@ -1150,11 +1149,11 @@ Code Institute, Lesson Excercise
 
 * What are the goals of your business? Which marketing strategies would offer the best ways to meet those goals?
 
-    * Goals of the business is to make buying high quality coffee easier for busy developers.
+    * Goal of the business is to make buying high-quality coffee easier for busy developers.
 
     * Ease of use across the site.
 
-    * Increasing customers value.
+    * Increasing customer value.
 
     * Boosting brand engagement.
 
@@ -1164,25 +1163,25 @@ Code Institute, Lesson Excercise
 
 * Would your business have a budget to spend on advertising? Or would it need to work with free or low-cost options to market itself?
 
-    * At the beginning the business would need to focus on free advertisement
+    * At the beginning, the business would need to focus on free advertisement
     And market itself
-    Once the business picks up the budget could increase according to the buinesss revenue.
+    Once the business picks up the budget could increase according to the business revenue.
 
 
 ### Keyword Research
 
 * What do your users need?
-    * My users need a product “coffee” for their daily work because they are coders who typically spend a long time infront of a computer screen and it may help them with a high quality coffee.
+    * My users need a product “coffee” for their daily work because they are coders who typically spend a long time in front of a computer screen and it may help them with a high-quality coffee.
 
 * What information and features can you provide to meet those needs?
 
-    * Add to cart button, product description, volume of product, pricing, product search.
+    * Add to cart button, product description, the volume of product, pricing, and product search.
 
 * How can you make the information easy to understand?
 
-    * Clear font and font colours as well as a accessible colour scheme across site.	
+    * Clear font and font colors as well as an accessible color scheme across the site.    
 
-* How can you demonstrate expertise, authoritativeness and trustworthiness in your content?
+* How can you demonstrate expertise, authoritativeness, and trustworthiness in your content?
 
     * Keep content up to date
 
@@ -1196,7 +1195,7 @@ Code Institute, Lesson Excercise
 
     * Contact details
 
-* Would there be other pages within your own site you could link to from your chosen page?
+* Would there be other pages within your site you could link to from your chosen page?
     * Index *page*
 
     * Footer *all/pages*
@@ -1234,12 +1233,12 @@ Code Institute, Lesson Excercise
 
 ## Newsletter
 
-I have used a newsletter from mailchimp where users will get a welcome email within a few days as I am on the free plan this may be quicker or slower depending on service. 
+I have used a newsletter from MailChimp where users will get a welcome email within a few days as I am on the free plan this may be quicker or slower depending on service. 
 Users can subscribe or unsubscribe whenever they wish.
 
 ## Facebook business page
 
-Fat stack coffee is on has a facebook business page for marketing and research purposes as well as to post and advertise, create engaging content and attract visitor and customers.
+Fat stack coffee is on has a Facebook business page for marketing and research purposes as well as to post and advertise, create engaging content and attract visitors and customers.
 
 ![Header](documentation/readme_images/web_marketing/facebook/Facebook-Header.png)
 <hr>
@@ -1293,7 +1292,7 @@ Fat stack coffee is on has a facebook business page for marketing and research p
     * Cause = Max_length too low
     * Fix = Increase Max_length, migrate.
 
-8. Weight not changing price products
+8. Weight not changing price of products
     * Cause = Not enough login
     * Fix add javascript to product_details page
 
@@ -1330,7 +1329,7 @@ Fat stack coffee is on has a facebook business page for marketing and research p
 ## Cloning Project with Github
   **[Repository Link](https://github.com/Matex600/Fat-Stack-Coffee)**
 
-  * Create Account with Github
+  * Create an Account with Github
 
   * Login To Github account.
   
@@ -1354,13 +1353,14 @@ Fat stack coffee is on has a facebook business page for marketing and research p
 
 ## Forking Project Via Github
 
-* To Fork and continue working on the project without affecting the main branch follow steps outlined below.
+* To Fork and continue working on the project without affecting the main branch follow the steps outlined below.
 
-    1. Navigate to github repositores select this **[repository](https://github.com/Matex600/Fat-Stack-Coffee)**.
+    1. Navigate to Github repositories and select this **[repository](https://github.com/Matex600/Fat-Stack-Coffee)**.
 
-    2. Navigate to top right of the web page and click on **Fork**.
+    2. Navigate to the top right of the web page and click on **Fork**.
 
     3. After this has been done a fork will be created for you to use!
+
 
 ## Deployment via Heroku
 
@@ -1369,7 +1369,7 @@ Fat stack coffee is on has a facebook business page for marketing and research p
         * Login
         * Create project using Code Institutes **[Project](https://github.com/Code-Institute-Org/gitpod-full-template)**  template.
         * Open workspace using gitpod button, Only do this once.
-        * Install required dependancies.
+        * Install required dependencies.
         <hr>
 
         ```
@@ -1417,7 +1417,7 @@ Fat stack coffee is on has a facebook business page for marketing and research p
 
       * Cloudinary can be obtained here [URL](https://cloudinary.com/)
 
-      * Secret key is a password of your choosing make it a strong one [KEY](https://djecrety.ir/)
+      * A secret key is a password of your choosing make it a strong one [KEY](https://djecrety.ir/)
 
       * Obtain Heroku postgreSQL [HERE](https://dashboard.heroku.com/apps)
 
@@ -1459,17 +1459,17 @@ Fat stack coffee is on has a facebook business page for marketing and research p
 
         ![SecuredVarExample](https://res.cloudinary.com/matts-cloud/image/upload/v1653828408/config-vars_en303z.png)
 
-    3. Create Procfile containing application name to ensure proper formatting or deployment will fail.
+    3. Create Procfile containing the application name to ensure proper formatting or deployment will fail.
 
     4. Commit and push changes to Github.
 
-    5. Move to Heroku part of deployment.
+    5. Move to the Heroku part of the deployment.
 
     6. Create an account with [Heroku](https://signup.heroku.com/).
 
     7. Create a new app
         * Choose region
-        * Choose appropriate app name
+        * Choose the appropriate app name
         * Add app name to Procfile
 
     8. In **Resources** add **Heroku Postgres** hobby plan.
@@ -1522,9 +1522,9 @@ Fat stack coffee is on has a facebook business page for marketing and research p
 
 ## Media
 
-All of these images below have been acquired for non-commercial use and for education and teaching purposes only I do not intend to profit from said images.
+All of these images below have been acquired for non-commercial use and education and teaching purposes only I do not intend to profit from said images.
 
-* [Site Bear Logo](https://www.creativefabrica.com/) I purchased this logo from Creative fabrica and have a license to use it.
+* [Site Bear Logo](https://www.creativefabrica.com/) I purchased this logo from Creative Fabrica and have a license to use it.
 
 ## Product Images
 
@@ -1579,7 +1579,7 @@ Procured from
 * [Code-Institute](https://codeinstitute.net/) - For preparing me for this project with their template and lessons.
 
     * Boutique Ado Walkthrough Project
-        * helping me understand ecommerce using stripe
+        * helping me understand e-commerce using stripe
     * Code-Institute Slack channel
         * Code Review
     * Code-Institute Tutor support
