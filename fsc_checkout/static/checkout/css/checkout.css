@@ -1,3 +1,7 @@
+/* Checkout css */
+
+
+/* Stripe */
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -45,6 +49,8 @@ select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
 }
+
+/* Loading overlay */
 
 #loading-overlay {
 	display: none;

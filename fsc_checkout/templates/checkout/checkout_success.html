@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 {% block content %}
+
+<!-- checkout success page -->
 <div class="overlay">
 </div>
 <div class="container">
@@ -19,6 +21,7 @@
       </p>
     </div>
   </div>
+  <!-- Order invoice -->
   <div class="row checkout_padding">
     <div class="col-12 col-lg-7">
       <div class="order-confirmation-wrapper p-2 border">
@@ -54,6 +57,7 @@
             </small>
           </div>
         </div>
+        <!-- Displays items in order -->
         {% for item in order.lineitems.all %}
         <div class="row">
           <div class="col-12 col-md-4">
@@ -67,6 +71,7 @@
           </div>
         </div>
         {% endfor %}
+        <!-- Customer information -->
         <div class="row">
           <div class="col">
             <small class="text-muted">Delivery Address:
@@ -197,7 +202,8 @@
         </div>
       </div>
     </div>
-  </div>                 
+  </div>
+  <!-- buttons for back to profile if coming from profile else to selected products                -->
   <div class="row checkout_padding">
     <div class="col-12 col-lg-7 text-right">
       {% if from_profile %}

@@ -2,6 +2,9 @@
 {% load static %}
 {% load cart_tools %}
 {% block content %}
+
+<!-- Shopping cart template -->
+
 <div class="overlay">
 </div>
 <div class="container mb-2">
@@ -29,6 +32,7 @@
             </p>
           </div>
         </div>
+        <!-- Cart summary -->
         {% for item in cart_items %}
         <div class="row">
           <div class="col-12 col-sm-6 mb-2">
@@ -65,6 +69,7 @@
         </div>
         {% endfor %}
       </div>
+      <!-- products in cart information -->
       <div class="table-responsive rounded d-none d-md-block form-margin">
         <table class="table table-sm table-borderless">
           <thead class="text-black">
@@ -117,6 +122,7 @@
           </tr>
           {% endfor %}
           <tr>
+            <!-- Includes -->
             <td colspan="5" class="pt-5 text-right">
               {% include "cart/cart-total.html" %}
             </td>
@@ -129,6 +135,7 @@
         </table>
       </div>
       {% else %}
+      <!-- Empty cart logic -->
       <p class="lead mb-5 form-margin">Your cart is empty.
       </p>
       <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
@@ -152,6 +159,9 @@
   }
                       )
 </script>
+
+<!-- Javascript for remvoing items -->
+
 {% include 'products/includes/quantity_input_script.html' %}
 <script>
   // Update quantity on click
